@@ -6,5 +6,6 @@ export * from './profile';
 export * from './singleBlog';
 
 // global  not found and error handler pages
-export * from './NotFound';
-export * from './RootErrorBoundary';
+export * from './error';
+export * from './not-found';
+

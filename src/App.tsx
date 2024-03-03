@@ -1,6 +1,5 @@
-import { Fragment } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Footer, Nav } from './components/Global';
+import { Footer, GlobalProvider, Nav } from './components/Global';
 import {
   CreateBlog,
   Home,
@@ -24,11 +23,11 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <Fragment>
+    <GlobalProvider>
       <Nav />
       <RouterProvider router={router} />
       <Footer />
-    </Fragment>
+    </GlobalProvider>
   );
 };
 
