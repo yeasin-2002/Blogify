@@ -1,14 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 interface Props extends React.ComponentProps<'div'> {}
 
 import searchIcon from '@/assets/icons/search.svg';
 import logo from '@/assets/logo.svg';
+import { useAuth } from '@/hooks';
 
 export const Nav = ({ ...rest }: Props) => {
+  const authData = useAuth();
   return (
     <header {...rest}>
       <nav className="container">
-        {/* Logo */}
         <div>
           <a href="./index.html">
             <img className="w-32" src={logo} alt="lws" />
@@ -38,28 +41,27 @@ export const Nav = ({ ...rest }: Props) => {
                 <span>Search</span>
               </a>
             </li>
-            <li>
-              <a
-                href="./login.html"
-                className="text-white/50 transition-all duration-200 hover:text-white"
-              >
-                Login
-              </a>
-            </li>
-            <li className="flex items-center">
-              {/* Circular Div with background color */}
-              <div className="avater-img bg-orange-600 text-white">
-                <span className="">S</span>
-                {/* User's first name initial */}
-              </div>
 
-              {/* Logged-in user's name */}
-              <a href="./profile.html">
-                <span className="ml-2 text-white">Saad Hasan</span>
-              </a>
+            {authData.authToken && authData.authUser ? (
+              <li className="flex items-center">
+                <div className="avater-img bg-orange-600 text-white">
+                  <span className="">S</span>
+                </div>
 
-              {/* Profile Image */}
-            </li>
+                <Link to="/profile">
+                  <span className="ml-2 text-white">Saad Hasan</span>
+                </Link>
+              </li>
+            ) : (
+              <li>
+                <a
+                  href="/login"
+                  className="text-white/50 transition-all duration-200 hover:text-white"
+                >
+                  Login
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       </nav>

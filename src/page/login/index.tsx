@@ -1,52 +1,61 @@
+import { Input } from '@/components';
 import React from 'react';
+import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 interface Props extends React.ComponentProps<'div'> {}
 
+interface FormValues {
+  email: string;
+  password: string;
+}
+
 export const LogIn = ({ ...rest }: Props) => {
+  const {
+    formState: { errors },
+    register,
+    handleSubmit,
+  } = useForm<FormValues>();
+
+  const onSubmit = (data: FormValues) => {
+    console.log(data);
+  };
+
   return (
     <main {...rest}>
       <section className="container">
         {/* Login Form into a box center of the page */}
-        <div className="w-full md:w-1/2 mx-auto bg-[#030317] p-8 rounded-md mt-12">
-          <h2 className="text-2xl font-bold mb-6">Login</h2>
-          <form action="">
-            <div className="mb-6">
-              <label htmlFor="email" className="block mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full p-3 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500"
-              />
-            </div>
-            <div className="mb-6">
-              <label htmlFor="password" className="block mb-2">
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                className="w-full p-3 bg-[#030317] border border-white/20 rounded-md focus:outline-none focus:border-indigo-500"
-              />
-            </div>
+        <div className="mx-auto mt-12 w-full rounded-md bg-[#030317] p-8 md:w-1/2">
+          <h2 className="mb-6 text-2xl font-bold">Login</h2>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Input
+              register={register('email', {
+                required: 'Email is required',
+                pattern: { value: /^\S+@\S+$/i, message: 'Invalid email' },
+              })}
+              errorMsg={errors.email?.message}
+              labelName="Email"
+            />
+            <Input
+              register={register('password', {
+                required: 'password is required',
+                minLength: { value: 8, message: 'Minimum 8 characters' },
+              })}
+              errorMsg={errors.password?.message}
+              labelName="Password"
+            />
             <div className="mb-6">
               <button
                 type="submit"
-                className="w-full bg-indigo-600 text-white p-3 rounded-md hover:bg-indigo-700 transition-all duration-200"
+                className="w-full rounded-md bg-indigo-600 p-3 text-white transition-all duration-200 hover:bg-indigo-700"
               >
                 Login
               </button>
             </div>
             <p className="text-center">
               Don't have an account?{' '}
-              <a
-                href="./register.html"
-                className="text-indigo-600 hover:underline"
-              >
+              <Link to="/register" className="text-indigo-600 hover:underline">
                 Register
-              </a>
+              </Link>
             </p>
           </form>
         </div>
