@@ -1,5 +1,12 @@
-## React-ts Starter
+## React Blogify
 
-#### This is a simple starter for a React project with TypeScript. It includes a basic setup for a React project with TypeScript, ESLint, Prettier, and shadcn/ui.
+## Main Requerment: 
 
-Don't forget to give a `star` if you like it. ✌️
+- [ ] Infinite Scroll  on home page, message if no blog found 
+
+- [ ] Redirect to 
+## Main Requerment: 
+
+- [ ] Infinite Scroll  on home page, message if no blog found 
+
+- [ ] Redirect to 
