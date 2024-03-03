@@ -1,4 +1,3 @@
-import { store } from '@/redux/store';
-
-export type RootStore = ReturnType<typeof store.getState>;
-export type RootDispatch = typeof store.dispatch;
+export * from './auth.type';
+export * from './response.type';
+export * from './utils.type';

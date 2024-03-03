@@ -8,6 +8,7 @@ import { store } from '@/redux/store';
 import { Provider } from 'react-redux';
 
 //? react-toastify
+import { AuthProvider } from '@/context';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -16,7 +17,7 @@ export const GlobalProvider = ({ children }: OnlyChild) => {
     <>
       <Provider store={store}>
         <QueryClientProvider client={queryClient}>
-          {children}
+          <AuthProvider>{children}</AuthProvider>
           <ToastContainer />
           <ReactQueryDevtools />
         </QueryClientProvider>

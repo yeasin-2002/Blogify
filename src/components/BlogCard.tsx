@@ -16,7 +16,7 @@ export const BlogCard = ({ showActionModal = false, ...rest }: Props) => {
       <div className="relative mt-2">
         <a href="./single-blog.html">
           <h3 className="text-xl text-slate-300 lg:text-2xl">
-            <a href="./single-blog.html">React Roadmap in 2024</a>
+            <p>React Roadmap in 2024</p>
           </h3>
         </a>
         <p className="mb-6 mt-1 text-base text-slate-500">
