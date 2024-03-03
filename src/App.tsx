@@ -14,7 +14,7 @@ import {
 
 const router = createBrowserRouter([
   { path: '/', Component: Home, errorElement: <RootErrorBoundary /> },
-  { path: '/create-blog', Component: CreateBlog },
+  { path: '/write', Component: CreateBlog },
   { path: '/register', Component: Register },
   { path: '/login', Component: LogIn },
   { path: '/profile', Component: Profile },

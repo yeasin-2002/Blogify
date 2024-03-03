@@ -1,18 +1,22 @@
 import React from 'react';
 interface Props extends React.ComponentProps<'div'> {}
 
+import { MainBlogs } from './MainBlogs';
+import { SideBarPost } from './SideBarPost';
+
 export const Home = ({ ...rest }: Props) => {
   return (
-    <div
-      className="grid min-h-screen place-items-center bg-gray-900 text-white "
-      {...rest}
-    >
-      <h1 className="text-center text-4xl font-bold">
-        React TypeScript TailwindCSS Templates with Vite
-      </h1>
-      <p className="text-center text-2xl">
-        Md Kawsar Islam Yeasin (@yeasin2002)
-      </p>
+    <div {...rest}>
+      <main>
+        <section>
+          <div className="container">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-7">
+              <MainBlogs />
+              <SideBarPost />
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };

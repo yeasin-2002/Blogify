@@ -1,6 +1,8 @@
-import logo from '@/assets/logo.svg';
 import React from 'react';
 interface Props extends React.ComponentProps<'div'> {}
+
+import searchIcon from '@/assets/icons/search.svg';
+import logo from '@/assets/logo.svg';
 
 export const Nav = ({ ...rest }: Props) => {
   return (
@@ -22,7 +24,7 @@ export const Nav = ({ ...rest }: Props) => {
             <li>
               <a
                 href="./createBlog.html"
-                className="bg-indigo-600 text-white px-6 py-2 md:py-3 rounded-md hover:bg-indigo-700 transition-all duration-200"
+                className="rounded-md bg-indigo-600 px-6 py-2 text-white transition-all duration-200 hover:bg-indigo-700 md:py-3"
               >
                 Write
               </a>
@@ -30,16 +32,16 @@ export const Nav = ({ ...rest }: Props) => {
             <li>
               <a
                 href="./search.html"
-                className="flex items-center gap-2 cursor-pointer"
+                className="flex cursor-pointer items-center gap-2"
               >
-                <img src="./assets/icons/search.svg" alt="Search" />
+                <img src={searchIcon} alt="Search" />
                 <span>Search</span>
               </a>
             </li>
             <li>
               <a
                 href="./login.html"
-                className="text-white/50 hover:text-white transition-all duration-200"
+                className="text-white/50 transition-all duration-200 hover:text-white"
               >
                 Login
               </a>
@@ -53,7 +55,7 @@ export const Nav = ({ ...rest }: Props) => {
 
               {/* Logged-in user's name */}
               <a href="./profile.html">
-                <span className="text-white ml-2">Saad Hasan</span>
+                <span className="ml-2 text-white">Saad Hasan</span>
               </a>
 
               {/* Profile Image */}
