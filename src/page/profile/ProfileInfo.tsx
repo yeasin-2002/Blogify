@@ -3,14 +3,21 @@ interface Props extends React.ComponentProps<'div'> {}
 
 // assets
 import editIcon from '@/assets/icons/edit.svg';
+import { Avatar } from '@/components';
 
 export const ProfileInfo = ({ ...rest }: Props) => {
   return (
     <div className="flex flex-col items-center py-8 text-center" {...rest}>
       <div className="relative mb-8 h-[120px] max-h-[180px] w-[120px] max-w-[180px] rounded-full lg:mb-11 lg:max-h-[218px] lg:max-w-[218px]">
+        {/*         
         <div className="grid h-full w-full place-items-center rounded-full bg-orange-600 text-5xl text-white">
           <span className="">S</span>
-        </div>
+        </div> */}
+        <Avatar
+          img="https://yeasin2002.netlify.app/_ipx/w_640,q_75/%2F_next%2Fstatic%2Fmedia%2Fsagufta.4509edc7.jpg?url=%2F_next%2Fstatic%2Fmedia%2Fsagufta.4509edc7.jpg&w=640&q=75"
+          alt="yeasin"
+          className="size-32"
+        />
 
         <button className="absolute bottom-0 right-0 grid h-7 w-7 place-items-center rounded-full bg-slate-700 hover:bg-slate-700/80">
           <img src={editIcon} alt="Edit" />
