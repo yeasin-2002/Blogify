@@ -39,12 +39,12 @@ export const Nav = ({ ...rest }: Props) => {
             </li>
 
             {authData.authToken && authData.authUser ? (
-              <li className="flex items-center">
-                <div className="avater-img bg-orange-600 text-white">
-                  <span className="">S</span>
-                </div>
+              <li>
+                <Link to="/profile" className="flex items-center">
+                  <div className="avater-img bg-orange-600 text-white">
+                    <span className="">S</span>
+                  </div>
 
-                <Link to="/profile">
                   <span className="ml-2 truncate text-white">
                     {authData.authUser.firstName +
                       ' ' +
