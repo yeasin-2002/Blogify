@@ -4,18 +4,16 @@ interface Props extends React.ComponentProps<'div'> {}
 // assets
 import editIcon from '@/assets/icons/edit.svg';
 import { Avatar } from '@/components';
+import { useAuth } from '@/hooks';
 
 export const ProfileInfo = ({ ...rest }: Props) => {
+  const { authUser } = useAuth();
   return (
     <div className="flex flex-col items-center py-8 text-center" {...rest}>
       <div className="relative mb-8 h-[120px] max-h-[180px] w-[120px] max-w-[180px] rounded-full lg:mb-11 lg:max-h-[218px] lg:max-w-[218px]">
-        {/*         
-        <div className="grid h-full w-full place-items-center rounded-full bg-orange-600 text-5xl text-white">
-          <span className="">S</span>
-        </div> */}
         <Avatar
-          img="https://yeasin2002.netlify.app/_ipx/w_640,q_75/%2F_next%2Fstatic%2Fmedia%2Fsagufta.4509edc7.jpg?url=%2F_next%2Fstatic%2Fmedia%2Fsagufta.4509edc7.jpg&w=640&q=75"
-          alt="yeasin"
+          img={authUser?.avatar}
+          firstName={authUser?.firstName}
           className="size-32"
         />
 
@@ -23,12 +21,12 @@ export const ProfileInfo = ({ ...rest }: Props) => {
           <img src={editIcon} alt="Edit" />
         </button>
       </div>
-      {/* name , email */}
+
       <div>
         <h3 className="text-2xl font-semibold text-white lg:text-[28px]">
-          Saad Hasan
+          {authUser?.firstName + ' ' + authUser?.lastName}
         </h3>
-        <p className="leading-[231%] lg:text-lg">saadhasan@gmail.com</p>
+        <p className="leading-[231%] lg:text-lg">{authUser?.bio}</p>
       </div>
 
       {/* bio */}

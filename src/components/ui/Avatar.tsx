@@ -1,12 +1,17 @@
 import { cn } from '@/utils';
 import React from 'react';
 interface Props extends React.ComponentProps<'div'> {
-  img: string;
-  alt: string;
+  img?: string;
   size?: string;
+  firstName?: string;
+
 }
 
-export const Avatar = ({ img, alt, className }: Props) => {
+export const Avatar = ({
+  img,
+  firstName = '',
+  className,
+}: Props) => {
   const [isError, setIsError] = React.useState(false);
 
   return (
@@ -25,8 +30,8 @@ export const Avatar = ({ img, alt, className }: Props) => {
             className,
           )}
         >
-          <span className="font-medium text-gray-600 dark:text-gray-300">
-            {alt[0]}
+          <span className="text-2xl font-bold   capitalize text-gray-600 dark:text-gray-300 ">
+            {firstName[0] }
           </span>
         </div>
       )}
