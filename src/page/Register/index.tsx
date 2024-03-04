@@ -1,27 +1,56 @@
-import React from 'react';
-interface Props extends React.ComponentProps<'div'> {}
+import { axiosInstance } from '@/utils';
+import { useMutation } from '@tanstack/react-query';
+import { AxiosError, AxiosResponse } from 'axios';
+import { useForm } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import { Input } from '@/components';
-import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
-interface Props extends React.ComponentProps<'div'> {}
+import { useAuth } from '@/hooks';
+import { authData } from '@/types';
 
 interface FormValues {
-  firstName: string;
-  lastName: string;
   email: string;
   password: string;
+  firstName: string;
+  lastName: string;
 }
 
-export const Register = ({ ...rest }: Props) => {
+export const Register = ({ ...rest }: DivProps) => {
+  const { setAuthToken, setAuthUser } = useAuth();
+  const navigate = useNavigate();
+
+  const { mutateAsync } = useMutation({
+    mutationKey: ['register'],
+    mutationFn: (body: FormValues): Promise<AxiosResponse> =>
+      axiosInstance.post('/auth/register', body),
+  });
+
   const {
     formState: { errors },
     register,
     handleSubmit,
   } = useForm<FormValues>();
 
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
+  const onSubmit = async (formValue: FormValues) => {
+    try {
+      const req = await mutateAsync(formValue);
+      console.log('🚀 ~ onSubmit ~ req:', req);
+
+      const data = req.data as authData;
+      data.token && setAuthToken(data.token);
+      data.user && setAuthUser(data.user);
+      toast.success('Register successful');
+      navigate('/');
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        console.log('register Error', error);
+        return toast.error(
+          error.response?.data?.error || 'Invalid user information',
+        );
+      }
+      toast.error('something went wrong');
+    }
   };
   return (
     <main {...rest}>
@@ -48,7 +77,10 @@ export const Register = ({ ...rest }: Props) => {
             <Input
               register={register('email', {
                 required: 'Email is required',
-                pattern: { value: /^\S+@\S+$/i, message: 'Invalid email' },
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: 'Invalid email',
+                },
               })}
               errorMsg={errors.email?.message}
               labelName="Email"

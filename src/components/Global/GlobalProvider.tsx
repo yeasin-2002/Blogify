@@ -12,9 +12,11 @@ import { AuthProvider } from '@/context';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { BrowserRouter } from 'react-router-dom';
+
 export const GlobalProvider = ({ children }: OnlyChild) => {
   return (
-    <>
+    <BrowserRouter>
       <Provider store={store}>
         <QueryClientProvider client={queryClient}>
           <AuthProvider>{children}</AuthProvider>
@@ -22,6 +24,6 @@ export const GlobalProvider = ({ children }: OnlyChild) => {
           <ReactQueryDevtools />
         </QueryClientProvider>
       </Provider>
-    </>
+    </BrowserRouter>
   );
 };

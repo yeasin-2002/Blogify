@@ -13,15 +13,11 @@ export const Nav = ({ ...rest }: Props) => {
     <header {...rest}>
       <nav className="container">
         <div>
-          <a href="./index.html">
+          <Link to="/">
             <img className="w-32" src={logo} alt="lws" />
-          </a>
+          </Link>
         </div>
 
-        {/* Actions - Login, Write, Home, Search */}
-        {/* Notes for Developers */}
-        {/* For Logged in User - Write, Profile, Logout Menu */}
-        {/* For Not Logged in User - Login Menu */}
         <div>
           <ul className="flex items-center space-x-5">
             <li>
@@ -49,17 +45,21 @@ export const Nav = ({ ...rest }: Props) => {
                 </div>
 
                 <Link to="/profile">
-                  <span className="ml-2 text-white">Saad Hasan</span>
+                  <span className="ml-2 truncate text-white">
+                    {authData.authUser.firstName +
+                      ' ' +
+                      authData.authUser.lastName}
+                  </span>
                 </Link>
               </li>
             ) : (
               <li>
-                <a
-                  href="/login"
+                <Link
+                  to="/login"
                   className="text-white/50 transition-all duration-200 hover:text-white"
                 >
                   Login
-                </a>
+                </Link>
               </li>
             )}
           </ul>

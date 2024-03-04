@@ -7,6 +7,9 @@ declare global {
 
   type ReduxStore = ReturnType<typeof store.getState>;
   type ReduxDispatch = typeof store.dispatch;
+
+  interface DivProps extends React.ComponentProps<'div'> {}
 }
 
 export {};
+

@@ -1,28 +1,28 @@
 import React from 'react';
 interface Props extends React.ComponentProps<'div'> {}
 
-export const singleBlog = ({ ...rest }: Props) => {
+export const SingleBlog = ({ ...rest }: Props) => {
   return (
     <div {...rest}>
       <main>
         {/* Begin Blogs */}
         <section>
-          <div className="container text-center py-8">
-            <h1 className="font-bold text-3xl md:text-5xl">
+          <div className="container py-8 text-center">
+            <h1 className="text-3xl font-bold md:text-5xl">
               Integer Maecenas Eget Viverra
             </h1>
-            <div className="flex justify-center items-center my-4 gap-4">
-              <div className="flex items-center capitalize space-x-2">
+            <div className="my-4 flex items-center justify-center gap-4">
+              <div className="flex items-center space-x-2 capitalize">
                 <div className="avater-img bg-indigo-600 text-white">
                   <span className="">S</span>
                 </div>
-                <h5 className="text-slate-500 text-sm">Saad Hasan</h5>
+                <h5 className="text-sm text-slate-500">Saad Hasan</h5>
               </div>
-              <span className="text-sm text-slate-700 dot">June 28, 2018</span>
-              <span className="text-sm text-slate-700 dot">100 Likes</span>
+              <span className="dot text-sm text-slate-700">June 28, 2018</span>
+              <span className="dot text-sm text-slate-700">100 Likes</span>
             </div>
             <img
-              className="mx-auto w-full md:w-8/12 object-cover h-80 md:h-96"
+              className="mx-auto h-80 w-full object-cover md:h-96 md:w-8/12"
               src="./assets/blogs/React-Roadmap.jpg"
               alt=""
             />
@@ -36,7 +36,7 @@ export const singleBlog = ({ ...rest }: Props) => {
             </ul>
 
             {/* Content */}
-            <div className="mx-auto w-full md:w-10/12 text-slate-300 text-base md:text-lg leading-8 py-2 !text-left">
+            <div className="mx-auto w-full py-2 !text-left text-base leading-8 text-slate-300 md:w-10/12 md:text-lg">
               Today I was mob programming with Square's Mobile & Performance
               Reliability team and we toyed with an interesting idea. Our
               codebase has classes that represent screens a user can navigate
@@ -63,7 +63,7 @@ export const singleBlog = ({ ...rest }: Props) => {
               factor of 2. So, for 1000 entries, that's an object array of size
               2048: 2048 * 8 = 16,314 bytes. The total retained size of the map
               is ~120 KB. Can we do better? Could we make it... 0?
-              <h2 className="font-bold text-3xl mt-4">100% code-based map</h2>
+              <h2 className="mt-4 text-3xl font-bold">100% code-based map</h2>
               What if we generate code that returns the right team for a given
               screen, instead of creating a map? Since we know the full list of
               screen classes, we can check ahead of time whether there's any
@@ -75,19 +75,19 @@ export const singleBlog = ({ ...rest }: Props) => {
 
         {/* Begin Comments */}
         <section id="comments">
-          <div className="mx-auto w-full md:w-10/12 container">
-            <h2 className="text-3xl font-bold my-8">Comments (3)</h2>
-            <div className="flex items -center space-x-4">
+          <div className="container mx-auto w-full md:w-10/12">
+            <h2 className="my-8 text-3xl font-bold">Comments (3)</h2>
+            <div className="items -center flex space-x-4">
               <div className="avater-img bg-indigo-600 text-white">
                 <span className="">S</span>
               </div>
               <div className="w-full">
                 <textarea
-                  className="w-full bg-[#030317] border border-slate-500 text-slate-300 p-4 rounded-md focus:outline-none"
+                  className="w-full rounded-md border border-slate-500 bg-[#030317] p-4 text-slate-300 focus:outline-none"
                   placeholder="Write a comment"
                 ></textarea>
-                <div className="flex justify-end mt-4">
-                  <button className="bg-indigo-600 text-white px-6 py-2 md:py-3 rounded-md hover:bg-indigo-700 transition-all duration-200">
+                <div className="mt-4 flex justify-end">
+                  <button className="rounded-md bg-indigo-600 px-6 py-2 text-white transition-all duration-200 hover:bg-indigo-700 md:py-3">
                     Comment
                   </button>
                 </div>
@@ -95,7 +95,7 @@ export const singleBlog = ({ ...rest }: Props) => {
             </div>
 
             {/* Comment One */}
-            <div className="flex items-start space-x-4 my-8">
+            <div className="my-8 flex items-start space-x-4">
               <div className="avater-img bg-orange-600 text-white">
                 <span className="">S</span>
               </div>
@@ -117,7 +117,7 @@ export const singleBlog = ({ ...rest }: Props) => {
             </div>
 
             {/* Comment Two */}
-            <div className="flex items-start space-x-4 my-8">
+            <div className="my-8 flex items-start space-x-4">
               <div className="avater-img bg-green-600 text-white">
                 <span className="">S</span>
               </div>
@@ -139,7 +139,7 @@ export const singleBlog = ({ ...rest }: Props) => {
             </div>
 
             {/* Comment Three */}
-            <div className="flex items-start space-x-4 my-8">
+            <div className="my-8 flex items-start space-x-4">
               <div className="avater-img bg-indigo-600 text-white">
                 <span className="">S</span>
               </div>

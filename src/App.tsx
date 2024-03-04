@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Footer, GlobalProvider, Nav } from './components/Global';
 import {
   CreateBlog,
@@ -8,24 +8,28 @@ import {
   Profile,
   Register,
   RootErrorBoundary,
-  singleBlog,
+  SingleBlog,
 } from './page';
-
-const router = createBrowserRouter([
-  { path: '/', Component: Home, errorElement: <RootErrorBoundary /> },
-  { path: '/write', Component: CreateBlog },
-  { path: '/register', Component: Register },
-  { path: '/login', Component: LogIn },
-  { path: '/profile', Component: Profile },
-  { path: '/single-blog/:id', Component: singleBlog },
-  { path: '*', Component: NotFound },
-]);
 
 const App = () => {
   return (
     <GlobalProvider>
       <Nav />
-      <RouterProvider router={router} />
+
+      <Routes>
+        <Route
+          path="/"
+          element={<Home />}
+          errorElement={<RootErrorBoundary />}
+        />
+        <Route path="/write" element={<CreateBlog />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/single-blog/:id" element={<SingleBlog />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
       <Footer />
     </GlobalProvider>
   );
