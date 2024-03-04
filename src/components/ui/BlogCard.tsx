@@ -1,28 +1,32 @@
 import React from 'react';
 interface Props extends React.ComponentProps<'div'> {
   showActionModal?: boolean;
+  blog: Blog;
 }
 
 // assets and Icons
-import thumbnail from '@/assets/blogs/React-Roadmap.jpg';
+
 import threeDots from '@/assets/icons/3dots.svg';
 import deleteIcon from '@/assets/icons/delete.svg';
 import editIcon from '@/assets/icons/edit.svg';
+import { Blog } from '@/types';
+import { baseUrl } from '@/utils';
 
-export const BlogCard = ({ showActionModal = false, ...rest }: Props) => {
+export const BlogCard = ({ showActionModal = false, blog, ...rest }: Props) => {
+  if (!blog) return null;
+  const thumbnail = `${baseUrl}/uploads/blog/${blog?.thumbnail}`;
+
   return (
     <div className="blog-card" {...rest}>
       <img className="blog-thumb" src={thumbnail} alt="" />
       <div className="relative mt-2">
         <a href="./single-blog.html">
           <h3 className="text-xl text-slate-300 lg:text-2xl">
-            <p>React Roadmap in 2024</p>
+            <p>{blog.title}</p>
           </h3>
         </a>
-        <p className="mb-6 mt-1 text-base text-slate-500">
-          Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor
-          pretium donec dictum. Vici consequat justo enim. Venenatis eget
-          adipiscing luctus lorem.
+        <p className="mb-6 mt-1 line-clamp-3 text-base text-slate-500">
+          {blog?.content}
         </p>
 
         {/* Meta Informations */}
@@ -43,7 +47,7 @@ export const BlogCard = ({ showActionModal = false, ...rest }: Props) => {
           </div>
 
           <div className="px-2 py-1 text-sm text-slate-700">
-            <span>100 Likes</span>
+            <span>{blog?.likes?.length} Likes</span>
           </div>
         </div>
 
