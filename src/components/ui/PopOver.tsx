@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 
+import { cn } from '@/utils';
 import { motion } from 'framer-motion';
 import { createPortal } from 'react-dom';
 import { Cross } from '../icons';
@@ -13,7 +14,12 @@ const PopoverContext = createContext<PopoverContextProps | undefined>(
   undefined,
 );
 
-export const Popover = ({ children }: OnlyChild) => {
+interface PopOverContainer extends React.ComponentProps<'div'> {
+  children: React.ReactNode;
+  title?: string;
+}
+
+export const Popover = ({ children, title, className }: PopOverContainer) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -33,11 +39,14 @@ export const Popover = ({ children }: OnlyChild) => {
               onClick={() => setIsOpen(false)}
             >
               <div
-                className="min-h-80 min-w-80 overflow-y-auto rounded-lg bg-white p-4 text-black shadow-lg"
+                className={cn(
+                  'min-h-80 min-w-80 overflow-y-auto rounded-lg bg-white p-4 text-black shadow-lg',
+                  className,
+                )}
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex justify-between ">
-                  <p>Header </p>
+                  <p>{title}</p>
                   <Cross
                     className="cursor-pointer"
                     onClick={() => setIsOpen(false)}
@@ -53,10 +62,11 @@ export const Popover = ({ children }: OnlyChild) => {
   );
 };
 
-export const PopoverTrigger = ({ children }: OnlyChild) => {
+export const PopoverTrigger = ({ children, ...rest }: ButtonPropWithChild) => {
   const { setIsOpen } = useContext(PopoverContext) as PopoverContextProps;
   return (
     <button
+      {...rest}
       aria-haspopup="true"
       aria-expanded="true"
       aria-lebel="model"
@@ -67,7 +77,7 @@ export const PopoverTrigger = ({ children }: OnlyChild) => {
   );
 };
 
-export const PopoverContent = ({ children }: OnlyChild) => {
+export const PopoverContent = ({ children, ...rest }: DivPropsWithChild) => {
   const { isOpen } = useContext(PopoverContext) as PopoverContextProps;
-  return isOpen ? <div>{children}</div> : null;
+  return isOpen ? <div {...rest}>{children}</div> : null;
 };

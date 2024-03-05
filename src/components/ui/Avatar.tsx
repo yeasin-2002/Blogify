@@ -3,13 +3,13 @@ import React from 'react';
 interface Props extends React.ComponentProps<'div'> {
   img?: string;
   size?: string;
-  firstName?: string;
+  name?: string;
 
 }
 
 export const Avatar = ({
   img,
-  firstName = '',
+  name = '',
   className,
 }: Props) => {
   const [isError, setIsError] = React.useState(false);
@@ -31,7 +31,7 @@ export const Avatar = ({
           )}
         >
           <span className="text-2xl font-bold   capitalize text-gray-600 dark:text-gray-300 ">
-            {firstName[0] }
+            {name[0] }
           </span>
         </div>
       )}

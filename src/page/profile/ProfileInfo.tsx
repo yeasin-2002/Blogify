@@ -1,7 +1,7 @@
 import editIcon from '@/assets/icons/edit.svg';
-import { Avatar, Popover, PopoverContent, PopoverTrigger } from '@/components';
-
+import { Avatar } from '@/components';
 import { profileResponse } from '@/types';
+import { UpdateProfileAvatar } from './updateProfileAvatar';
 
 interface Props extends React.ComponentProps<'div'> {
   authUser: profileResponse | undefined;
@@ -13,19 +13,13 @@ export const ProfileInfo = ({ authUser, ...rest }: Props) => {
       <div className="relative mb-8 h-[120px] max-h-[180px] w-[120px] max-w-[180px] rounded-full lg:mb-11 lg:max-h-[218px] lg:max-w-[218px]">
         <Avatar
           img={authUser?.avatar}
-          firstName={authUser?.firstName}
+          name={authUser?.firstName}
           className="size-32"
         />
-
-        <Popover>
-          <PopoverTrigger>
-            <button className="absolute bottom-0 right-0 grid h-7 w-7 place-items-center rounded-full bg-slate-700 hover:bg-slate-700/80">
-              <img src={editIcon} alt="Edit" />
-            </button>
-
-            <PopoverContent>content</PopoverContent>
-          </PopoverTrigger>
-        </Popover>
+        <UpdateProfileAvatar
+          avatarLegacy={authUser?.avatar}
+          userName={authUser?.firstName}
+        />
       </div>
 
       <div>

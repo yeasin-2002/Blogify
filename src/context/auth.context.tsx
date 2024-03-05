@@ -1,4 +1,4 @@
-import useLocalStorage from '@/hooks/useLocalStorage';
+import { useLocalStorage } from '@/hooks';
 import { authContextValue, authToken, authUser } from '@/types';
 import { createContext } from 'react';
 
