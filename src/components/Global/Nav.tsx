@@ -42,7 +42,10 @@ export const Nav = ({ ...rest }: Props) => {
 
             {authData.authToken && authData.authUser ? (
               <li>
-                <Link to="/profile" className="flex items-center">
+                <Link
+                  to={`/profile/${authData?.authUser?.id}`}
+                  className="flex items-center"
+                >
                   <Avatar
                     img={authData.authUser.avatar}
                     name={authData.authUser.firstName}

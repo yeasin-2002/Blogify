@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 type UseInViewReturn = {
-  ref: React.Ref<Element>;
+  ref: React.RefObject<HTMLElement>;
   isVisible: boolean;
 };
 

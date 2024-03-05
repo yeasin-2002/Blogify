@@ -25,7 +25,7 @@ const App = () => {
         />
 
         <Route element={<PrivateRoute />}>
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/:id" element={<Profile />} />
           <Route path="/write" element={<CreateBlog />} />
         </Route>
 

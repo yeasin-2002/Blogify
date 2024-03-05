@@ -11,6 +11,7 @@ import deleteIcon from '@/assets/icons/delete.svg';
 import editIcon from '@/assets/icons/edit.svg';
 import { Blog } from '@/types';
 import { baseUrl } from '@/utils';
+import { ThumbsUp } from 'lucide-react';
 
 export const BlogCard = ({ showActionModal = false, blog, ...rest }: Props) => {
   if (!blog) return null;
@@ -46,8 +47,9 @@ export const BlogCard = ({ showActionModal = false, blog, ...rest }: Props) => {
             </div>
           </div>
 
-          <div className="px-2 py-1 text-sm text-slate-700">
-            <span>{blog?.likes?.length} Likes</span>
+          <div className="flex items-center gap-x-1 px-2 py-1 text-sm text-slate-700">
+            <span>{blog?.likes?.length}</span>
+            <ThumbsUp className="size-5" />
           </div>
         </div>
 
