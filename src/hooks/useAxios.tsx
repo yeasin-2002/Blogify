@@ -12,7 +12,7 @@ export const useAxios = () => {
       (config) => {
         const token = authData.authToken?.accessToken;
         if (token) {
-          config.headers.Authorization = `Bearer ${token}`;
+          config.headers.Authorization = `Bearer ${token} `;
         }
         return config;
       },
@@ -24,7 +24,10 @@ export const useAxios = () => {
       async (error) => {
         const originalRequest = error.config;
 
-        if (error.response.status === 401 && !originalRequest._retry) {
+        if (
+          (error.response.status === 401 || error.response.status === 403) &&
+          !originalRequest._retry
+        ) {
           originalRequest._retry = true;
 
           try {
@@ -33,6 +36,8 @@ export const useAxios = () => {
               refreshToken,
             });
             const { token } = response.data;
+
+            console.log('🚀 ~ interceptor ~ token', token);
 
             if (authData.authToken?.refreshToken) {
               authData.setAuthToken({
@@ -50,6 +55,11 @@ export const useAxios = () => {
             console.log('🚀 ~ interceptor Err', error);
           }
         }
+        // if (error.response.status === 403) {
+        //   toast.error('Your session has expired, please login again');
+        //   authData.logout();
+        //   return navigate('/login');
+        // }
 
         return Promise.reject(error);
       },

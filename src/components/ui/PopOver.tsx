@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { Fragment, createContext, useContext, useState } from 'react';
 
 import { cn } from '@/utils';
 import { motion } from 'framer-motion';
@@ -17,14 +17,25 @@ const PopoverContext = createContext<PopoverContextProps | undefined>(
 interface PopOverContainer extends React.ComponentProps<'div'> {
   children: React.ReactNode;
   title?: string;
+  onClosed?: (setter: React.Dispatch<React.SetStateAction<boolean>>) => void;
 }
 
-export const Popover = ({ children, title, className }: PopOverContainer) => {
+export const Popover = ({
+  children,
+  title,
+  className,
+  onClosed,
+}: PopOverContainer) => {
   const [isOpen, setIsOpen] = useState(false);
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+    onClosed && onClosed(setIsOpen);
+  };
+
   return (
     <>
       <PopoverContext.Provider value={{ isOpen, setIsOpen }}>
-        {children}
+        {!isOpen && <>{children}</>}
 
         {isOpen &&
           createPortal(
@@ -36,7 +47,7 @@ export const Popover = ({ children, title, className }: PopOverContainer) => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 5 }}
               className={`fixed inset-0 z-50 flex  items-center justify-center bg-black bg-opacity-50`}
-              onClick={() => setIsOpen(false)}
+              onClick={handleClick}
             >
               <div
                 className={cn(
@@ -46,7 +57,7 @@ export const Popover = ({ children, title, className }: PopOverContainer) => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex justify-between ">
-                  <p>{title}</p>
+                  <p className="text-lg font-semibold">{title}</p>
                   <Cross
                     className="cursor-pointer"
                     onClick={() => setIsOpen(false)}
@@ -63,16 +74,22 @@ export const Popover = ({ children, title, className }: PopOverContainer) => {
 };
 
 export const PopoverTrigger = ({ children, ...rest }: ButtonPropWithChild) => {
-  const { setIsOpen } = useContext(PopoverContext) as PopoverContextProps;
+  const { setIsOpen, isOpen } = useContext(
+    PopoverContext,
+  ) as PopoverContextProps;
   return (
-    <button
-      {...rest}
-      aria-haspopup="true"
-      aria-expanded="true"
-      onClick={() => setIsOpen(true)}
-    >
-      {children}
-    </button>
+    <Fragment>
+      {!isOpen && (
+        <button
+          {...rest}
+          aria-haspopup="true"
+          aria-expanded="true"
+          onClick={() => setIsOpen(true)}
+        >
+          {children}
+        </button>
+      )}
+    </Fragment>
   );
 };
 

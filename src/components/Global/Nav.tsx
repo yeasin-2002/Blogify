@@ -6,9 +6,11 @@ interface Props extends React.ComponentProps<'div'> {}
 import searchIcon from '@/assets/icons/search.svg';
 import logo from '@/assets/logo.svg';
 import { useAuth } from '@/hooks';
+import { Avatar } from '../ui';
 
 export const Nav = ({ ...rest }: Props) => {
   const authData = useAuth();
+
   return (
     <header {...rest}>
       <nav className="container">
@@ -41,9 +43,11 @@ export const Nav = ({ ...rest }: Props) => {
             {authData.authToken && authData.authUser ? (
               <li>
                 <Link to="/profile" className="flex items-center">
-                  <div className="avater-img bg-orange-600 text-white">
-                    <span className="">S</span>
-                  </div>
+                  <Avatar
+                    img={authData.authUser.avatar}
+                    name={authData.authUser.firstName}
+                    className="size-10"
+                  />
 
                   <span className="ml-2 truncate text-white">
                     {authData.authUser.firstName +

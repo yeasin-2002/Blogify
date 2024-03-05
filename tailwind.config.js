@@ -9,6 +9,8 @@ module.exports = {
       },
       colors: {
         dark: '#121416',
+        githubDark: '#24292F',
+        githubHover: '#050708',
       },
     },
   },

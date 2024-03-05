@@ -5,20 +5,72 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
+  UploadingLoop,
 } from '@/components';
+import { useAuth, useAxios } from '@/hooks';
+import { authUser } from '@/types';
+import { cn } from '@/utils';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { AxiosError, AxiosResponse } from 'axios';
+import { ImageUp } from 'lucide-react';
 
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 const fileTypes = ['JPG', 'PNG', 'JPEG'];
 
-interface Props extends React.ComponentProps<'div'> {}
+interface Props extends React.ComponentProps<'div'> {
+  id: string | undefined;
+}
 
-export const UpdateProfileAvatar = ({ ...rest }: Props) => {
-  const [file, setFile] = useState(null);
-  const handleChange = (file: any) => {
+export const UpdateProfileAvatar = ({ id, ...rest }: Props) => {
+  const api = useAxios();
+  const queryClient = useQueryClient();
+  const { setAuthUser } = useAuth();
+
+  const [file, setFile] = useState<File | null>(null);
+  const handleChange = (file: File) => {
     setFile(file);
   };
 
-  console.log(file);
+  const { isPending } = useMutation({
+    mutationKey: ['updateProfileAvatar'],
+    mutationFn: (body: any): Promise<AxiosResponse> =>
+      api.post('/profile/avatar', body, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['profile'] });
+    },
+  });
+
+  const handleUpload = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('avatar', file as Blob);
+      const req = await api.post('/profile/avatar', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+
+      if (req.status === 200) {
+        setAuthUser((pre) => {
+          toast.success('Avatar updated successfully');
+          if (pre) {
+            const user = pre as authUser;
+            return { ...user, avatar: req.data.user.avatar };
+          }
+          return pre;
+        });
+      }
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        toast.error(
+          error?.response?.data?.error ||
+            'Something went wrong, try again later',
+        );
+      }
+    }
+  };
+
   return (
     <div {...rest}>
       <Popover title="Upload Avatar" className="bg-slate-200 ">
@@ -26,23 +78,68 @@ export const UpdateProfileAvatar = ({ ...rest }: Props) => {
           <img src={editIcon} alt="Edit" />
         </PopoverTrigger>
         <PopoverContent>
-          <Draggable handleChange={handleChange} name="file" types={fileTypes}>
-            <div className="mt-10 grid  place-items-center     gap-y-5 ">
-              <img src={fileIcon} alt="File" className=" size-20 " />
-              <p className="text-center  text-gray-600">
-                Click or Drag your image here
-              </p>
-              <p className="text-center text-gray-400">
-                Supported Types:
-                <br />
-                {fileTypes.map((type, i) => (
-                  <span key={type + i} className="mx-1">
-                    {type}
-                  </span>
-                ))}
-              </p>
+          {!file ? (
+            <Draggable
+              handleChange={handleChange}
+              name="file"
+              types={fileTypes}
+            >
+              <div className="mt-10 grid  place-items-center     gap-y-5 ">
+                <img src={fileIcon} alt="File" className=" size-20 " />
+                <p className="text-center  text-gray-600">
+                  Click or Drag your image here
+                </p>
+                <p className="text-center text-gray-400">
+                  Supported Image Formate :
+                  <br />
+                  {fileTypes.map((type, i) => (
+                    <span key={type + i} className="mx-1">
+                      {type}
+                    </span>
+                  ))}
+                </p>
+              </div>
+            </Draggable>
+          ) : (
+            <div className="flex flex-col items-center gap-y-4">
+              <img
+                src={URL.createObjectURL(file)}
+                alt="Avatar"
+                className="size-64 rounded-md object-cover shadow-md"
+              />
+
+              <div className="mt-4 flex gap-x-2">
+                <button
+                  type="button"
+                  className="alternative-dark flex-1 px-4"
+                  onClick={handleUpload}
+                  disabled={isPending}
+                >
+                  {isPending ? (
+                    <>
+                      <UploadingLoop />
+                      <span className="ml-2">Uploading...</span>
+                    </>
+                  ) : (
+                    <>
+                      <ImageUp className="size-5" />
+                      Upload New Avatar
+                    </>
+                  )}
+                </button>
+                <button
+                  type="button"
+                  disabled={isPending}
+                  className={cn('alternative', {
+                    'cursor-not-allowed': isPending,
+                  })}
+                  onClick={() => setFile(null)}
+                >
+                  Reset
+                </button>
+              </div>
             </div>
-          </Draggable>
+          )}
         </PopoverContent>
       </Popover>
     </div>

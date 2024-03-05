@@ -17,7 +17,7 @@ export const Input = ({ register, errorMsg, labelName, ...rest }: Props) => {
         id={labelName}
         {...rest}
         {...register}
-        className="w-full rounded-md border border-white/20 bg-[#030317] p-3 focus:border-indigo-500 focus:outline-none"
+        className="w-full rounded-md border border-white/20   bg-slate-200 p-3 text-black focus:border-indigo-500 focus:outline-none"
       />
       {errorMsg && (
         <p className="mt-1 animate-pulse text-sm text-red-500">{errorMsg}</p>

@@ -24,4 +24,6 @@ export type authContextValue = {
   setAuthUser: Setter<authUser | null>;
   authToken: authToken | null;
   setAuthToken: Setter<authToken | null>;
+  login: (user: authUser, token: authToken) => void;
+  logout: (to?: string) => void;
 };

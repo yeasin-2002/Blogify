@@ -4,7 +4,7 @@
 
 @layer components {
   * {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
   }
 
@@ -24,15 +24,15 @@
 
   /* Navbar */
   header {
-    @apply text-white border-b border-slate-800 mb-4;
+    @apply mb-4 border-b border-slate-800 text-white;
   }
 
   nav {
-    @apply flex items-center flex-col md:flex-row justify-between md:p-4 py-2 md:py-6 gap-4   sticky top-0  min-h-[60px];
+    @apply sticky top-0 flex min-h-[60px] flex-col items-center justify-between gap-4 py-2   md:flex-row md:p-4  md:py-6;
   }
 
   .avater-img {
-    @apply w-8 h-8 md:w-10 md:h-10 rounded-full grid place-items-center font-bold text-sm;
+    @apply grid h-8 w-8 place-items-center rounded-full text-sm font-bold md:h-10 md:w-10;
   }
   .avater-img span {
     line-height: 0;
@@ -40,7 +40,7 @@
 
   /* Blogs */
   .blog-card {
-    @apply flex gap-4 flex-col md:flex-row  bg-[#030317] p-3 border border-slate-800/40 rounded-lg transition-all hover:border-blue-900/50 hover:shadow-lg shadow-slate-200/50 cursor-pointer;
+    @apply flex cursor-pointer flex-col gap-4  rounded-lg border border-slate-800/40 bg-[#030317] p-3 shadow-slate-200/50 transition-all hover:border-blue-900/50 hover:shadow-lg md:flex-row;
   }
 
   .blog-card > div {
@@ -48,21 +48,21 @@
   }
 
   .blog-thumb {
-    @apply aspect-video object-cover rounded-md max-h-48;
+    @apply aspect-video max-h-48 rounded-md object-cover;
   }
 
   /* Sidebar */
   .sidebar-card {
-    @apply border border-slate-800/40 p-4 rounded-lg  hover:border-slate-800/90;
+    @apply rounded-lg border border-slate-800/40 p-4  hover:border-slate-800/90;
   }
 
   .dot {
-    @apply relative before:rounded-full pl-4 before:translate-y-[6px] before:absolute before:left-0 before:content-[''] before:w-1 before:h-1 before:bg-[#6C757D66];
+    @apply relative pl-4 before:absolute before:left-0 before:h-1 before:w-1 before:translate-y-[6px] before:rounded-full before:bg-[#6C757D66] before:content-[''];
   }
 
   /* Floating Actions */
   .floating-action {
-    @apply fixed shadow-lg shadow-slate-900/60 bottom-10 left-1/2 -translate-x-1/2 bg-slate-800/80 backdrop-blur-md border border-slate-200/20 p-4 py-2 rounded-full;
+    @apply fixed bottom-10 left-1/2 -translate-x-1/2 rounded-full border border-slate-200/20 bg-slate-800/80 p-4 py-2 shadow-lg shadow-slate-900/60 backdrop-blur-md;
   }
 
   .floating-action-menus {
@@ -70,7 +70,7 @@
   }
 
   .floating-action-menus li {
-    @apply flex items-center gap-2 cursor-pointer hover:scale-105 hover:opacity-90 transition-all;
+    @apply flex cursor-pointer items-center gap-2 transition-all hover:scale-105 hover:opacity-90;
   }
 
   .floating-action-menus li span {
@@ -78,41 +78,52 @@
   }
 
   .floating-action-menus li img {
-    @apply w-6 h-6;
+    @apply h-6 w-6;
   }
 
   /* Tags */
   .tags {
-    @apply flex gap-2 mx-auto my-6 justify-center;
+    @apply mx-auto my-6 flex justify-center gap-2;
   }
 
   .tags li {
-    @apply bg-slate-700 p-2 px-4 rounded-md text-sm cursor-pointer hover:bg-slate-800 hover:ring hover:ring-slate-500 transition-all;
+    @apply cursor-pointer rounded-md bg-slate-700 p-2 px-4 text-sm transition-all hover:bg-slate-800 hover:ring hover:ring-slate-500;
   }
 
   /* createBlog */
   .createBlog {
-    @apply w-8/12 mx-auto my-8;
+    @apply mx-auto my-8 w-8/12;
   }
 
   .createBlog input {
-    @apply w-full focus:ring-0 shadow-none border-none outline-none placeholder:text-3xl text-3xl pl-0 font-bold bg-transparent appearance-none focus:border-none focus:outline-none;
+    @apply w-full appearance-none border-none bg-transparent pl-0 text-3xl font-bold shadow-none outline-none placeholder:text-3xl focus:border-none focus:outline-none focus:ring-0;
   }
 
   .createBlog textarea {
-    @apply w-full focus:ring-0 border-none outline-none placeholder:text-lg text-lg pl-0  bg-transparent appearance-none focus:border-none focus:outline-none;
+    @apply w-full appearance-none border-none bg-transparent pl-0 text-lg outline-none  placeholder:text-lg focus:border-none focus:outline-none focus:ring-0;
   }
   .createBlog #tags {
-    @apply font-normal text-base placeholder:text-base text-slate-500 w-full placeholder:italic;
+    @apply w-full text-base font-normal text-slate-500 placeholder:text-base placeholder:italic;
   }
 
   /* Action Modal */
 
   .action-modal-container {
-    @apply absolute bg-slate-900 border border-slate-800  right-full top-6 min-w-[200px] divide-y divide-slate-800 py-1  rounded-md overflow-hidden;
+    @apply absolute right-full top-6 min-w-[200px]  divide-y divide-slate-800 overflow-hidden rounded-md border border-slate-800  bg-slate-900 py-1;
   }
 
   .action-menu-item {
-    @apply px-4 py-2 hover:bg-slate-800 flex w-full items-center gap-2 text-gray-100 transition-all;
+    @apply flex w-full items-center gap-2 px-4 py-2 text-gray-100 transition-all hover:bg-slate-800;
+  }
+
+  /*  My custom styles  */
+  .alternative {
+    @apply  me-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700;
+  }
+  .alternative-dark {
+    @apply hover:bg-githubDark/90 focus:ring-githubDark/50  bg-githubDark  inline-flex items-center gap-x-3 rounded-lg  text-center text-sm font-medium text-white focus:outline-none focus:ring-4 dark:focus:ring-gray-500;
+  }
+  .alternative-orange {
+    @apply   rounded-lg bg-orange-500  text-sm font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-4 focus:ring-orange-300 dark:focus:ring-orange-900;
   }
 }

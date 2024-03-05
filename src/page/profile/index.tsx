@@ -14,7 +14,7 @@ interface Props extends React.ComponentProps<'div'> {}
 export const Profile = ({ ...rest }: Props) => {
   const { authUser } = useAuth();
   const { data, isLoading } = useQuery({
-    queryKey: ['profile', authUser?.id],
+    queryKey: ['profile'],
     queryFn: () =>
       axiosInstance.get<profileResponse>(`/profile/${authUser?.id}`),
   });
