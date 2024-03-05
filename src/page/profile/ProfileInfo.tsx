@@ -16,10 +16,7 @@ export const ProfileInfo = ({ authUser, ...rest }: Props) => {
           name={authUser?.firstName}
           className="size-32"
         />
-        <UpdateProfileAvatar
-          avatarLegacy={authUser?.avatar}
-          userName={authUser?.firstName}
-        />
+        <UpdateProfileAvatar />
       </div>
 
       <div>

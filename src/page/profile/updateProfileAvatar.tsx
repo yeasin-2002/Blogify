@@ -8,15 +8,11 @@ import {
 } from '@/components';
 
 import React, { useState } from 'react';
-
 const fileTypes = ['JPG', 'PNG', 'JPEG'];
 
-interface Props extends React.ComponentProps<'div'> {
-  avatarLegacy: string | undefined;
-  userName?: string;
-}
+interface Props extends React.ComponentProps<'div'> {}
 
-export const UpdateProfileAvatar = ({ avatarLegacy, ...rest }: Props) => {
+export const UpdateProfileAvatar = ({ ...rest }: Props) => {
   const [file, setFile] = useState(null);
   const handleChange = (file: any) => {
     setFile(file);
@@ -26,10 +22,8 @@ export const UpdateProfileAvatar = ({ avatarLegacy, ...rest }: Props) => {
   return (
     <div {...rest}>
       <Popover title="Upload Avatar" className="bg-slate-200 ">
-        <PopoverTrigger>
-          <button className="absolute bottom-0 right-0 grid h-7 w-7 place-items-center rounded-full bg-slate-700 hover:bg-slate-700/80">
-            <img src={editIcon} alt="Edit" />
-          </button>
+        <PopoverTrigger className="absolute bottom-0 right-0 grid h-7 w-7 place-items-center rounded-full bg-slate-700 hover:bg-slate-700/80">
+          <img src={editIcon} alt="Edit" />
         </PopoverTrigger>
         <PopoverContent>
           <Draggable handleChange={handleChange} name="file" types={fileTypes}>
@@ -41,8 +35,10 @@ export const UpdateProfileAvatar = ({ avatarLegacy, ...rest }: Props) => {
               <p className="text-center text-gray-400">
                 Supported Types:
                 <br />
-                {fileTypes.map((type) => (
-                  <span className="mx-1">{type}</span>
+                {fileTypes.map((type, i) => (
+                  <span key={type + i} className="mx-1">
+                    {type}
+                  </span>
                 ))}
               </p>
             </div>

@@ -69,7 +69,6 @@ export const PopoverTrigger = ({ children, ...rest }: ButtonPropWithChild) => {
       {...rest}
       aria-haspopup="true"
       aria-expanded="true"
-      aria-lebel="model"
       onClick={() => setIsOpen(true)}
     >
       {children}
