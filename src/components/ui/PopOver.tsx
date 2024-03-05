@@ -1,4 +1,6 @@
 import { createContext, useContext, useState } from 'react';
+
+import { motion } from 'framer-motion';
 import { createPortal } from 'react-dom';
 import { Cross } from '../icons';
 
@@ -14,31 +16,40 @@ const PopoverContext = createContext<PopoverContextProps | undefined>(
 export const Popover = ({ children }: OnlyChild) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <PopoverContext.Provider value={{ isOpen, setIsOpen }}>
-      {children}
-      {isOpen &&
-        createPortal(
-          <div
-            className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50`}
-            onClick={() => setIsOpen(false)}
-          >
-            <div
-              className="rounded-lg bg-white p-4 text-black shadow-lg"
-              onClick={(e) => e.stopPropagation()}
+    <>
+      <PopoverContext.Provider value={{ isOpen, setIsOpen }}>
+        {children}
+
+        {isOpen &&
+          createPortal(
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 5,
+              }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 5 }}
+              className={`fixed inset-0 z-50 flex  items-center justify-center bg-black bg-opacity-50`}
+              onClick={() => setIsOpen(false)}
             >
-              <div className="flex justify-between ">
-                <p>Header </p>
-                <Cross
-                  className="cursor-pointer"
-                  onClick={() => setIsOpen(false)}
-                />
+              <div
+                className="min-h-80 min-w-80 overflow-y-auto rounded-lg bg-white p-4 text-black shadow-lg"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex justify-between ">
+                  <p>Header </p>
+                  <Cross
+                    className="cursor-pointer"
+                    onClick={() => setIsOpen(false)}
+                  />
+                </div>
+                {children}
               </div>
-              {children}
-            </div>
-          </div>,
-          document.getElementById('popOver') as HTMLElement,
-        )}
-    </PopoverContext.Provider>
+            </motion.div>,
+            document.getElementById('popOver') as HTMLElement,
+          )}
+      </PopoverContext.Provider>
+    </>
   );
 };
 

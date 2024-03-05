@@ -18,9 +18,17 @@ export type authData = {
   token: authToken;
 };
 
+// export type authContextValue = {
+//   authUser: authUser | null;
+//   setAuthUser: React.Dispatch<React.SetStateAction<authUser | null>>;
+//   authToken: authToken | null;
+//   setAuthToken: React.Dispatch<authToken>;
+// };
+
+type Setter<T> = React.Dispatch<React.SetStateAction<T | undefined>>;
 export type authContextValue = {
   authUser: authUser | null;
-  setAuthUser: React.Dispatch<React.SetStateAction<authUser | null>>;
+  setAuthUser: Setter<authUser | null>;
   authToken: authToken | null;
-  setAuthToken: React.Dispatch<authToken>;
+  setAuthToken: Setter<authToken | null>;
 };

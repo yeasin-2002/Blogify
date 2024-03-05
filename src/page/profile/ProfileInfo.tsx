@@ -1,6 +1,5 @@
 import editIcon from '@/assets/icons/edit.svg';
-import { Avatar } from '@/components';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/';
+import { Avatar, Popover, PopoverContent, PopoverTrigger } from '@/components';
 
 import { profileResponse } from '@/types';
 
