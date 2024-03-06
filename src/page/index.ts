@@ -1,11 +1,11 @@
-export * from './CreateBlog';
-export * from './Register';
-export * from './home';
-export * from './login';
-export * from './profile';
-export * from './singleBlog';
+export * from "./CreateBlog";
+export * from "./Register";
+export * from "./home";
+export * from "./login";
+export * from "./profile";
+export * from "./search";
+export * from "./singleBlog";
 
 // global  not found and error handler pages
-export * from './error';
-export * from './not-found';
-
+export * from "./error";
+export * from "./not-found";

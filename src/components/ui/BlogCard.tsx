@@ -1,5 +1,4 @@
 import { baseUrl, cn, formatDateYearFirst } from "@/utils";
-import { ThumbsUp } from "lucide-react";
 import React from "react";
 interface Props extends React.ComponentProps<"div"> {
   showActionModal?: boolean;
@@ -7,15 +6,13 @@ interface Props extends React.ComponentProps<"div"> {
 }
 
 // assets and Icons
-
-import threeDots from "@/assets/icons/3dots.svg";
-import deleteIcon from "@/assets/icons/delete.svg";
-import editIcon from "@/assets/icons/edit.svg";
 import { useAuth } from "@/hooks";
 import { Blog } from "@/types";
+import { Link } from "react-router-dom";
 import { Like } from "../icons";
+import { BlogCardActions } from "./BlogCardActions";
 
-export const BlogCard = ({ showActionModal = false, blog, ...rest }: Props) => {
+export const BlogCard = ({ blog, ...rest }: Props) => {
   if (!blog) return null;
   const { authUser } = useAuth();
 
@@ -25,15 +22,17 @@ export const BlogCard = ({ showActionModal = false, blog, ...rest }: Props) => {
   const isYouLiked =
     authUser?.id && blog.likes.find((like) => like.id === authUser.id);
 
+  const isUserIsAuthor = authUser?.id === blog.author.id || false;
+
   return (
     <div className="blog-card" {...rest}>
       <img className="blog-thumb" src={thumbnail} alt="" />
       <div className="relative mt-2">
-        <a href="./single-blog.html">
+        <Link to={`/blog/${blog.id}`}>
           <h3 className="text-xl text-slate-300 lg:text-2xl">
             <p>{blog.title}</p>
           </h3>
-        </a>
+        </Link>
         <p className="mb-6 mt-1 line-clamp-3 text-base text-slate-500">
           {blog?.content}
         </p>
@@ -66,25 +65,7 @@ export const BlogCard = ({ showActionModal = false, blog, ...rest }: Props) => {
           </div>
         </div>
 
-        {showActionModal && (
-          <div className="absolute right-0 top-0">
-            <button>
-              <img src={threeDots} alt="3dots of Action" />
-            </button>
-
-            {/* Action Menus Popup */}
-            <div className="action-modal-container">
-              <button className="action-menu-item hover:text-lwsGreen">
-                <img src={editIcon} alt="Edit" />
-                Edit
-              </button>
-              <button className="action-menu-item hover:text-red-500">
-                <img src={deleteIcon} alt="Delete" />
-                Delete
-              </button>
-            </div>
-          </div>
-        )}
+        {isUserIsAuthor && <BlogCardActions />}
       </div>
     </div>
   );

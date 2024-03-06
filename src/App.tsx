@@ -1,6 +1,6 @@
-import { Route, Routes } from 'react-router-dom';
-import { Footer, GlobalProvider, Nav } from './components/Global';
-import { PrivateRoute } from './components/routes';
+import { Route, Routes } from "react-router-dom";
+import { Footer, GlobalProvider, Nav } from "./components/Global";
+import { PrivateRoute } from "./components/routes";
 import {
   CreateBlog,
   Home,
@@ -10,7 +10,7 @@ import {
   Register,
   RootErrorBoundary,
   SingleBlog,
-} from './page';
+} from "./page";
 
 const App = () => {
   return (
@@ -31,7 +31,7 @@ const App = () => {
 
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
-        <Route path="/single-blog/:id" element={<SingleBlog />} />
+        <Route path="/blog/:id" element={<SingleBlog />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

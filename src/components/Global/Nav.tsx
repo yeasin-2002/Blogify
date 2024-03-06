@@ -1,13 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-interface Props extends React.ComponentProps<'div'> {}
+interface Props extends React.ComponentProps<"div"> {}
 
-
-import logo from '@/assets/logo.svg';
-import { useAuth } from '@/hooks';
-import { Avatar } from '../ui';
-import { SearchBlogs } from './SearchBlogs';
+import logo from "@/assets/logo.svg";
+import { useAuth } from "@/hooks";
+import { SearchBlogs } from "@/page/search";
+import { Avatar } from "../ui";
 
 export const Nav = ({ ...rest }: Props) => {
   const authData = useAuth();
@@ -24,12 +23,12 @@ export const Nav = ({ ...rest }: Props) => {
         <div>
           <ul className="flex items-center space-x-5">
             <li>
-              <a
-                href="./createBlog.html"
+              <Link
+                to="/write"
                 className="rounded-md bg-indigo-600 px-6 py-2 text-white transition-all duration-200 hover:bg-indigo-700 md:py-3"
               >
                 Write
-              </a>
+              </Link>
             </li>
             <li>
               <SearchBlogs />
@@ -49,7 +48,7 @@ export const Nav = ({ ...rest }: Props) => {
 
                   <span className="ml-2 truncate text-white">
                     {authData.authUser.firstName +
-                      ' ' +
+                      " " +
                       authData.authUser.lastName}
                   </span>
                 </Link>

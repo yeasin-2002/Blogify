@@ -1,22 +1,39 @@
-import React from 'react';
-interface Props extends React.ComponentProps<'div'> {}
+import { Editor } from "novel";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { useLocation } from "react-router-dom";
+
+interface Props extends React.ComponentProps<"div"> {}
+
+interface FormValue {
+  key: string;
+  value: string;
+  description: string;
+  type: string;
+  tags: string;
+  thumbnail: File;
+}
 
 export const CreateBlog = ({ ...rest }: Props) => {
+  const { register } = useForm<FormValue>({});
+  const location = useLocation();
+  console.log("🚀 ~ CreateBlog ~ location:", location);
+
   return (
     <main {...rest}>
       <section>
         <div className="container">
           {/* Form Input field for creating Blog Post */}
           <form action="#" method="POST" className="createBlog">
-            <div className="grid place-items-center bg-slate-600/20 h-[150px] rounded-md my-4">
-              <div className="flex items-center gap-4 hover:scale-110 transition-all cursor-pointer">
+            <div className="my-4 grid h-[150px] place-items-center rounded-md bg-slate-600/20">
+              <div className="flex cursor-pointer items-center gap-4 transition-all hover:scale-110">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -46,17 +63,26 @@ export const CreateBlog = ({ ...rest }: Props) => {
             </div>
 
             <div className="mb-6">
-              <textarea
+              <Editor
+                disableLocalStorage={true}
+                className="rounded-md border border-slate-600 bg-[#030317]"
+                defaultValue={""}
+                onUpdate={(value) => {
+                  // console.log(value);
+                  const html = value?.getHTML();
+                }}
+              />
+              {/* <textarea
                 id="content"
                 name="content"
                 placeholder="Write your blog content"
                 rows={8}
-              ></textarea>
+              ></textarea> */}
             </div>
 
             <a
               href="./createBlog.html"
-              className="bg-indigo-600 text-white px-6 py-2 md:py-3 rounded-md hover:bg-indigo-700 transition-all duration-200"
+              className="rounded-md bg-indigo-600 px-6 py-2 text-white transition-all duration-200 hover:bg-indigo-700 md:py-3"
             >
               Create Blog
             </a>
