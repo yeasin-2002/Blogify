@@ -1,21 +1,29 @@
-import React from 'react';
-interface Props extends React.ComponentProps<'div'> {
+import { baseUrl, cn, formatDateYearFirst } from "@/utils";
+import { ThumbsUp } from "lucide-react";
+import React from "react";
+interface Props extends React.ComponentProps<"div"> {
   showActionModal?: boolean;
   blog: Blog;
 }
 
 // assets and Icons
 
-import threeDots from '@/assets/icons/3dots.svg';
-import deleteIcon from '@/assets/icons/delete.svg';
-import editIcon from '@/assets/icons/edit.svg';
-import { Blog } from '@/types';
-import { baseUrl } from '@/utils';
-import { ThumbsUp } from 'lucide-react';
+import threeDots from "@/assets/icons/3dots.svg";
+import deleteIcon from "@/assets/icons/delete.svg";
+import editIcon from "@/assets/icons/edit.svg";
+import { useAuth } from "@/hooks";
+import { Blog } from "@/types";
+import { Like } from "../icons";
 
 export const BlogCard = ({ showActionModal = false, blog, ...rest }: Props) => {
   if (!blog) return null;
+  const { authUser } = useAuth();
+
   const thumbnail = `${baseUrl}/uploads/blog/${blog?.thumbnail}`;
+  const authName = blog.author.firstName + " " + blog.author.lastName;
+  const blogCreatedDate = formatDateYearFirst(new Date(blog.createdAt));
+  const isYouLiked =
+    authUser?.id && blog.likes.find((like) => like.id === authUser.id);
 
   return (
     <div className="blog-card" {...rest}>
@@ -39,17 +47,22 @@ export const BlogCard = ({ showActionModal = false, blog, ...rest }: Props) => {
 
             <div>
               <h5 className="text-sm text-slate-500">
-                <a href="./profile.html">Saad Hasan</a>
+                <a href="./profile.html">{authName}</a>
               </h5>
               <div className="flex items-center text-xs text-slate-700">
-                <span>June 28, 2018</span>
+                {/* <span>June 28, 2018</span> */}
+                <span> {blogCreatedDate}</span>
               </div>
             </div>
           </div>
 
           <div className="flex items-center gap-x-1 px-2 py-1 text-sm text-slate-700">
             <span>{blog?.likes?.length}</span>
-            <ThumbsUp className="size-5" />
+            <Like
+              className={cn("size-5", {
+                "fill-blue-600": isYouLiked,
+              })}
+            />
           </div>
         </div>
 

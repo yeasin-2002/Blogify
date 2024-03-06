@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 
 interface Props extends React.ComponentProps<'div'> {}
 
-import searchIcon from '@/assets/icons/search.svg';
+
 import logo from '@/assets/logo.svg';
 import { useAuth } from '@/hooks';
 import { Avatar } from '../ui';
+import { SearchBlogs } from './SearchBlogs';
 
 export const Nav = ({ ...rest }: Props) => {
   const authData = useAuth();
@@ -31,13 +32,7 @@ export const Nav = ({ ...rest }: Props) => {
               </a>
             </li>
             <li>
-              <a
-                href="./search.html"
-                className="flex cursor-pointer items-center gap-2"
-              >
-                <img src={searchIcon} alt="Search" />
-                <span>Search</span>
-              </a>
+              <SearchBlogs />
             </li>
 
             {authData.authToken && authData.authUser ? (

@@ -1,4 +1,4 @@
-import { Blog, User } from './utils.type';
+import { Blog, User } from "./utils.type";
 
 export type homeBlogResponse = {
   total: number;
@@ -21,4 +21,14 @@ export type profileResponse = {
 export type updateProfileResponse = {
   message: string;
   user: User;
+};
+
+export type FavoriteBlogsResponse = {
+  total: number;
+  blogs: { id: string; title: string; tags: string }[];
+};
+
+export type PopularBlogsResponse = {
+  total: number;
+  blogs: Blog[];
 };
