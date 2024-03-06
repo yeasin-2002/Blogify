@@ -11,6 +11,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { SearchContent } from "./SearchIContent";
 import { SearchInput } from "./SearchInput";
+import { SuggestSearch } from "./SuggestSearch";
 
 export const SearchBlogs = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -25,7 +26,7 @@ export const SearchBlogs = () => {
 
   return (
     <Popover
-      title="Search for Your Desire Blogs"
+      title="Search Blogs"
       className="m-10 mx-auto my-2 size-11/12 rounded-lg  border border-slate-600/50   bg-slate-900  p-4  text-xl font-bold text-slate-400 shadow-lg shadow-slate-400/10"
     >
       <PopoverTrigger>
@@ -40,7 +41,11 @@ export const SearchBlogs = () => {
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
-        <SearchContent />
+        {data && data?.data?.data ? (
+          <SearchContent data={data?.data?.data} />
+        ) : (
+          <SuggestSearch />
+        )}
       </PopoverContent>
     </Popover>
   );

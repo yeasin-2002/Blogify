@@ -1,21 +1,26 @@
-import thumbNail from "@/assets/blogs/taiulwind-cn-thumb.jpg";
+import { Blog } from "@/types";
+import { baseUrl } from "@/utils";
 import React from "react";
-interface Props extends React.ComponentProps<"div"> {}
+import { Link } from "react-router-dom";
+interface Props extends React.ComponentProps<"div"> {
+  data: Blog[];
+}
 
-export const SearchContent = ({ ...rest }: Props) => {
-  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+export const SearchContent = ({ data, ...rest }: Props) => {
   return (
     <div
       className="my-4 max-h-[440px] divide-y-2 divide-slate-500/30 overflow-y-scroll overscroll-contain"
       {...rest}
     >
-      {array.map((item) => (
-        <div className="flex gap-6 py-2" key={item}>
-          <img className="h-28 object-contain" src={thumbNail} alt="" />
+      {data?.map((blog) => (
+        <Link to={`/blog/${blog.id}`} className="flex gap-6 py-2" key={blog.id}>
+          <img
+            className="h-28 object-contain"
+            src={`${baseUrl}/uploads/blog/${blog.thumbnail}`}
+            alt=""
+          />
           <div className="mt-2">
-            <h3 className="text-xl font-bold text-slate-300">
-              Style your components with TailwindCSS
-            </h3>
+            <h3 className="text-xl font-bold text-slate-300">{blog.title}</h3>
             {/* Meta Informations */}
             <p className="mb-6 mt-1 text-sm text-slate-500">
               Aenean eleifend ante maecenas pulvinar montes lorem et pede dis
@@ -23,7 +28,7 @@ export const SearchContent = ({ ...rest }: Props) => {
               eget adipiscing luctus lorem.
             </p>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

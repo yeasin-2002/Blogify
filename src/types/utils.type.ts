@@ -17,8 +17,8 @@ export type Blog = {
   content: string;
   thumbnail: string;
   author: User;
-  tags: string;
   likes: { id: string }[];
-  comments: Comment[];
   createdAt: string;
+  tags?: string;
+  comments?: Comment[];
 };
