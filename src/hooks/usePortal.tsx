@@ -7,17 +7,11 @@ import { createPortal } from "react-dom";
 
 export const usePortal = (defaultShow = false, title = "") => {
   const [isShowPortal, setIsShowPortal] = useState(defaultShow);
-  // const wrapper = useMemo(() => document.createElement("div"), []);
 
-  // useEffect(() => {
-  //   document.body.appendChild(wrapper);
-
-  //   return () => {
-  //     document.body.removeChild(wrapper);
-  //   };
-  // }, []);
-
-  const renter = (children: ReactNode): ReactPortal | null => {
+  const renter = (
+    children: ReactNode,
+    showHeading = false,
+  ): ReactPortal | null => {
     if (!isShowPortal) return null;
     return createPortal(
       <div
@@ -30,10 +24,12 @@ export const usePortal = (defaultShow = false, title = "") => {
           className=" border-gray-200   shadow "
           onClick={(e) => e.stopPropagation()}
         >
-          <div>
-            {title}
-            <Cross />
-          </div>
+          {showHeading && (
+            <div>
+              {title}
+              <Cross />
+            </div>
+          )}
           {children}
         </div>
       </div>,
