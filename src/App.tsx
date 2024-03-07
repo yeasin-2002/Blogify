@@ -10,6 +10,7 @@ import {
   Register,
   RootErrorBoundary,
   SingleBlog,
+  TestRoute,
 } from "./page";
 
 const App = () => {
@@ -32,6 +33,9 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/blog/:id" element={<SingleBlog />} />
+
+        <Route path="/test" element={<TestRoute />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
 

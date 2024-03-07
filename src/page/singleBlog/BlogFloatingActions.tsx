@@ -22,7 +22,6 @@ export const BlogFloatingActions = ({
         </li>
 
         <li>
-          {/* There is heart-filled.svg in the icons folder */}
           <img src={HeartIcon} alt="Favourite" />
         </li>
         <a href="#comments">

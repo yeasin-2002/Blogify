@@ -14,15 +14,16 @@ import { BlogCardActions } from "./BlogCardActions";
 
 export const BlogCard = ({ blog, ...rest }: Props) => {
   if (!blog) return null;
-  const { authUser } = useAuth();
+  const auth = useAuth();
 
   const thumbnail = `${baseUrl}/uploads/blog/${blog?.thumbnail}`;
   const authName = blog.author.firstName + " " + blog.author.lastName;
   const blogCreatedDate = formatDateYearFirst(new Date(blog.createdAt));
   const isYouLiked =
-    authUser?.id && blog.likes.find((like) => like.id === authUser.id);
+    auth?.authUser?.id &&
+    blog.likes.find((like) => like.id === auth?.authUser?.id);
 
-  const isUserIsAuthor = authUser?.id === blog.author.id || false;
+  const isUserIsAuthor = auth?.authUser?.id === blog.author.id || false;
 
   return (
     <div className="blog-card" {...rest}>

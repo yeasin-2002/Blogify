@@ -1,10 +1,5 @@
 import searchIcon from "@/assets/icons/search.svg";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/PopOver";
-import { useDebounce } from "@/hooks";
+import { useDebounce, usePortal } from "@/hooks";
 import { searchResponse } from "@/types";
 import { axiosInstance } from "@/utils";
 import { useQuery } from "@tanstack/react-query";
@@ -16,6 +11,7 @@ import { SuggestSearch } from "./SuggestSearch";
 export const SearchBlogs = () => {
   const [searchValue, setSearchValue] = useState("");
   const delaySearchedValue = useDebounce(searchValue, 500);
+  const { renter, setIsShowPortal } = usePortal();
 
   const { data } = useQuery({
     queryKey: ["search", delaySearchedValue],
@@ -25,28 +21,30 @@ export const SearchBlogs = () => {
   });
 
   return (
-    <Popover
+    <div
       title="Search Blogs"
-      className="m-10 mx-auto my-2 size-11/12 rounded-lg  border border-slate-600/50   bg-slate-900  p-4  text-xl font-bold text-slate-400 shadow-lg shadow-slate-400/10"
+      // className="m-10 mx-auto my-2 size-11/12 rounded-lg  border border-slate-600/50   bg-slate-900  p-4  text-xl font-bold text-slate-400 shadow-lg shadow-slate-400/10"
     >
-      <PopoverTrigger>
+      <div onClick={() => setIsShowPortal((pre) => !pre)}>
         <p className="flex cursor-pointer items-center gap-2">
           <img src={searchIcon} alt="Search" />
           <span>Search</span>
         </p>
-      </PopoverTrigger>
-      <PopoverContent>
-        <SearchInput
-          className="my-10"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-        />
-        {data && data?.data?.data ? (
-          <SearchContent data={data?.data?.data} />
-        ) : (
-          <SuggestSearch />
-        )}
-      </PopoverContent>
-    </Popover>
+      </div>
+      {renter(
+        <div className="mx-auto my-2 size-11/12  min-w-[80%] rounded-lg  border border-slate-600/50   bg-slate-900  p-4  text-xl font-bold text-slate-400 shadow-lg shadow-slate-400/10">
+          <SearchInput
+            className="my-10"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+          />
+          {data && data?.data?.data ? (
+            <SearchContent data={data?.data?.data} />
+          ) : (
+            <SuggestSearch />
+          )}
+        </div>,
+      )}
+    </div>
   );
 };

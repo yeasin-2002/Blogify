@@ -13,7 +13,6 @@ export const BlogCardActions = ({ ...rest }: Props) => {
         <img src={threeDots} alt="3dots of Action" />
       </button>
 
-      {/* Action Menus Popup */}
       <div className="action-modal-container">
         <button className="action-menu-item hover:text-lwsGreen">
           <img src={editIcon} alt="Edit" />

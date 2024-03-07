@@ -1,9 +1,9 @@
-import { Fragment, createContext, useContext, useState } from 'react';
+import { Fragment, createContext, useContext, useState } from "react";
 
-import { cn } from '@/utils';
-import { motion } from 'framer-motion';
-import { createPortal } from 'react-dom';
-import { Cross } from '../icons';
+import { cn } from "@/utils";
+import { motion } from "framer-motion";
+import { createPortal } from "react-dom";
+import { Cross } from "../icons";
 
 interface PopoverContextProps {
   isOpen: boolean;
@@ -14,7 +14,7 @@ const PopoverContext = createContext<PopoverContextProps | undefined>(
   undefined,
 );
 
-interface PopOverContainer extends React.ComponentProps<'div'> {
+interface PopOverContainer extends React.ComponentProps<"div"> {
   children: React.ReactNode;
   title?: string;
   onClosed?: (setter: React.Dispatch<React.SetStateAction<boolean>>) => void;
@@ -51,7 +51,7 @@ export const Popover = ({
             >
               <div
                 className={cn(
-                  'min-h-80 min-w-80 overflow-y-auto rounded-lg bg-white p-4 text-black shadow-lg',
+                  "min-h-80 min-w-80 overflow-y-auto rounded-lg bg-white p-4 text-black shadow-lg",
                   className,
                 )}
                 onClick={(e) => e.stopPropagation()}
@@ -66,14 +66,18 @@ export const Popover = ({
                 {children}
               </div>
             </motion.div>,
-            document.getElementById('popOver') as HTMLElement,
+            document.getElementById("popOver") as HTMLElement,
           )}
       </PopoverContext.Provider>
     </>
   );
 };
 
-export const PopoverTrigger = ({ children, ...rest }: ButtonPropWithChild) => {
+export const PopoverTrigger = ({
+  children,
+  className,
+  ...rest
+}: ButtonPropWithChild) => {
   const { setIsOpen, isOpen } = useContext(
     PopoverContext,
   ) as PopoverContextProps;
@@ -85,6 +89,7 @@ export const PopoverTrigger = ({ children, ...rest }: ButtonPropWithChild) => {
           aria-haspopup="true"
           aria-expanded="true"
           onClick={() => setIsOpen(true)}
+          className={className}
         >
           {children}
         </button>

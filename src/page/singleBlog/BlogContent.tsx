@@ -17,12 +17,12 @@ export const BlogContent = ({ blog, ...rest }: Props) => {
         <div className="my-4 flex items-center justify-center gap-4">
           <div className="flex items-center space-x-2 capitalize">
             <Avatar
-              img={blog?.author.avatar}
-              name={blog?.author.firstName}
+              img={blog?.author?.avatar}
+              name={blog?.author?.firstName}
               className="avater-img bg-indigo-600 text-white"
             />
             <h5 className="text-sm text-slate-500">
-              {blog?.author.firstName} {blog?.author.lastName}
+              {blog?.author?.firstName} {blog?.author?.lastName}
             </h5>
           </div>
           <span className="dot text-sm text-slate-700"> {publishDate} </span>
@@ -41,7 +41,7 @@ export const BlogContent = ({ blog, ...rest }: Props) => {
           </ul>
         )}
 
-        <div
+        <article
           className="prose mx-auto mt-5 w-full py-2 !text-left text-base leading-8 text-slate-300 lg:prose-xl md:w-10/12 md:text-lg"
           dangerouslySetInnerHTML={{ __html: blog?.content || "" }}
         />

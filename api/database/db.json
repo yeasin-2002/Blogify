@@ -33,10 +33,10 @@
     {
       "id": "3d2dde4b6548275fb066",
       "email": "saadhasan@learnwithsumit.com",
-      "firstName": "Saaaaad",
-      "lastName": "Vaaaaiiiiiii",
-      "avatar": "avatar-1709679026452-164564616.png",
-      "bio": "I am Saad Hasan, self-taught Junior Software Developer from Bangladesh. I have been working as a Professional Frontend Developer for the last 1 year, Though I started my Self-Taught Programming Journey In 2014....",
+      "firstName": "Saad",
+      "lastName": "Hasan",
+      "avatar": "avatar-1708764856675-623317122.jpg",
+      "bio": "I am Saad Hasan, self-taught Junior Software Developer from Bangladesh. I have been working as a Professional Frontend Developer for the last 1 year, Though I started my Self-Taught Programming Journey In 2014.",
       "password": "$2b$08$e9uY0ZjxXJ9F4r36Ln4oCu4nLZ92OKaQ466VEVDtxBPCs/JL/ChR.",
       "favourites": [
         {
@@ -54,16 +54,6 @@
       "avatar": "avatar-1708882452726-336021919.jpeg",
       "bio": "",
       "password": "$2b$08$At/U5W1/ASt/F3zWCqOZnO75ftNVjwR.RVf0FEhEdQ0nHkll5tJ4m",
-      "favourites": []
-    },
-    {
-      "id": "8abbd0874287b707836e",
-      "email": "mdkawsarislam2002@gmail.com",
-      "firstName": "md ",
-      "lastName": "Yeasin",
-      "avatar": null,
-      "bio": "",
-      "password": "$2b$08$QWynwd2m4tPmyV3lWux.d.Gpajgi1t1k8/KSD.jdQ6ZSr8VvPXcMK",
       "favourites": []
     }
   ],
@@ -113,8 +103,8 @@
           }
         },
         {
-          "id": "48554b3ebbc9a9a5187c",
-          "content": "আমি JavaScript এর অনেক  টিউটোরিয়াল দেখেছি অন্যান্য ভাইয়াদের channel থেকে। আমার মনে হয়, কিছু কিছু ভাইদের উদ্দেশ্য হয়তো বিগিনারদের ভীতু করা, ভাগিয়ে দেওয়া যে সহজ বিষয় কঠিন করে বুঝানো। আমি আপনার মধ্যে সেটা একদমই দেখি না। সত্যিকার অর্থে- আপনি একজন বিগিনারবান্ধব।। অসংখ্য ধন্যবাদ ভাইয়া আপনাকে।",
+          "id": "8e64c09ab8c9ef20c7e6",
+          "content": "আমি JavaScript এর অনেক  টিউটোরিয়াল দেখেছি অন্যান্য ভাইয়াদের channel থেকে। আমার মনে হয়, কিছু কিছু ভাইদের উদ্দেশ্য হয়তো বিগিনারদের ভীতু করা, ভাগিয়ে দেওয়া যে সহজ বিষয় কঠিন করে বুঝানো। আমি আপনার মধ্যে সেটা একদমই দেখি না। সত্যিকার অর্থে- আপনি একজন বিগিনারবান্ধব।। ",
           "author": {
             "id": "3d2dde4b6548275fb066",
             "firstName": "Saad",

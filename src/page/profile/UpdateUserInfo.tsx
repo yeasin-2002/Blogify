@@ -60,7 +60,7 @@ export const UpdateUserInfo = ({ info, ...rest }: UpdateUserInfoProps) => {
       <PopoverTrigger
         {...rest}
         type="button"
-        className=" alternative-orange flex items-center gap-x-1 px-4 py-2.5"
+        className=" alternative-orange flex items-center gap-x-1 bg-orange-500 px-4 py-2.5"
       >
         Edit
         <Pencil className="size-4" />
@@ -68,22 +68,22 @@ export const UpdateUserInfo = ({ info, ...rest }: UpdateUserInfoProps) => {
       <PopoverContent>
         <form onSubmit={handleSubmit(onSubmit)} className="mt-4  ">
           <Input
-            register={register('firstName', {
-              required: 'First Name is required',
+            register={register("firstName", {
+              required: "First Name is required",
             })}
             labelName="First Name"
             errorMsg={errors.firstName?.message}
           />
           <Input
-            register={register('lastName', {
-              required: 'First Name is required',
+            register={register("lastName", {
+              required: "First Name is required",
             })}
             labelName="Last Name"
             errorMsg={errors.lastName?.message}
           />
           <textarea
-            {...register('bio', {
-              required: 'Bio is required',
+            {...register("bio", {
+              required: "Bio is required",
             })}
             className="min-h-32 w-full rounded-md border border-white/20   bg-slate-200 p-2 focus:border-indigo-500 focus:outline-none"
           />
@@ -101,3 +101,4 @@ export const UpdateUserInfo = ({ info, ...rest }: UpdateUserInfoProps) => {
     </Popover>
   );
 };
+

@@ -9,7 +9,7 @@ interface Props extends React.ComponentProps<"div"> {
 export const BlogComments = ({ comments, ...rest }: Props) => {
   return (
     <div {...rest}>
-      <section id="comments">
+      <section id="#comments">
         <div className="container mx-auto w-full md:w-10/12">
           <h2 className="my-8 text-3xl font-bold">
             Comments
@@ -31,8 +31,8 @@ export const BlogComments = ({ comments, ...rest }: Props) => {
               </div>
             </div>
           </div>
-          {comments.length > 0 ? (
-            comments?.map((cm) => <CommentItems comment={cm} />)
+          {comments?.length > 0 ? (
+            comments?.map((cm) => <CommentItems comment={cm} key={cm.id} />)
           ) : (
             <NoComments />
           )}
