@@ -5,12 +5,15 @@ import { searchResponse } from "@/types";
 import { axiosInstance } from "@/utils";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
+import { FiltersBlog } from "./FiltersBlog";
 import { SearchContent } from "./SearchIContent";
 import { SearchInput } from "./SearchInput";
 import { SuggestSearch } from "./SuggestSearch";
 
 export const SearchBlogs = () => {
   const [searchValue, setSearchValue] = useState("");
+  const [filterBy, setFilterBy] = useState<SearchFilter>("");
+
   const delaySearchedValue = useDebounce(searchValue, 500);
   const { renter, setIsShowPortal } = usePortal();
 
@@ -43,14 +46,25 @@ export const SearchBlogs = () => {
                 <Cross className="cursor-pointer" />
               </span>
             </div>
-            <SearchInput
-              className="my-10"
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
-            />
+            <div className="flex items-center  gap-x-2">
+              <SearchInput
+                className="my-10"
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+              />
+
+              <FiltersBlog filterBy={filterBy} setFilterBy={setFilterBy} />
+            </div>
           </div>
 
-          {delaySearchedValue && <SearchContent data={data} error={error} />}
+          {delaySearchedValue && (
+            <SearchContent
+              data={data}
+              error={error}
+              SearchFilter={filterBy}
+              filterBy={filterBy}
+            />
+          )}
 
           {!delaySearchedValue && <SuggestSearch />}
         </>,

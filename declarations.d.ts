@@ -17,6 +17,13 @@ declare global {
     children: React.ReactNode;
   }
 
+  type SearchFilter =
+    | ""
+    | "latest"
+    | "oldest"
+    | "most-liked"
+    | "most-commented";
+
   type User = {
     id: string;
     firstName: string;
@@ -44,3 +51,4 @@ declare global {
 }
 
 export {};
+
