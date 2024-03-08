@@ -49,12 +49,15 @@ export const CreateComment = ({ comments, ...rest }: Props) => {
   };
 
   const onSubmit = async (data: FormValue) => {
-    console.log(data);
-    const res = await mutateAsync(data);
+    try {
+      const res = await mutateAsync(data);
+      console.log("🚀 ~ onSubmit ~ res:", res);
 
-    if (res.status === 200) {
-      return toast.success("Comment created successfully");
-    } else {
+      if (res.status === 200) {
+        return toast.success("Comment created successfully");
+      }
+    } catch (error) {
+      console.log(error);
       return toast.error("Failed to create comment");
     }
   };
@@ -67,8 +70,8 @@ export const CreateComment = ({ comments, ...rest }: Props) => {
       </h2>
       <div className="flex items-start  space-x-4">
         <Avatar
-          img={auth.authUser?.avatar}
-          name={auth.authUser?.firstName}
+          img={auth?.authUser?.avatar}
+          name={auth?.authUser?.firstName}
           className="avater-img"
         />
 

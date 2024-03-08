@@ -1,4 +1,3 @@
-import React from "react";
 interface Props extends React.ComponentProps<"button"> {
   children: React.ReactNode;
 }

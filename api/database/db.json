@@ -196,7 +196,18 @@
           "id": "346d7a36b3c41f3fbfa2"
         }
       ],
-      "comments": [],
+      "comments": [
+        {
+          "id": "3bbb6b639db80c2a4734",
+          "content": "nice ",
+          "author": {
+            "id": "3d2dde4b6548275fb066",
+            "firstName": "Saad",
+            "lastName": "Hasan",
+            "avatar": "avatar-1708764856675-623317122.jpg"
+          }
+        }
+      ],
       "createdAt": "2024-02-24T09:01:37.581Z",
       "isFavourite": false
     },

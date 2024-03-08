@@ -1,9 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useParams } from "react-router-dom";
-interface Props extends React.ComponentProps<"div"> {}
 
-// temporary
 import { SingleBlogSkeleton } from "@/components";
 import { Blog } from "@/types";
 import { baseUrl } from "@/utils";
@@ -11,6 +9,8 @@ import axios from "axios";
 import { BlogComments } from "./BlogComments";
 import { BlogContent } from "./BlogContent";
 import { BlogFloatingActions } from "./BlogFloatingActions";
+
+interface Props extends React.ComponentProps<"div"> {}
 
 export const SingleBlog = ({ ...rest }: Props) => {
   const params = useParams();
@@ -32,6 +32,8 @@ export const SingleBlog = ({ ...rest }: Props) => {
           <BlogFloatingActions
             totalComments={data?.data?.comments?.length}
             totalLikes={data?.data.likes?.length}
+            blogId={params?.id}
+            allLikes={data?.data.likes}
           />
         </>
       ) : (
