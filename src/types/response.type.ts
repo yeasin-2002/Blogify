@@ -34,5 +34,5 @@ export type PopularBlogsResponse = {
 };
 
 export type searchResponse =
-  | { length: 5; query: string; data: Blog[] }
+  | { length: number; query: string; data: Blog[] }
   | undefined;

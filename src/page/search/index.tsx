@@ -1,4 +1,5 @@
 import searchIcon from "@/assets/icons/search.svg";
+import { Cross } from "@/components";
 import { useDebounce, usePortal } from "@/hooks";
 import { searchResponse } from "@/types";
 import { axiosInstance } from "@/utils";
@@ -13,7 +14,7 @@ export const SearchBlogs = () => {
   const delaySearchedValue = useDebounce(searchValue, 500);
   const { renter, setIsShowPortal } = usePortal();
 
-  const { data } = useQuery({
+  const { data, error } = useQuery({
     queryKey: ["search", delaySearchedValue],
     queryFn: async () =>
       axiosInstance.get<searchResponse>(`/search?q=${delaySearchedValue}`),
@@ -21,10 +22,7 @@ export const SearchBlogs = () => {
   });
 
   return (
-    <div
-      title="Search Blogs"
-      // className="m-10 mx-auto my-2 size-11/12 rounded-lg  border border-slate-600/50   bg-slate-900  p-4  text-xl font-bold text-slate-400 shadow-lg shadow-slate-400/10"
-    >
+    <>
       <div onClick={() => setIsShowPortal((pre) => !pre)}>
         <p className="flex cursor-pointer items-center gap-2">
           <img src={searchIcon} alt="Search" />
@@ -32,19 +30,31 @@ export const SearchBlogs = () => {
         </p>
       </div>
       {renter(
-        <div className="   my-2 size-11/12  w-screen  rounded-lg  border border-slate-600/50   bg-slate-900  p-4  text-xl font-bold text-slate-400 shadow-lg shadow-slate-400/10">
-          <SearchInput
-            className="my-10"
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-          />
-          {data && data?.data?.data ? (
-            <SearchContent data={data?.data?.data} />
-          ) : (
-            <SuggestSearch />
-          )}
-        </div>,
+        <>
+          <div>
+            <div className="flex items-center justify-between">
+              <h3 className="my-2 pl-2 text-xl font-bold text-slate-400">
+                Search for Your Desire Blogs
+              </h3>
+              <span
+                className="cursor-pointer rounded-md  bg-slate-800 p-2 transition-all hover:bg-slate-700"
+                onClick={() => setIsShowPortal((pre) => !pre)}
+              >
+                <Cross className="cursor-pointer" />
+              </span>
+            </div>
+            <SearchInput
+              className="my-10"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+          </div>
+
+          {delaySearchedValue && <SearchContent data={data} error={error} />}
+
+          {!delaySearchedValue && <SuggestSearch />}
+        </>,
       )}
-    </div>
+    </>
   );
 };
