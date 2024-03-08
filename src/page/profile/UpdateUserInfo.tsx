@@ -60,7 +60,7 @@ export const UpdateUserInfo = ({ info, ...rest }: UpdateUserInfoProps) => {
       <PopoverTrigger
         {...rest}
         type="button"
-        className=" alternative-orange flex items-center gap-x-1 bg-orange-500 px-4 py-2.5"
+        className=" alternative-orange flex items-center gap-x-1  px-4 py-2.5"
       >
         Edit
         <Pencil className="size-4" />

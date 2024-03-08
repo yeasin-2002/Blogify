@@ -10,9 +10,10 @@ interface Props extends React.ComponentProps<"li"> {
 
 export const PopularBlogItems = ({ data, ...rest }: Props) => {
   const authorName = "  " + data.author.firstName + " " + data.author.lastName;
-  const { authUser } = useAuth();
+  const auth = useAuth();
   const idYouLiked =
-    authUser?.id && data.likes.find((like) => like.id === authUser.id);
+    auth?.authUser?.id &&
+    data.likes.find((like) => like.id === auth?.authUser?.id);
 
   return (
     <li {...rest}>

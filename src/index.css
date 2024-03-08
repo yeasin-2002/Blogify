@@ -4,7 +4,7 @@
 
 @layer components {
   * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     scroll-behavior: smooth;
   }
 
@@ -118,12 +118,12 @@
 
   /*  My custom styles  */
   .alternative {
-    @apply  me-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700;
+    @apply me-2 rounded-lg border border-gray-200 !bg-white px-5 py-2.5 text-sm font-medium !text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700;
   }
   .alternative-dark {
-    @apply hover:bg-githubDark/90 focus:ring-githubDark/50  bg-githubDark  inline-flex items-center gap-x-3 rounded-lg  text-center text-sm font-medium text-white focus:outline-none focus:ring-4 dark:focus:ring-gray-500;
+    @apply inline-flex items-center  gap-x-3  rounded-lg !bg-githubDark text-center text-sm  font-medium text-white hover:bg-githubDark/90 focus:outline-none focus:ring-4 focus:ring-githubDark/50 dark:focus:ring-gray-500;
   }
   .alternative-orange {
-    @apply   rounded-lg bg-orange-500  text-sm font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-4 focus:ring-orange-300 dark:focus:ring-orange-900;
+    @apply rounded-lg !bg-orange-500  text-sm font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-4 focus:ring-orange-300 dark:focus:ring-orange-900;
   }
 }

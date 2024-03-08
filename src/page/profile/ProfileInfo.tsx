@@ -11,9 +11,9 @@ interface Props extends React.ComponentProps<"div"> {
 }
 
 export const ProfileInfo = ({ User, ...rest }: Props) => {
-  const { logout, authUser } = useAuth();
+  const auth = useAuth();
   const param = useParams();
-  const isAuthUser = param.id === authUser?.id;
+  const isAuthUser = param.id === auth?.authUser?.id;
   return (
     <div className="flex flex-col  py-8 text-center" {...rest}>
       <div className="flex flex-col  items-center   gap-x-3 *:text-center  sm:flex-row sm:*:text-left">
@@ -45,7 +45,7 @@ export const ProfileInfo = ({ User, ...rest }: Props) => {
               />
               <button
                 className="alternative-dark px-4 py-2.5"
-                onClick={() => logout()}
+                onClick={() => auth.logout()}
               >
                 Logout
                 <LogOutIcon className="size-6" />

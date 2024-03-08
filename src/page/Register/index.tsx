@@ -17,13 +17,13 @@ interface FormValues {
 }
 
 export const Register = ({ ...rest }: DivProps) => {
-  const { setAuthToken, setAuthUser } = useAuth();
+  const auth = useAuth();
   const navigate = useNavigate();
 
   const { mutateAsync } = useMutation({
-    mutationKey: ['register'],
+    mutationKey: ["register"],
     mutationFn: (body: FormValues): Promise<AxiosResponse> =>
-      axiosInstance.post('/auth/register', body),
+      axiosInstance.post("/auth/register", body),
   });
 
   const {
@@ -35,21 +35,21 @@ export const Register = ({ ...rest }: DivProps) => {
   const onSubmit = async (formValue: FormValues) => {
     try {
       const req = await mutateAsync(formValue);
-      console.log('🚀 ~ onSubmit ~ req:', req);
+      console.log("🚀 ~ onSubmit ~ req:", req);
 
       const data = req.data as authData;
-      data.token && setAuthToken(data.token);
-      data.user && setAuthUser(data.user);
-      toast.success('Register successful');
-      navigate('/');
+      data.token && auth?.setAuthToken(data.token);
+      data.user && auth?.setAuthUser(data.user);
+      toast.success("Register successful");
+      navigate("/");
     } catch (error) {
       if (error instanceof AxiosError) {
-        console.log('register Error', error);
+        console.log("register Error", error);
         return toast.error(
-          error.response?.data?.error || 'Invalid user information',
+          error.response?.data?.error || "Invalid user information",
         );
       }
-      toast.error('something went wrong');
+      toast.error("something went wrong");
     }
   };
   return (

@@ -32,7 +32,7 @@ export const SearchBlogs = () => {
         </p>
       </div>
       {renter(
-        <div className="mx-auto my-2 size-11/12  min-w-[80%] rounded-lg  border border-slate-600/50   bg-slate-900  p-4  text-xl font-bold text-slate-400 shadow-lg shadow-slate-400/10">
+        <div className="   my-2 size-11/12  w-screen  rounded-lg  border border-slate-600/50   bg-slate-900  p-4  text-xl font-bold text-slate-400 shadow-lg shadow-slate-400/10">
           <SearchInput
             className="my-10"
             value={searchValue}

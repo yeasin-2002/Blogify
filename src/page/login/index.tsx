@@ -83,7 +83,7 @@ export const LogIn = ({ ...rest }: DivProps) => {
             <div className="mb-6">
               <button
                 type="submit"
-                className="w-full rounded-md bg-indigo-600 p-3 text-white transition-all duration-200 hover:bg-indigo-700"
+                className="w-full rounded-md !bg-indigo-600 p-3 text-white transition-all duration-200 hover:bg-indigo-700"
               >
                 Login
               </button>

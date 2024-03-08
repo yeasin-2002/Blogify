@@ -25,7 +25,7 @@ interface Props extends React.ComponentProps<'div'> {
 export const UpdateProfileAvatar = ({ id, ...rest }: Props) => {
   const api = useAxios();
   const queryClient = useQueryClient();
-  const { setAuthUser } = useAuth();
+  const auth = useAuth();
 
   const [file, setFile] = useState<File | null>(null);
   const handleChange = (file: File) => {
@@ -33,27 +33,27 @@ export const UpdateProfileAvatar = ({ id, ...rest }: Props) => {
   };
 
   const { isPending } = useMutation({
-    mutationKey: ['updateProfileAvatar'],
+    mutationKey: ["updateProfileAvatar"],
     mutationFn: (body: any): Promise<AxiosResponse> =>
-      api.post('/profile/avatar', body, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+      api.post("/profile/avatar", body, {
+        headers: { "Content-Type": "multipart/form-data" },
       }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['profile'] });
+      queryClient.invalidateQueries({ queryKey: ["profile"] });
     },
   });
 
   const handleUpload = async () => {
     try {
       const formData = new FormData();
-      formData.append('avatar', file as Blob);
-      const req = await api.post('/profile/avatar', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+      formData.append("avatar", file as Blob);
+      const req = await api.post("/profile/avatar", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
       });
 
       if (req.status === 200) {
-        setAuthUser((pre) => {
-          toast.success('Avatar updated successfully');
+        auth.setAuthUser((pre) => {
+          toast.success("Avatar updated successfully");
           if (pre) {
             const user = pre as authUser;
             return { ...user, avatar: req.data.user.avatar };
@@ -65,7 +65,7 @@ export const UpdateProfileAvatar = ({ id, ...rest }: Props) => {
       if (error instanceof AxiosError) {
         toast.error(
           error?.response?.data?.error ||
-            'Something went wrong, try again later',
+            "Something went wrong, try again later",
         );
       }
     }
