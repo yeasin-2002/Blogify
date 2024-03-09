@@ -1,8 +1,11 @@
 import { Input } from "@/components";
-import { Editor } from "novel";
+// import { Editor } from "novel";
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { BlogFormThumbnail } from "./BlogFormThumbnail";
+
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 interface Props extends React.ComponentProps<"div"> {}
 
@@ -10,7 +13,7 @@ interface FormValue {
   title: string;
   content: string;
   tags: string;
-  thumbnail: File;
+  thumbnail: File | null;
 }
 
 export const BlogForm = ({ ...rest }: Props) => {
@@ -30,22 +33,21 @@ export const BlogForm = ({ ...rest }: Props) => {
         <div className="container">
           <form className="createBlog" onSubmit={handleSubmit(onSubmit)}>
             <Controller
-              name="content"
+              name="thumbnail"
               control={control}
-              render={({ field }) => (
-                <Editor
-                  defaultValue={field.value || ""}
-                  className="rounded-md border  border-white       bg-githubDark  "
-                  disableLocalStorage={true}
-                  onUpdate={(data) => {
-                    const html = data?.getHTML();
-                    field.onChange(html);
-                  }}
-                />
-              )}
+              render={({ field }) => {
+                return (
+                  <BlogFormThumbnail
+                    imgFile={field?.value}
+                    handleChange={(file) => {
+                      console.log(file);
+                      field.onChange(file);
+                    }}
+                  />
+                );
+              }}
             />
 
-            <BlogFormThumbnail />
             <div className="mb-6 *:text-white">
               <Input
                 placeholder="Enter your blog title"
@@ -66,23 +68,22 @@ export const BlogForm = ({ ...rest }: Props) => {
               />
             </div>
 
-            <div className="mb-6">
+            
               <Controller
                 name="content"
                 control={control}
                 render={({ field }) => (
-                  <Editor
-                    defaultValue={field.value || ""}
-                    className="rounded-md border  border-white       bg-githubDark  "
-                    disableLocalStorage={true}
-                    onUpdate={(data) => {
-                      const html = data?.getHTML();
-                      field.onChange(html);
-                    }}
+                  <ReactQuill
+                    theme="snow"
+                    value={field.value}
+                    onChange={field.onChange}
+                    className="mb-6 text-white "
+                    // style={{ minHeight: "300px" }}
+                    
                   />
                 )}
               />
-            </div>
+            
 
             <button
               type="submit"

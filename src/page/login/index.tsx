@@ -16,7 +16,7 @@ interface FormValues {
 
 export const LogIn = ({ ...rest }: DivProps) => {
   const navigate = useNavigate();
-  const { setAuthToken, setAuthUser } = useAuth();
+  const auth = useAuth();
 
   const { mutateAsync } = useMutation({
     mutationKey: ["login"],
@@ -33,17 +33,17 @@ export const LogIn = ({ ...rest }: DivProps) => {
   const onSubmit = async (data: FormValues) => {
     try {
       const req = await mutateAsync(data);
-      if (req.status !== 200) return toast.error("something went wrong");
-      const returnedData = req.data as authData;
-      returnedData.token && setAuthToken(returnedData.token);
-      returnedData.user && setAuthUser(returnedData.user);
+      if (req.status !== 200) return toast?.error("something went wrong");
+      const returnedData = req?.data as authData;
+      returnedData?.token && auth?.setAuthToken(returnedData.token);
+      returnedData?.user && auth?.setAuthUser(returnedData.user);
       toast.success("Login successful");
       navigate("/");
     } catch (error) {
       if (error instanceof AxiosError) {
         console.log("form error", error);
         return toast.error(
-          error.response?.data?.error || "Invalid email or password",
+          error?.response?.data?.error || "Invalid email or password",
         );
       }
       toast.error("something went wrong");

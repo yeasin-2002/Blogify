@@ -1,11 +1,12 @@
-import React, { ReactNode, useCallback } from 'react';
+import { cn } from "@/utils";
+import React, { ReactNode, useCallback } from "react";
 
 const defaultFileTypes = ["JPG", "PNG", "JPEG"];
 
-interface FileUploaderProps {
+interface FileUploaderProps extends React.ComponentPropsWithoutRef<"label"> {
   handleChange: (file: File) => void;
   name: string;
-  types: string[];
+  types?: string[];
   children?: ReactNode;
 }
 
@@ -14,6 +15,8 @@ export const Draggable: React.FC<FileUploaderProps> = ({
   name,
   types = defaultFileTypes,
   children,
+  className,
+  ...rest
 }) => {
   const onDrop = useCallback(
     (event: React.DragEvent<HTMLLabelElement>) => {
@@ -34,6 +37,7 @@ export const Draggable: React.FC<FileUploaderProps> = ({
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
+
     if (files && files.length > 0) {
       const file = files[0];
       handleChange(file);
@@ -45,7 +49,8 @@ export const Draggable: React.FC<FileUploaderProps> = ({
       onDrop={onDrop}
       onDragOver={onDragOver}
       htmlFor="drag-and-drop-file"
-      className=" cursor-pointer"
+      className={cn("cursor-pointer", className)}
+      {...rest}
     >
       {children}
       <input
@@ -54,7 +59,7 @@ export const Draggable: React.FC<FileUploaderProps> = ({
         name={name}
         accept={types.join(",")}
         onChange={onChange}
-        style={{ display: "none" }}
+        className="hidden"
       />
     </label>
   );
