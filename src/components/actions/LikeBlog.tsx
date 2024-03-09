@@ -1,18 +1,23 @@
 import { useAxios } from "@/hooks";
 import { cn } from "@/utils";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 interface Props extends React.ComponentProps<"button"> {
   children: React.ReactNode;
   blogId: string;
+  invalidateKey: string[];
 }
 
-export const LikeBlog = ({ children, blogId, className, ...rest }: Props) => {
+export const LikeBlog = ({
+  children,
+  blogId,
+  className,
+  invalidateKey,
+  ...rest
+}: Props) => {
   const queryClient = useQueryClient();
   const api = useAxios();
-  const { id } = useParams();
 
   const { mutateAsync } = useMutation({
     mutationKey: ["addBlogToFavorite", blogId],
@@ -23,7 +28,7 @@ export const LikeBlog = ({ children, blogId, className, ...rest }: Props) => {
       const req = await mutateAsync();
 
       if (req.status === 200) {
-        return queryClient.invalidateQueries({ queryKey: ["singleBlog", id] });
+        return queryClient.invalidateQueries({ queryKey: invalidateKey });
       }
     } catch (error) {
       console.log("🚀 ~ handleLike ~ error:", error);

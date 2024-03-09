@@ -1,4 +1,4 @@
-import { baseUrl, cn, formatDateYearFirst } from "@/utils";
+import { baseUrl, formatDateYearFirst } from "@/utils";
 import React from "react";
 interface Props extends React.ComponentProps<"div"> {
   showActionModal?: boolean;
@@ -9,7 +9,9 @@ interface Props extends React.ComponentProps<"div"> {
 import { useAuth } from "@/hooks";
 import { Blog } from "@/types";
 import { Link } from "react-router-dom";
-import { Like } from "../icons";
+import { LikeBlog } from "../actions";
+import { Like, LinkFill } from "../icons";
+import { Avatar } from "./Avatar";
 import { BlogCardActions } from "./BlogCardActions";
 
 export const BlogCard = ({ blog, ...rest }: Props) => {
@@ -38,32 +40,30 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
           {blog?.content}
         </p>
 
-        {/* Meta Informations */}
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 capitalize">
-            <div className="avater-img bg-indigo-600 text-white">
-              <span className="">S</span>
-            </div>
+            <Link to={`/profile/${blog.author.id}`}>
+              <Avatar img={blog.author.avatar} name={blog.author.firstName} />
+            </Link>
 
             <div>
               <h5 className="text-sm text-slate-500">
-                <a href="./profile.html">{authName}</a>
+                <Link to={`/profile/${blog.author.id}`}>{authName}</Link>
               </h5>
               <div className="flex items-center text-xs text-slate-700">
-                {/* <span>June 28, 2018</span> */}
                 <span> {blogCreatedDate}</span>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-x-1 px-2 py-1 text-sm text-slate-700">
+          <LikeBlog
+            blogId={blog.id}
+            invalidateKey={["blog"]}
+            className="flex items-center gap-x-1 px-2 py-1 text-sm text-slate-700"
+          >
             <span>{blog?.likes?.length}</span>
-            <Like
-              className={cn("size-5", {
-                "fill-blue-600": isYouLiked,
-              })}
-            />
-          </div>
+            {isYouLiked ? <LinkFill /> : <Like />}
+          </LikeBlog>
         </div>
 
         {isUserIsAuthor && <BlogCardActions />}

@@ -10,12 +10,14 @@ interface Props extends React.ComponentProps<"div"> {
   error: Error | null;
   SearchFilter: SearchFilter;
   filterBy: SearchFilter;
+  setIsShowPortal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const SearchContent = ({
   data,
   SearchFilter,
   filterBy,
+  setIsShowPortal,
   ...rest
 }: Props) => {
   const filteredData =
@@ -31,7 +33,12 @@ export const SearchContent = ({
       {...rest}
     >
       {filteredData?.map((blog) => (
-        <Link to={`/blog/${blog.id}`} className="flex gap-6 py-2" key={blog.id}>
+        <Link
+          to={`/blog/${blog.id}`}
+          className="flex gap-6 py-2"
+          key={blog.id}
+          onClick={() => setIsShowPortal(false)}
+        >
           <img
             className="h-28 object-contain"
             src={`${baseUrl}/uploads/blog/${blog.thumbnail}`}

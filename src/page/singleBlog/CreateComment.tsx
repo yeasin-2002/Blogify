@@ -51,10 +51,9 @@ export const CreateComment = ({ comments, ...rest }: Props) => {
   const onSubmit = async (data: FormValue) => {
     try {
       const res = await mutateAsync(data);
-      console.log("🚀 ~ onSubmit ~ res:", res);
 
-      if (res.status === 200) {
-        return toast.success("Comment created successfully");
+      if (res.statusText !== "OK") {
+        return toast.error("Failed to create comment");
       }
     } catch (error) {
       console.log(error);

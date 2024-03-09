@@ -1,2 +1,2 @@
-export * from "./AddBlogToFavorite";
+export * from "./ToggleBlogToFavorite";
 export * from "./LikeBlog";

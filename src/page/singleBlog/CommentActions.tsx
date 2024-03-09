@@ -24,8 +24,8 @@ export const CommentActions = ({ commentId, ...rest }: Props) => {
   const deleteComment = async () => {
     try {
       const req = await mutateAsync();
-      if (req.status === 200) {
-        return toast.success("Comment deleted successfully");
+      if (req.statusText !== "OK") {
+        return toast.error("Failed to delete comment");
       }
     } catch (error) {
       if (error instanceof AxiosError) {

@@ -63,6 +63,7 @@ export const SearchBlogs = () => {
               error={error}
               SearchFilter={filterBy}
               filterBy={filterBy}
+              setIsShowPortal={setIsShowPortal}
             />
           )}
 
