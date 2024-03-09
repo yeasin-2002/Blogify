@@ -1,5 +1,7 @@
 import React, { ReactNode, useCallback } from 'react';
 
+const defaultFileTypes = ["JPG", "PNG", "JPEG"];
+
 interface FileUploaderProps {
   handleChange: (file: File) => void;
   name: string;
@@ -10,7 +12,7 @@ interface FileUploaderProps {
 export const Draggable: React.FC<FileUploaderProps> = ({
   handleChange,
   name,
-  types,
+  types = defaultFileTypes,
   children,
 }) => {
   const onDrop = useCallback(
@@ -50,9 +52,9 @@ export const Draggable: React.FC<FileUploaderProps> = ({
         id="drag-and-drop-file"
         type="file"
         name={name}
-        accept={types.join(',')}
+        accept={types.join(",")}
         onChange={onChange}
-        style={{ display: 'none' }}
+        style={{ display: "none" }}
       />
     </label>
   );

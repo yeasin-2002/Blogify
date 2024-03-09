@@ -14,11 +14,14 @@ interface Props extends React.ComponentProps<"div"> {}
 
 export const SingleBlog = ({ ...rest }: Props) => {
   const params = useParams();
+  const commentRef = React.useRef(null);
 
   const { data, isLoading, isSuccess } = useQuery({
     queryKey: ["singleBlog", params.id],
     queryFn: async () => axios.get<Blog>(baseUrl + `/blogs/${params?.id}`),
   });
+
+  const executeScroll = () => commentRef?.current; // ?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <div {...rest}>
@@ -26,7 +29,10 @@ export const SingleBlog = ({ ...rest }: Props) => {
         <>
           <main>
             <BlogContent blog={data?.data} />
-            <BlogComments comments={data?.data?.comments || []} />
+            <BlogComments
+              comments={data?.data?.comments || []}
+              ref={commentRef}
+            />
           </main>
 
           <BlogFloatingActions
@@ -34,6 +40,7 @@ export const SingleBlog = ({ ...rest }: Props) => {
             totalLikes={data?.data.likes?.length}
             blogId={params?.id}
             allLikes={data?.data.likes}
+            executeScroll={executeScroll}
           />
         </>
       ) : (

@@ -12,6 +12,7 @@ import {
   SingleBlog,
   TestRoute,
 } from "./page";
+import { Edit } from "./page/Edit";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route element={<PrivateRoute />}>
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/write" element={<CreateBlog />} />
+          <Route path="/edit/:id" element={<Edit />} />
         </Route>
 
         <Route path="/register" element={<Register />} />

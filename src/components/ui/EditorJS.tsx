@@ -1,16 +1,18 @@
-// import CheckList from "@editorjs/checklist";
-import { createReactEditorJS } from "react-editor-js";
+import { Editor } from "novel";
+import { useState } from "react";
 
-interface Props {
-  defaultValue?: string;
-}
+export const NovelEditor = () => {
+  const [content, setContent] = useState("");
 
-export const EditorJS = ({ defaultValue = "" }: Props) => {
-  const ReactEditorJS = createReactEditorJS();
   return (
-    <ReactEditorJS
-      defaultBlock={defaultValue}
-      // tools={{ checkList: CheckList }}
-    />
+    <Editor
+      className="rounded-md border  border-white       bg-githubDark  "
+      onUpdate={(data) => {
+        const json = data?.getJSON();
+        console.log("🚀 ~ NovelEditor ~ json:", json);
+        const html = data?.getHTML() || "";
+        setContent(html);
+      }}
+    ></Editor>
   );
 };

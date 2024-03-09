@@ -67,6 +67,7 @@ export const LogIn = ({ ...rest }: DivProps) => {
               })}
               errorMsg={errors.email?.message}
               labelName="Email"
+              className="w-full rounded-md border border-white/20   bg-slate-200 p-3 text-black  focus:border-indigo-500 focus:outline-none"
             />
             <Input
               placeholder="write your password"
@@ -79,6 +80,7 @@ export const LogIn = ({ ...rest }: DivProps) => {
               })}
               errorMsg={errors.password?.message}
               labelName="Password"
+              className="w-full rounded-md border border-white/20   bg-slate-200 p-3 text-black  focus:border-indigo-500 focus:outline-none"
             />
             <div className="mb-6">
               <button

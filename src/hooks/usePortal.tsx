@@ -1,3 +1,4 @@
+import { Cross } from "@/components";
 import { cn } from "@/utils";
 import type { ReactNode, ReactPortal } from "react";
 import { useState } from "react";
@@ -15,18 +16,35 @@ export const usePortal = (defaultShow = false) => {
         )}
         onClick={() => setIsShowPortal((pre) => !pre)}
       >
-        <div
-          className=" h-full   w-full  border-gray-200 shadow"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className=" mx-auto mt-10 w-11/12    rounded-lg border border-slate-600/50 bg-slate-900 p-4 shadow-lg shadow-slate-400/10 ">
+        <>
+          <div
+            //  className=" h-full   w-full  border-gray-200 shadow"
+            className=" 
+             mx-auto  grid
+             h-3/4
+             w-11/12 place-items-center    rounded-lg border border-slate-600/50 bg-slate-900 p-4 shadow-lg shadow-slate-400/10 "
+            onClick={(e) => e.stopPropagation()}
+          >
             {children}
           </div>
-        </div>
+        </>
       </div>,
       document.getElementById("popOver") as HTMLElement,
     );
   };
 
   return { isShowPortal, setIsShowPortal, renter };
+};
+
+interface HeadingProps extends React.ComponentProps<"div"> {
+  title?: string;
+}
+
+export const PortalHeading = ({ title, ...rest }: HeadingProps) => {
+  return (
+    <div {...rest} className="flex items-center justify-between">
+      <p className="text-center text-xl font-bold">{title}</p>
+      <Cross className=" cursor-pointer" />
+    </div>
+  );
 };
