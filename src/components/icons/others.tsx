@@ -1,7 +1,5 @@
 import { cn } from "@/utils";
 
-interface SvgProp extends React.SVGProps<SVGSVGElement> {}
-
 export function ArrowBack(props: SvgProp) {
   return (
     <svg
@@ -251,5 +249,25 @@ export const UploadIcon = ({ className, ...rest }: SvgProp) => (
       strokeLinejoin="round"
       d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
     />
+  </svg>
+);
+
+export const HeartIcon = ({ className, ...rest }: SvgProp) => (
+  <svg
+    {...rest}
+    data-slot="icon"
+    fill="none"
+    strokeWidth="1.5"
+    stroke="white"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    className={cn(className)}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+    ></path>
   </svg>
 );

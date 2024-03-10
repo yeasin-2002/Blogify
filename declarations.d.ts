@@ -17,6 +17,8 @@ declare global {
     children: React.ReactNode;
   }
 
+  interface SvgProp extends React.SVGProps<SVGSVGElement> {}
+
   type SearchFilter =
     | ""
     | "latest"

@@ -1,7 +1,8 @@
 import commentIcon from "@/assets/icons/comment.svg";
-import HeartIcon from "@/assets/icons/heart.svg";
-import { Like, LikeBlog, LinkFill } from "@/components";
+
+import { Like, LikeBlog, LinkFill, ToggleBlogToFavorite } from "@/components";
 import { useAuth } from "@/hooks";
+import { HeartIcon } from "lucide-react";
 
 interface Props extends React.ComponentProps<"div"> {
   totalComments: number | undefined;
@@ -35,7 +36,9 @@ export const BlogFloatingActions = ({
         </li>
 
         <li>
-          <img src={HeartIcon} alt="Favourite" />
+          <ToggleBlogToFavorite>
+            <HeartIcon />
+          </ToggleBlogToFavorite>
         </li>
 
         <li onClick={() => executeScroll()}>

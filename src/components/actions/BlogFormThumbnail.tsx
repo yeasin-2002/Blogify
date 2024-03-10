@@ -11,7 +11,7 @@ interface Props extends React.ComponentProps<"div"> {
 }
 
 export const BlogFormThumbnail = ({
-  imgFile,
+  imgFile = "",
   handleChange,
   errorMsg,
   Register,
@@ -34,7 +34,7 @@ export const BlogFormThumbnail = ({
               />
             ) : (
               <img
-                src={URL.createObjectURL(imgFile)}
+                src={URL.createObjectURL(imgFile) || ""}
                 alt="thumbnail"
                 className="h-full w-full object-cover"
               />

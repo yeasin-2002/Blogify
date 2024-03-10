@@ -25,6 +25,11 @@ export const BlogForm = ({ onSave, defaultBlogValues, ...rest }: Props) => {
       content: defaultBlogValues?.content,
       tags: defaultBlogValues?.tags,
       thumbnail: defaultBlogValues?.thumbnail,
+    } || {
+      title: "",
+      content: "",
+      tags: "",
+      thumbnail: "",
     },
   });
 

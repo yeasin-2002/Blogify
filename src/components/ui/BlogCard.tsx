@@ -36,9 +36,11 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
             <p>{blog.title}</p>
           </h3>
         </Link>
-        <p className="mb-6 mt-1 line-clamp-3 text-base text-slate-500">
-          {blog?.content}
-        </p>
+
+        <div
+          className="mb-6 mt-1 line-clamp-3 text-base text-slate-500"
+          dangerouslySetInnerHTML={{ __html: blog.content }}
+        />
 
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 capitalize">
@@ -69,7 +71,7 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
           </LikeBlog>
         </div>
 
-        {isUserIsAuthor && <BlogCardActions blogId={blog?.id} />}
+        {isUserIsAuthor && <BlogCardActions blogid={blog?.id} />}
       </div>
     </div>
   );

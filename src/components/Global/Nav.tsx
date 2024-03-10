@@ -34,22 +34,22 @@ export const Nav = ({ ...rest }: Props) => {
               <SearchBlogs />
             </li>
 
-            {authData.authToken && authData.authUser ? (
+            {authData?.authToken && authData?.authUser ? (
               <li>
                 <Link
                   to={`/profile/${authData?.authUser?.id}`}
                   className="flex items-center"
                 >
                   <Avatar
-                    img={authData.authUser.avatar}
-                    name={authData.authUser.firstName}
+                    img={authData?.authUser?.avatar}
+                    name={authData?.authUser?.firstName}
                     className="size-10"
                   />
 
                   <span className="ml-2 truncate text-white">
-                    {authData.authUser.firstName +
+                    {authData?.authUser?.firstName +
                       " " +
-                      authData.authUser.lastName}
+                      authData?.authUser?.lastName}
                   </span>
                 </Link>
               </li>

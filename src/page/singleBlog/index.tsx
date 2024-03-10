@@ -27,7 +27,7 @@ export const SingleBlog = ({ ...rest }: Props) => {
     <div {...rest}>
       {!isLoading && isSuccess ? (
         <>
-          <main>
+          <main className="text-gray-200">
             <BlogContent blog={data?.data} />
             <BlogComments
               comments={data?.data?.comments || []}

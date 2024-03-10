@@ -34,27 +34,25 @@ export const SearchBlogs = () => {
       </div>
       {renter(
         <>
-          <div>
-            <div className="flex items-center justify-between">
-              <h3 className="my-2 pl-2 text-xl font-bold text-slate-400">
-                Search for Your Desire Blogs
-              </h3>
-              <span
-                className="cursor-pointer rounded-md  bg-slate-800 p-2 transition-all hover:bg-slate-700"
-                onClick={() => setIsShowPortal((pre) => !pre)}
-              >
-                <Cross className="cursor-pointer" />
-              </span>
-            </div>
-            <div className="flex items-center  gap-x-2">
-              <SearchInput
-                className="my-10"
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
-              />
+          <div className="flex w-full items-center justify-between">
+            <h3 className="my-2 pl-2 text-xl font-bold text-slate-400">
+              Search for Your Desire Blogs
+            </h3>
+            <span
+              className="cursor-pointer rounded-md  bg-slate-800 p-2 transition-all hover:bg-slate-700"
+              onClick={() => setIsShowPortal((pre) => !pre)}
+            >
+              <Cross className="cursor-pointer" />
+            </span>
+          </div>
+          <div className="flex items-center  gap-x-2 ">
+            <SearchInput
+              className="my-10"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
 
-              <FiltersBlog filterBy={filterBy} setFilterBy={setFilterBy} />
-            </div>
+            <FiltersBlog filterBy={filterBy} setFilterBy={setFilterBy} />
           </div>
 
           {delaySearchedValue && (

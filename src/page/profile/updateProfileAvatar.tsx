@@ -1,24 +1,24 @@
-import editIcon from '@/assets/icons/edit.svg';
-import fileIcon from '@/assets/icons/file.svg';
+import editIcon from "@/assets/icons/edit.svg";
+import fileIcon from "@/assets/icons/file.svg";
 import {
   Draggable,
   Popover,
   PopoverContent,
   PopoverTrigger,
   UploadingLoop,
-} from '@/components';
-import { useAuth, useAxios } from '@/hooks';
-import { authUser } from '@/types';
-import { cn } from '@/utils';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { AxiosError, AxiosResponse } from 'axios';
-import { ImageUp } from 'lucide-react';
+} from "@/components";
+import { useAuth, useAxios } from "@/hooks";
+import { authUser } from "@/types";
+import { cn } from "@/utils";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { AxiosError, AxiosResponse } from "axios";
+import { ImageUp } from "lucide-react";
 
-import React, { useState } from 'react';
-import { toast } from 'react-toastify';
-const fileTypes = ['JPG', 'PNG', 'JPEG'];
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+const fileTypes = ["JPG", "PNG", "JPEG"];
 
-interface Props extends React.ComponentProps<'div'> {
+interface Props extends React.ComponentProps<"div"> {
   id: string | undefined;
 }
 
@@ -39,7 +39,7 @@ export const UpdateProfileAvatar = ({ id, ...rest }: Props) => {
         headers: { "Content-Type": "multipart/form-data" },
       }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["profile"] });
+      return queryClient.invalidateQueries({ queryKey: ["profile"] });
     },
   });
 
@@ -130,8 +130,8 @@ export const UpdateProfileAvatar = ({ id, ...rest }: Props) => {
                 <button
                   type="button"
                   disabled={isPending}
-                  className={cn('alternative', {
-                    'cursor-not-allowed': isPending,
+                  className={cn("alternative", {
+                    "cursor-not-allowed": isPending,
                   })}
                   onClick={() => setFile(null)}
                 >

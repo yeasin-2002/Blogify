@@ -33,15 +33,15 @@
     {
       "id": "3d2dde4b6548275fb066",
       "email": "saadhasan@learnwithsumit.com",
-      "firstName": "Saad",
+      "firstName": "Saad ",
       "lastName": "Hasan",
-      "avatar": "avatar-1708764856675-623317122.jpg",
+      "avatar": "avatar-1710099231594-625798957.png",
       "bio": "I am Saad Hasan, self-taught Junior Software Developer from Bangladesh. I have been working as a Professional Frontend Developer for the last 1 year, Though I started my Self-Taught Programming Journey In 2014.",
       "password": "$2b$08$e9uY0ZjxXJ9F4r36Ln4oCu4nLZ92OKaQ466VEVDtxBPCs/JL/ChR.",
       "favourites": [
         {
-          "id": "7c12b4b48531bcc995ae",
-          "title": "A guide to Prototype in JavaScript",
+          "id": "9d5598ab44600a379103",
+          "title": "Dev Retro 2022: What made me a better developer this year?",
           "tags": "programming, algorithm, prototype, javascript"
         }
       ]
@@ -151,6 +151,75 @@
       "isFavourite": false
     },
     {
+      "id": "4321b782f360f58c8c86",
+      "title": "এন্ড্রয়েড পার্মিশন",
+      "content": "এন্ড্রয়েড ইউজারদের ললিপপ খাওয়ানোর পাশাপাশি তাদের নিরপত্তার বিষয়টি নিশ্চিত করতে ললিপপ ভার্সন থেকে রান টাইম পার্মিশন নামক একটি অদ্ভুত বস্তু গুগল তাদের খাতায় যোগ করেছে । যেখানে, কোনো এপ ডেভেলোপার যদি তার এপ ইউজারের Storage, Camera, Contacts, Locationঅথবা Microphone সহ অন্যান্য যেকোনো গুরুত্বপূর্ণ এরিয়াতে হাত দিতে চাইলে অবশ্যই ইউজার কতৃক পারমিশন নিয়ে তারপরেই হাতা হাতি করতে হবে । আমার মনে হয় গুগল বাংলাদেশের কথা ভেবেই এই বস্তুটি তাদের খাতায় যুক্ত করেছেন । কারণ, আমরা (৯০% মানুষ) আল্লাহর ওয়াস্তে আমাদের এপ কি কি পার্মিশন নিচ্ছে অথবা Terms & Condition এ কি লেখা আছে সেট না পড়েই সব কিছু তে Allow করে দেই (আমিও এর ব্যাতিক্রম নই 🤓 )। যেটা অনেকটা ঝুকিপূর্ণ, কারণ আমাদের কিছু ভাই রয়েছে (হ্যাকার) যারা RAT বা ট্রজান হর্স দিয়ে খুব সুন্দর করে ভিকটিমের ডেটা নিজের মনে করে চুরি করে নিতে পারে । তা আমি সে বিষয়ে কিছু না বলে আমরা এখানে দেখবো কিভাবে আমরা রানটাইম ইউজারের কাছে পার্মিশন নিতে পারবো । 😁 \n আগের ভার্সন গুলোর মতই আমাদের আগেই AndroidManifest.xml এ পার্মিশন গুলো উল্লেখ করে নিতে হবে",
+      "thumbnail": "thumbnail-1708765297564-606798153.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "android, java, kotlin, permission",
+      "likes": [
+        {
+          "id": "346d7a36b3c41f3fbfa2"
+        },
+        {
+          "id": "3d2dde4b6548275fb066"
+        }
+      ],
+      "comments": [
+        {
+          "id": "19becccf4ebf3e6cf385",
+          "content": "অনেক সুন্দর হয়েছে",
+          "author": {
+            "id": "346d7a36b3c41f3fbfa2",
+            "firstName": "Tapas",
+            "lastName": "Adhikary",
+            "avatar": "avatar-1708764766479-243448656.png"
+          }
+        },
+        {
+          "id": "4e9eccf8885cece50505",
+          "content": "nice",
+          "author": {
+            "id": "3d2dde4b6548275fb066",
+            "firstName": "Saad",
+            "lastName": "Hasan",
+            "avatar": "avatar-1708764856675-623317122.jpg"
+          }
+        }
+      ],
+      "createdAt": "2024-02-24T09:01:37.581Z",
+      "isFavourite": false
+    },
+    {
+      "id": "4321b782f360f58c8c89",
+      "title": "React useMemo Hook",
+      "content": "<p>useMemo is used to memoize the result of a function, meaning it caches the result and returns it when the inputs to that function haven't changed since the last render. It takes two arguments: the function to memoize and an array of dependencies. If any of the dependencies change between renders, the memoized function is re-executed; otherwise, the cached result is returned.</p><p><br></p><p>it now gonna be replaced by react forgot compiler </p>",
+      "thumbnail": "thumbnail-4321b782f360f58c8c89.avif",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "android, java, kotlin, permission",
+      "likes": [
+        {
+          "id": "346d7a36b3c41f3fbfa2"
+        },
+        {
+          "id": "3d2dde4b6548275fb066"
+        }
+      ],
+      "comments": [],
+      "createdAt": "2024-02-24T09:01:37.581Z",
+      "isFavourite": false
+    },
+    {
       "id": "4321b782f360f58c8c87",
       "title": "Create Custom Dialog with listview | Android | Java",
       "content": "Often we might need to create a custom dialog with listview to choose different kinds of actions for a particular option. In certain cases, we use such type of menu items for menus. So, In this post, I will show you how you can create this Custom Dialog with Listview :",
@@ -218,75 +287,6 @@
       "isFavourite": false
     },
     {
-      "id": "4321b782f360f58c8c86",
-      "title": "এন্ড্রয়েড পার্মিশন",
-      "content": "এন্ড্রয়েড ইউজারদের ললিপপ খাওয়ানোর পাশাপাশি তাদের নিরপত্তার বিষয়টি নিশ্চিত করতে ললিপপ ভার্সন থেকে রান টাইম পার্মিশন নামক একটি অদ্ভুত বস্তু গুগল তাদের খাতায় যোগ করেছে । যেখানে, কোনো এপ ডেভেলোপার যদি তার এপ ইউজারের Storage, Camera, Contacts, Locationঅথবা Microphone সহ অন্যান্য যেকোনো গুরুত্বপূর্ণ এরিয়াতে হাত দিতে চাইলে অবশ্যই ইউজার কতৃক পারমিশন নিয়ে তারপরেই হাতা হাতি করতে হবে । আমার মনে হয় গুগল বাংলাদেশের কথা ভেবেই এই বস্তুটি তাদের খাতায় যুক্ত করেছেন । কারণ, আমরা (৯০% মানুষ) আল্লাহর ওয়াস্তে আমাদের এপ কি কি পার্মিশন নিচ্ছে অথবা Terms & Condition এ কি লেখা আছে সেট না পড়েই সব কিছু তে Allow করে দেই (আমিও এর ব্যাতিক্রম নই 🤓 )। যেটা অনেকটা ঝুকিপূর্ণ, কারণ আমাদের কিছু ভাই রয়েছে (হ্যাকার) যারা RAT বা ট্রজান হর্স দিয়ে খুব সুন্দর করে ভিকটিমের ডেটা নিজের মনে করে চুরি করে নিতে পারে । তা আমি সে বিষয়ে কিছু না বলে আমরা এখানে দেখবো কিভাবে আমরা রানটাইম ইউজারের কাছে পার্মিশন নিতে পারবো । 😁 \n আগের ভার্সন গুলোর মতই আমাদের আগেই AndroidManifest.xml এ পার্মিশন গুলো উল্লেখ করে নিতে হবে",
-      "thumbnail": "thumbnail-1708765297564-606798153.png",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
-      },
-      "tags": "android, java, kotlin, permission",
-      "likes": [
-        {
-          "id": "346d7a36b3c41f3fbfa2"
-        },
-        {
-          "id": "3d2dde4b6548275fb066"
-        }
-      ],
-      "comments": [
-        {
-          "id": "19becccf4ebf3e6cf385",
-          "content": "অনেক সুন্দর হয়েছে",
-          "author": {
-            "id": "346d7a36b3c41f3fbfa2",
-            "firstName": "Tapas",
-            "lastName": "Adhikary",
-            "avatar": "avatar-1708764766479-243448656.png"
-          }
-        },
-        {
-          "id": "4e9eccf8885cece50505",
-          "content": "nice",
-          "author": {
-            "id": "3d2dde4b6548275fb066",
-            "firstName": "Saad",
-            "lastName": "Hasan",
-            "avatar": "avatar-1708764856675-623317122.jpg"
-          }
-        }
-      ],
-      "createdAt": "2024-02-24T09:01:37.581Z",
-      "isFavourite": false
-    },
-    {
-      "id": "4321b782f360f58c8c89",
-      "title": "React useMemo Hook",
-      "content": "useMemo is used to memoize the result of a function, meaning it caches the result and returns it when the inputs to that function haven't changed since the last render. It takes two arguments: the function to memoize and an array of dependencies. If any of the dependencies change between renders, the memoized function is re-executed; otherwise, the cached result is returned.",
-      "thumbnail": "thumbnail-4321b782f360f58c8c89.avif",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
-      },
-      "tags": "android, java, kotlin, permission",
-      "likes": [
-        {
-          "id": "346d7a36b3c41f3fbfa2"
-        },
-        {
-          "id": "3d2dde4b6548275fb066"
-        }
-      ],
-      "comments": [],
-      "createdAt": "2024-02-24T09:01:37.581Z",
-      "isFavourite": false
-    },
-    {
       "id": "9d5598ab44600a379103",
       "title": "Dev Retro 2022: What made me a better developer this year?",
       "content": "Writing about the Dev Retro 2022 will be a bit off track if I do not discuss the journey briefly before it, which shaped my career as a blogger. The year 2021 was about writing. Writing here on my blog, freeCodeCamp, CSS-Tricks, Dev, and many other platforms.\n\nAt the end of 2021, I could establish myself as a technology blogger on the prominent platforms mentioned. The most exciting fact was that I was one of the top contributors/most-read authors on all these platforms.\n\nWhile these achievements were immense, I was still wondering about doing something else, trying something different in 2022. To be honest, I was trying to put myself out of my comfort zone, banking on all experiences I've gained over the years.\n\nThis article captures my journey of becoming a better developer this year. I hope it inspires you somehow, and if it does, I'll appreciate you leaving a comment. Also, for some of you who are part of this journey, I want to thank you from the bottom of my heart ❤️.",
@@ -327,6 +327,46 @@
       "createdAt": "2024-02-24T17:06:43.629Z"
     },
     {
+      "id": "6c33b31ecaa2b8917db2",
+      "title": "লিনিয়ার সার্চ । ডেটা স্ট্রাকচার ও এলগোরিদম",
+      "content": "গত ৫-৬ বছর থেকে Android, Fontend, Backend, Web Security ইত্যাদি নিয়ে কাজ করতে করতে একটা সময় মনে হলো, কোনো একটা জিনিস শেখা বাদ পরে গেছে। একটু কিছু চিন্তার পর বুঝতে পারলাম প্রোগ্রামিং এর সব থেকে important জিনিসটাই শেখা হয় নাই। আর তা হলো “ Data Structure & Algorithm ” । এটির গুরুত্ব নিয়ে বলার কিছু নাই।\n\nতাই Quarantine এর শেষের দিকে মাইন্ড সেটআপ করলাম,সব কিছু বাদ দিয়ে DS & Algo তেই ফোকাস করবো। তাই Android Studio কে লাল সালাম দিয়ে শেখা শুরু করলাম । এখন যখন আমি এই পোস্টটি লিখছি, তখনো আমি Data Structure & Algorithm এ খুব ভালো না, বলতে গেলে পারিই না। একদম বাচ্চা আমি। তবে এই পোস্ট টি মূলত আমি নিজের জন্যেই লিখছি, যেন ভবিষ্যতে যদি কখনো দরকার পরে বা কিছু ভূলে যাই তখবে নিজের লেখা জার্নাল দেখে আবার মনে করে নিতে পারি। (তবে এই পোষ্ট গুলো অবশ্যই পাবলিক থাকবে যেন অন্য কেউ যদি চায়, এগুলো follow করতে পারে )তাই এই পোষ্ট কিংবা এর পরবর্তীতে Data Structure & Algorithm নিয়ে পোষ্ট গুলো তে ভূল থাকা স্বাভাবিক। ভুলত্রুটি গুলো দেখিয়ে দেবার অনুরোধ রইলো।\n\nলিনিয়ার সার্চ এলগোরিদম\n\nএই অনেক অনেক সার্চিং এলগোরিদমের মধ্যে লিনিয়ার সার্চ সব থেকে সহজ একটি এলগোরিদম। ধরুন আপনি একটি বই এর তাক থেকে কোনো একটি নিদৃষ্ট বই খুজবেন অথবা তো আমি চাইলে এক এক করে খুজে বের করতে পারেন অথবা randomly ও খুজতে পারেন। লিনিয়ার সার্চের ক্ষেত্রে আমরা নিদির্ষ্ট বইটি এক এক করে খুজবো।\nঅর্থাৎ বই এর তাকের প্রথম থেকে খোজা শুরু করবো, প্রথম বইটি দেখবো। সেটা কি আমাদের কাংখিত বই ? যদি বইটি আমরা পেয়ে যাই তবে খোজা বাদ দিবো আর না পেলে খুজতেই থাকবো যতক্ষন পর্যন্ত আমরা আমাদের কাংখিত বই টি না পাচ্ছি ।\n\n\nআচ্ছা ধরুন, একটি Array আছে যার মধ্যে ৫,১২,১৮,২০,২৬ এই ৫টি Int ভ্যালু আছে। এখন আমাদের খুজতে হবে ২০ ভ্যালু টি array এর কোন পজিশন/index এ আছে।\n\nতবে ২০ এর ইনডেক্স খোজার জন্য আমরা নিচের ধাপ গুলো ফলো করতে পারি\n\nধাপ-১ঃ ধরি লিস্টে n সংখ্যক উপাদান আছে।\n\nধাপ-২ঃ এখন আমরা i এর মান ০ নেই এবং i এর মান (n-1) পর্যন্ত বাড়াতে থাকবো। প্রতিটি মানের জন্যে ধাপ-৩ এ যাই।\n\nধাপ-৩ঃ i এর মান array এর পজিশন/ইনডেক্স হিসেবে চিন্তা করি এবং array[i] এর ভ্যালু আমাদের কাংক্ষিত ভ্যালুর সাথে মিলে কিনা তা চেক করে দেখি। যদি মিলে যায় তবে ধাপঃ৪ এ যাই নাহলে আবার ধাপঃ২ এ যাই।\n\nধাপ-৪ঃ i এর ভ্যালু return করি এবং প্রোগ্রাম বন্ধ করি ।",
+      "thumbnail": "thumbnail-1708765461841-967006271.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "programming, algorithm",
+      "likes": [
+        {
+          "id": "3d2dde4b6548275fb066"
+        }
+      ],
+      "comments": [],
+      "createdAt": "2024-02-24T09:04:21.871Z"
+    },
+    {
+      "id": "e4e76caa99bf703a7b2a",
+      "title": "Dive into React",
+      "content": "<h1><strong>Declarative</strong></h1><p><em>React makes</em> it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.</p><p>Declarative views make your code more predictable and easier to debug.</p><p><br></p>",
+      "thumbnail": "thumbnail-1710090929156-773680140.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "react,web",
+      "likes": [
+        {
+          "id": "3d2dde4b6548275fb066"
+        }
+      ],
+      "comments": [],
+      "createdAt": "2024-03-10T17:15:29.173Z"
+    },
+    {
       "id": "965584a7b281d9f99c14",
       "title": "What do you need to know to become proficient in JavaScript?",
       "content": "JavaScript is everywhere! It's the web browser's language and helps you create web, mobile, and desktop applications. Today, JavaScript is not limited to the client side alone; it is equally popular as the base of server-side frameworks like Node.js and Deno. If you are considering picking up and mastering a programming language, JavaScript is a safe bet.\n\nRecently I have focused on chalking out a path about how to learn JavaScript effectively using a learning model. Please check it out in the video below. I believe that it will help you to learn the language faster.\n\nThe video above talks about how learning JavaScript effectively, and in this article, we will focus on the what part. We will go over the topics that you must consider putting on your plate when you plan to learn JavaScript.\n\nWe will also get introduced to a community-driven JavaScript Roadmap Guide that you can make use of in learning the language and also can contribute to. We will mention the chapters from the guide occasionally, but if you are interested, please feel free to check out the entire guide early.",
@@ -343,20 +383,165 @@
       "createdAt": "2024-02-24T16:59:13.363Z"
     },
     {
-      "id": "6c33b31ecaa2b8917db2",
-      "title": "লিনিয়ার সার্চ । ডেটা স্ট্রাকচার ও এলগোরিদম",
-      "content": "গত ৫-৬ বছর থেকে Android, Fontend, Backend, Web Security ইত্যাদি নিয়ে কাজ করতে করতে একটা সময় মনে হলো, কোনো একটা জিনিস শেখা বাদ পরে গেছে। একটু কিছু চিন্তার পর বুঝতে পারলাম প্রোগ্রামিং এর সব থেকে important জিনিসটাই শেখা হয় নাই। আর তা হলো “ Data Structure & Algorithm ” । এটির গুরুত্ব নিয়ে বলার কিছু নাই।\n\nতাই Quarantine এর শেষের দিকে মাইন্ড সেটআপ করলাম,সব কিছু বাদ দিয়ে DS & Algo তেই ফোকাস করবো। তাই Android Studio কে লাল সালাম দিয়ে শেখা শুরু করলাম । এখন যখন আমি এই পোস্টটি লিখছি, তখনো আমি Data Structure & Algorithm এ খুব ভালো না, বলতে গেলে পারিই না। একদম বাচ্চা আমি। তবে এই পোস্ট টি মূলত আমি নিজের জন্যেই লিখছি, যেন ভবিষ্যতে যদি কখনো দরকার পরে বা কিছু ভূলে যাই তখবে নিজের লেখা জার্নাল দেখে আবার মনে করে নিতে পারি। (তবে এই পোষ্ট গুলো অবশ্যই পাবলিক থাকবে যেন অন্য কেউ যদি চায়, এগুলো follow করতে পারে )তাই এই পোষ্ট কিংবা এর পরবর্তীতে Data Structure & Algorithm নিয়ে পোষ্ট গুলো তে ভূল থাকা স্বাভাবিক। ভুলত্রুটি গুলো দেখিয়ে দেবার অনুরোধ রইলো।\n\nলিনিয়ার সার্চ এলগোরিদম\n\nএই অনেক অনেক সার্চিং এলগোরিদমের মধ্যে লিনিয়ার সার্চ সব থেকে সহজ একটি এলগোরিদম। ধরুন আপনি একটি বই এর তাক থেকে কোনো একটি নিদৃষ্ট বই খুজবেন অথবা তো আমি চাইলে এক এক করে খুজে বের করতে পারেন অথবা randomly ও খুজতে পারেন। লিনিয়ার সার্চের ক্ষেত্রে আমরা নিদির্ষ্ট বইটি এক এক করে খুজবো।\nঅর্থাৎ বই এর তাকের প্রথম থেকে খোজা শুরু করবো, প্রথম বইটি দেখবো। সেটা কি আমাদের কাংখিত বই ? যদি বইটি আমরা পেয়ে যাই তবে খোজা বাদ দিবো আর না পেলে খুজতেই থাকবো যতক্ষন পর্যন্ত আমরা আমাদের কাংখিত বই টি না পাচ্ছি ।\n\n\nআচ্ছা ধরুন, একটি Array আছে যার মধ্যে ৫,১২,১৮,২০,২৬ এই ৫টি Int ভ্যালু আছে। এখন আমাদের খুজতে হবে ২০ ভ্যালু টি array এর কোন পজিশন/index এ আছে।\n\nতবে ২০ এর ইনডেক্স খোজার জন্য আমরা নিচের ধাপ গুলো ফলো করতে পারি\n\nধাপ-১ঃ ধরি লিস্টে n সংখ্যক উপাদান আছে।\n\nধাপ-২ঃ এখন আমরা i এর মান ০ নেই এবং i এর মান (n-1) পর্যন্ত বাড়াতে থাকবো। প্রতিটি মানের জন্যে ধাপ-৩ এ যাই।\n\nধাপ-৩ঃ i এর মান array এর পজিশন/ইনডেক্স হিসেবে চিন্তা করি এবং array[i] এর ভ্যালু আমাদের কাংক্ষিত ভ্যালুর সাথে মিলে কিনা তা চেক করে দেখি। যদি মিলে যায় তবে ধাপঃ৪ এ যাই নাহলে আবার ধাপঃ২ এ যাই।\n\nধাপ-৪ঃ i এর ভ্যালু return করি এবং প্রোগ্রাম বন্ধ করি ।",
-      "thumbnail": "thumbnail-1708765461841-967006271.png",
+      "id": "bd121c721c9c119aff80",
+      "title": "how to became full stack dev ",
+      "content": "<p><span style=\"background-color: rgb(31, 31, 31); color: rgb(232, 232, 232);\">Full-stack developers&nbsp;</span><span style=\"background-color: rgb(58, 63, 80); color: rgb(226, 238, 255);\">design and create websites and applications for various platforms</span><span style=\"background-color: rgb(31, 31, 31); color: rgb(232, 232, 232);\">. A full-stack developer's job description might include the following: Develop and maintain web services and interfaces. Contribute to front-end and&nbsp;back-end development&nbsp;processes. Build new product features or</span></p>",
+      "thumbnail": "thumbnail-1710097167252-755488109.png",
       "author": {
         "id": "3d2dde4b6548275fb066",
         "firstName": "Saad",
         "lastName": "Hasan",
         "avatar": "avatar-1708764856675-623317122.jpg"
       },
-      "tags": "programming, algorithm",
+      "tags": "react,web",
       "likes": [],
       "comments": [],
-      "createdAt": "2024-02-24T09:04:21.871Z"
+      "createdAt": "2024-03-10T18:59:27.281Z"
+    },
+    {
+      "id": "a4172170704cbbd1035c",
+      "title": "Front end Developers roadmap ",
+      "content": "<p><span style=\"background-color: rgb(31, 31, 31); color: rgb(232, 232, 232);\">&nbsp;Front-End Developer is&nbsp;</span><span style=\"background-color: rgb(58, 63, 80); color: rgb(226, 238, 255);\">someone who creates websites and web applications</span><span style=\"background-color: rgb(31, 31, 31); color: rgb(232, 232, 232);\">. The difference between Front-End and Back-End is that Front-End refers to how a web page looks, while back-end refers to how it works</span></p>",
+      "thumbnail": "thumbnail-1710097241388-713062958.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "react,web",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-10T19:00:41.412Z"
+    },
+    {
+      "id": "f9261522741b0d4054d1",
+      "title": "Back end  Developers roadmap ",
+      "content": "<p><span style=\"background-color: rgb(31, 31, 31); color: rgb(232, 232, 232);\">Back-end development means&nbsp;</span><span style=\"background-color: rgb(58, 63, 80); color: rgb(226, 238, 255);\">working on server-side software, which focuses on everything you can't see on a website</span><span style=\"background-color: rgb(31, 31, 31); color: rgb(232, 232, 232);\">. Back-end developers ensure the website performs correctly, focusing on databases, back-end logic, application programming interface (APIs), architecture, and servers.</span></p>",
+      "thumbnail": "thumbnail-1710097283905-476737997.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "react,node,express",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-10T19:01:23.954Z"
+    },
+    {
+      "id": "bfb8af1371205cce4b93",
+      "title": "Be a DevOps",
+      "content": "<p><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">&nbsp;</span><strong style=\"background-color: rgb(31, 31, 31); color: rgb(188, 192, 195);\">DevOps engineer</strong><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">&nbsp;is an IT generalist who should have a wide-ranging knowledge of both development and operations, including coding, infrastructure management</span></p>",
+      "thumbnail": "thumbnail-1710097329065-54504321.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "docker,ci,cd,git,github",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-10T19:02:09.077Z"
+    },
+    {
+      "id": "c1e58ed5d1e3e7bae276",
+      "title": "Programming Hero ",
+      "content": "<p><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">Learn and master&nbsp;</span><strong style=\"background-color: rgb(31, 31, 31); color: rgb(188, 192, 195);\">programming</strong><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">&nbsp;to open a new career opportunity. Enjoy the most effective and fun way to learn&nbsp;</span><strong style=\"background-color: rgb(31, 31, 31); color: rgb(188, 192, 195);\">programming</strong><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">&nbsp;as an absolute beginner that will</span></p>",
+      "thumbnail": "thumbnail-1710097390724-445740444.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "docker,ci,cd,git,github",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-10T19:03:10.743Z"
+    },
+    {
+      "id": "c395a56bf9a7a2720c70",
+      "title": "why programmers are single",
+      "content": "<p><span style=\"background-color: rgb(58, 63, 80); color: rgb(226, 238, 255);\">They are often immersed in their coding tasks, even during their off-hours</span><span style=\"background-color: rgb(31, 31, 31); color: rgb(232, 232, 232);\">. This leaves them with little time for dating or relationships. Introverted Nature: Most programmers tend to be introverts, which means they may struggle with socializing and meeting new people, making it challenging to find potential partners</span></p>",
+      "thumbnail": "thumbnail-1710097442975-236866117.jpg",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "programmer,relationship",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-10T19:04:03.005Z"
+    },
+    {
+      "id": "3dc337b5bbae4c24cfd1",
+      "title": "GoLang Masterclass ",
+      "content": "<p><strong style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">Go </strong><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">is an </span><em style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">open source</em><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\"> programming language that makes it simple to build secure, scalable systems</span></p>",
+      "thumbnail": "thumbnail-1710097524083-262429749.jpg",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "golang,open-source,low level ",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-10T19:05:24.109Z"
+    },
+    {
+      "id": "77e57a7cfc89d1dc7d21",
+      "title": "GoLang Full Course",
+      "content": "<p>Go is a statically typed, compiled high-level programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is syntactically similar to C, but also has memory safety, garbage collection, structural typing, and CSP-style concurrency.&nbsp;<a href=\"https://en.wikipedia.org/wiki/Go_(programming_language)\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(153, 195, 255);\">Wikipedia</a></p><p><br></p><p><br></p>",
+      "thumbnail": "thumbnail-1710097667161-626456007.jpg",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "go,coures,low-lavel",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-10T19:07:47.169Z"
+    },
+    {
+      "id": "f4762e304be3f97d7b1a",
+      "title": "Why Zustand",
+      "content": "<p>A small, fast and scalable bearbones state-management solution using simplified flux principles. Has a comfy API based on hooks, isn't boilerplatey or opinionated.</p><p>Don't disregard it because it's cute. It has quite the claws, lots of time was spent dealing with common pitfalls, like the dreaded&nbsp;<a href=\"https://react-redux.js.org/api/hooks#stale-props-and-zombie-children\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--fgColor-accent, var(--color-accent-fg)); background-color: transparent;\">zombie child problem</a>,&nbsp;<a href=\"https://github.com/bvaughn/rfcs/blob/useMutableSource/text/0000-use-mutable-source.md\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--fgColor-accent, var(--color-accent-fg)); background-color: transparent;\">react concurrency</a>, and&nbsp;<a href=\"https://github.com/facebook/react/issues/13332\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--fgColor-accent, var(--color-accent-fg)); background-color: transparent;\">context loss</a>&nbsp;between mixed renderers. It may be the one state-manager in the React space that gets all of these right.</p><p>You can try a live demo&nbsp;<a href=\"https://githubbox.com/pmndrs/zustand/tree/main/examples/demo\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--fgColor-accent, var(--color-accent-fg)); background-color: transparent;\">here</a>.</p><p><br></p>",
+      "thumbnail": "thumbnail-1710102863490-299425460.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad ",
+        "lastName": "Hasan",
+        "avatar": "avatar-1710099231594-625798957.png"
+      },
+      "tags": "zustand,react,redux",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-10T20:34:23.499Z"
+    },
+    {
+      "id": "16fae7f1c09e1f9d7daa",
+      "title": "এন্ড্রয়েড পার্মিশন",
+      "content": "<p>এন্ড্রয়েড ইউজারদের ললিপপ খাওয়ানোর পাশাপাশি তাদের নিরপত্তার বিষয়টি নিশ্চিত করতে ললিপপ ভার্সন থেকে রান টাইম পার্মিশন নামক একটি অদ্ভুত বস্তু গুগল তাদের খাতায় যোগ করেছে । যেখানে, কোনো এপ ডেভেলোপার যদি তার এপ ইউজারের Storage, Camera, Contacts, Locationঅথবা Microphone সহ অন্যান্য যেকোনো গুরুত্বপূর্ণ এরিয়াতে হাত দিতে চাইলে অবশ্যই ইউজার কতৃক পারমিশন নিয়ে তারপরেই হাতা হাতি করতে হবে । আমার মনে হয় গুগল বাংলাদেশের কথা ভেবেই এই বস্তুটি তাদের খাতায় যুক্ত করেছেন । কারণ, আমরা (৯০% মানুষ) আল্লাহর ওয়াস্তে আমাদের এপ কি কি পার্মিশন নিচ্ছে অথবা Terms &amp; Condition এ কি লেখা আছে সেট না পড়েই সব কিছু তে Allow করে দেই (আমিও এর ব্যাতিক্রম নই 🤓 )। যেটা অনেকটা ঝুকিপূর্ণ, কারণ আমাদের কিছু ভাই রয়েছে (হ্যাকার) যারা RAT বা ট্রজান হর্স দিয়ে খুব সুন্দর করে ভিকটিমের ডেটা নিজের মনে করে চুরি করে নিতে</p>",
+      "thumbnail": "thumbnail-1708765297564-606798153.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad ",
+        "lastName": "Hasan",
+        "avatar": "avatar-1710099231594-625798957.png"
+      },
+      "tags": "android, java, kotlin,flash",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-10T20:43:53.985Z",
+      "isFavourite": false
     }
   ]
 }

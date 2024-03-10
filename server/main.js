@@ -9,6 +9,10 @@ require("dotenv").config();
 const app = express();
 
 app.use(morgan("dev"));
+app.use((req, res, next) => {
+  console.table(req?.body);
+  next();
+});
 // Prevent CORS errors
 app.use(cors({ credentials: true, origin: true }));
 
