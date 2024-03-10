@@ -1,31 +1,40 @@
 import { Input } from "@/components";
-// import { Editor } from "novel";
+import { DevTool } from "@hookform/devtools";
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { BlogFormThumbnail } from "./BlogFormThumbnail";
 
+import { DefaultFormValueForNewBlog, FormValueForNewBlog } from "@/types";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-interface Props extends React.ComponentProps<"div"> {}
-
-interface FormValue {
-  title: string;
-  content: string;
-  tags: string;
-  thumbnail: File | null;
+interface Props extends React.ComponentProps<"div"> {
+  onSave: (data: FormData) => Promise<void>;
+  defaultBlogValues?: DefaultFormValueForNewBlog;
 }
 
-export const BlogForm = ({ ...rest }: Props) => {
+export const BlogForm = ({ onSave, defaultBlogValues, ...rest }: Props) => {
   const {
     register,
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValue>({});
+  } = useForm<FormValueForNewBlog>({
+    defaultValues: {
+      title: defaultBlogValues?.title,
+      content: defaultBlogValues?.content,
+      tags: defaultBlogValues?.tags,
+      thumbnail: defaultBlogValues?.thumbnail,
+    },
+  });
 
-  const onSubmit = (data: FormValue) => {
-    console.log(data);
+  const onSubmit = (data: FormValueForNewBlog) => {
+    const formData = new FormData();
+    formData.append("thumbnail", data.thumbnail as Blob);
+    formData.append("title", data.title);
+    formData.append("content", data.content);
+    formData.append("tags", data.tags);
+    onSave(formData);
   };
   return (
     <main {...rest}>
@@ -43,6 +52,10 @@ export const BlogForm = ({ ...rest }: Props) => {
                       console.log(file);
                       field.onChange(file);
                     }}
+                    Register={register("thumbnail", {
+                      required: "Thumbnail is required",
+                    })}
+                    errorMsg={errors.thumbnail?.message}
                   />
                 );
               }}
@@ -51,7 +64,13 @@ export const BlogForm = ({ ...rest }: Props) => {
             <div className="mb-6 *:text-white">
               <Input
                 placeholder="Enter your blog title"
-                register={register("title")}
+                register={register("title", {
+                  required: "Title is required",
+                  minLength: {
+                    value: 5,
+                    message: "Title should be atleast 5 characters",
+                  },
+                })}
                 errorMsg={errors.title?.message}
                 labelName="Title"
                 className="input-flow"
@@ -60,30 +79,37 @@ export const BlogForm = ({ ...rest }: Props) => {
 
             <div className="mb-6">
               <Input
-                placeholder="Your Comma Separated Tags Ex. JavaScript, React, Node, Express,"
-                register={register("tags")}
+                placeholder="Your Comma Separated  Tags Ex. JS,TS,REACT (Max 5) "
+                register={register("tags", {
+                  required: "Tags is required",
+                  validate: (value) => {
+                    const tags = value.split(",");
+                    return tags.length <= 5 || "You can add maximum 5 tags";
+                  },
+                })}
                 errorMsg={errors.tags?.message}
                 labelName="Tags"
                 className="input-flow !placeholder:text-xs"
               />
             </div>
 
-            
-              <Controller
-                name="content"
-                control={control}
-                render={({ field }) => (
-                  <ReactQuill
-                    theme="snow"
-                    value={field.value}
-                    onChange={field.onChange}
-                    className="mb-6 text-white "
-                    // style={{ minHeight: "300px" }}
-                    
-                  />
-                )}
-              />
-            
+            <Controller
+              control={control}
+              {...register("content", { required: "Content is required" })}
+              render={({ field }) => (
+                <ReactQuill
+                  theme="snow"
+                  value={field.value}
+                  onChange={field.onChange}
+                  className="mb-6 text-white "
+                />
+              )}
+            />
+            {errors.content && (
+              <p className="mb-6 text-sm text-red-500">
+                {errors.content.message}
+              </p>
+            )}
 
             <button
               type="submit"
@@ -94,6 +120,7 @@ export const BlogForm = ({ ...rest }: Props) => {
           </form>
         </div>
       </section>
+      <DevTool control={control} />
     </main>
   );
 };

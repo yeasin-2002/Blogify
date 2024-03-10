@@ -22,3 +22,17 @@ export type Blog = {
   tags?: string;
   comments?: Comment[];
 };
+
+export interface FormValueForNewBlog {
+  title: string;
+  content: string;
+  tags: string;
+  thumbnail: File | string;
+}
+
+export interface DefaultFormValueForNewBlog {
+  title: string | undefined;
+  content: string | undefined;
+  tags: string | undefined;
+  thumbnail: File | string;
+}

@@ -31,7 +31,7 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
     <div className="blog-card" {...rest}>
       <img className="blog-thumb" src={thumbnail} alt="" />
       <div className="relative mt-2">
-        <Link to={`/blog/${blog.id}`}>
+        <Link to={`/blog/${blog?.id}`}>
           <h3 className="text-xl text-slate-300 lg:text-2xl">
             <p>{blog.title}</p>
           </h3>
@@ -42,13 +42,16 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
 
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 capitalize">
-            <Link to={`/profile/${blog.author.id}`}>
-              <Avatar img={blog.author.avatar} name={blog.author.firstName} />
+            <Link to={`/profile/${blog?.author?.id}`}>
+              <Avatar
+                img={blog?.author?.avatar}
+                name={blog?.author?.firstName}
+              />
             </Link>
 
             <div>
               <h5 className="text-sm text-slate-500">
-                <Link to={`/profile/${blog.author.id}`}>{authName}</Link>
+                <Link to={`/profile/${blog?.author?.id}`}>{authName}</Link>
               </h5>
               <div className="flex items-center text-xs text-slate-700">
                 <span> {blogCreatedDate}</span>
@@ -57,7 +60,7 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
           </div>
 
           <LikeBlog
-            blogId={blog.id}
+            blogId={blog?.id}
             invalidateKey={["blog"]}
             className="flex items-center gap-x-1 px-2 py-1 text-sm text-slate-700"
           >
@@ -66,7 +69,7 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
           </LikeBlog>
         </div>
 
-        {isUserIsAuthor && <BlogCardActions />}
+        {isUserIsAuthor && <BlogCardActions blogId={blog?.id} />}
       </div>
     </div>
   );
