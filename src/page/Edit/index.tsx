@@ -36,9 +36,7 @@ export const Edit = ({ ...rest }: Props) => {
       if (req.status === 200 || req.status === 201) {
         toast.success("Blog Edited successfully");
         console.log(req?.data?.id);
-        flushSync(() => {
-          navigate(`/blog/${req?.data?.id}`);
-        });
+        navigate(`/blog/${req?.data?.id}`);
       }
     } catch (error) {
       console.log(error);

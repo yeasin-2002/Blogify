@@ -10,6 +10,7 @@ const app = express();
 
 app.use(morgan("dev"));
 app.use((req, res, next) => {
+  console.log("Body :");
   console.table(req?.body);
   next();
 });

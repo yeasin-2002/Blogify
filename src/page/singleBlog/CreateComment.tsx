@@ -7,7 +7,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import { BlockCommentingIfUnauthenticated } from "./BlockCommentingIfUnauthenticated";
+import { PreventCommentingIfUnauthenticated } from "./PreventCommentingIfUnauthenticated";
 interface Props extends React.ComponentProps<"div"> {
   comments: Comment[];
 }
@@ -104,7 +104,9 @@ export const CreateComment = ({ comments, ...rest }: Props) => {
       </div>
 
       {renter(
-        <BlockCommentingIfUnauthenticated setIsShowPortal={setIsShowPortal} />,
+        <PreventCommentingIfUnauthenticated
+          setIsShowPortal={setIsShowPortal}
+        />,
       )}
     </div>
   );

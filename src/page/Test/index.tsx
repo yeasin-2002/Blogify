@@ -2,6 +2,12 @@ import { usePortal } from "@/hooks";
 import React from "react";
 interface Props extends React.ComponentProps<"div"> {}
 
+export const WithChild = (props: DivPropsWithChild) => {
+  console.log(typeof props.className);
+  console.log(Array.isArray(props.children));
+  return <div {...props}>{props.children}</div>;
+};
+
 export const TestRoute = ({ ...rest }: Props) => {
   const { renter, isShowPortal, setIsShowPortal } = usePortal();
 
@@ -30,6 +36,11 @@ export const TestRoute = ({ ...rest }: Props) => {
           </a>
         </div>,
       )}
+
+      <WithChild>
+        <button className="alternative-orange px-4 py-2">Click Me</button>
+        <button className="alternative-orange px-4 py-2">Click Me</button>
+      </WithChild>
     </div>
   );
 };

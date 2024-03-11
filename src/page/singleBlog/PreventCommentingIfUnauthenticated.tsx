@@ -6,18 +6,21 @@ interface Props extends React.ComponentProps<"div"> {
   setIsShowPortal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const BlockCommentingIfUnauthenticated = ({
+export const PreventCommentingIfUnauthenticated = ({
   setIsShowPortal,
   ...rest
 }: Props) => {
   return (
     <div
       {...rest}
-      className="rounded-md border border-slate-500 bg-[#030317] p-4 "
+      className="h-full w-full rounded-md border border-slate-500  bg-[#030317] p-4"
     >
       <div className="flex items-center justify-between ">
         <p>Log in to continue</p>
-        <Cross />
+        <Cross
+          onClick={() => setIsShowPortal(false)}
+          className="h-6 w-6 cursor-pointer fill-current text-slate-300 transition-all duration-200 hover:text-slate-100"
+        />
       </div>
       <div className="flex flex-col items-center justify-center   ">
         <img src={warningIcon} alt="Warning" className="size-32" />
@@ -26,7 +29,7 @@ export const BlockCommentingIfUnauthenticated = ({
           <br />
           Please log in or create an account.
         </p>
-        <div className="mt-8 flex w-full items-center">
+        <div className="mt-8 flex w-full items-center justify-center *:w-52">
           <Link to={"/login"} className="alternative  w-full text-center">
             Log In
           </Link>

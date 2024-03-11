@@ -13,7 +13,7 @@ export const BlogContent = ({ blog, ...rest }: Props) => {
 
   return (
     <section {...rest}>
-      <div className="container py-8 text-center ">
+      <div className="container py-4 text-center ">
         <h1 className="text-3xl font-bold md:text-5xl">{blog?.title}</h1>
         <div className="my-4 flex items-center justify-center gap-4">
           <Link

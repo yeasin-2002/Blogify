@@ -542,6 +542,22 @@
       "comments": [],
       "createdAt": "2024-03-10T20:43:53.985Z",
       "isFavourite": false
+    },
+    {
+      "id": "64b8a2c35b7598c1e95b",
+      "title": "what is github",
+      "content": "<p>GitHub is a developer platform that allows developers to create, store, manage and share their code. It uses Git software, providing the distributed version control of Git plus access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project.&nbsp;<a href=\"https://en.wikipedia.org/wiki/GitHub\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(153, 195, 255);\">Wikipedia</a></p><p><br></p><p><br></p>",
+      "thumbnail": "thumbnail-1710104568623-662903659.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad ",
+        "lastName": "Hasan",
+        "avatar": "avatar-1710099231594-625798957.png"
+      },
+      "tags": "git,github",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-10T21:02:48.654Z"
     }
   ]
 }

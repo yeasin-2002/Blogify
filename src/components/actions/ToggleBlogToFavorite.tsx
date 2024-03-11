@@ -1,20 +1,19 @@
 import { useAxios } from "@/hooks";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 interface Props extends React.ComponentProps<"button"> {
   children: React.ReactNode;
+  id: string;
 }
 
-export const ToggleBlogToFavorite = ({ children, ...rest }: Props) => {
+export const ToggleBlogToFavorite = ({ children, id, ...rest }: Props) => {
   const api = useAxios();
   const queryClient = useQueryClient();
-  const params = useParams();
 
   const { mutateAsync } = useMutation({
-    mutationKey: ["favourites-toggle", params.blog_id],
-    mutationFn: async () => api.patch(`/blogs/${params.id}/favourite`),
+    mutationKey: ["favourites-toggle", id],
+    mutationFn: async () => api.patch(`/blogs/${id}/favourite`),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["favourites"] });
     },

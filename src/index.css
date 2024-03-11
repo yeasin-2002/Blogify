@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 @layer components {
   * {
     font-family: "Montserrat", sans-serif;
@@ -96,7 +102,7 @@
   }
 
   .createBlog input {
-    @apply w-full appearance-none border-none bg-transparent pl-0 text-lg font-bold shadow-none outline-none placeholder:text-lg focus:border-none focus:outline-none focus:ring-0 px-1 placeholder:px-2;
+    @apply w-full appearance-none border-none bg-transparent px-1 pl-0 text-lg font-bold shadow-none outline-none placeholder:px-2 placeholder:text-lg focus:border-none focus:outline-none focus:ring-0;
   }
 
   .createBlog textarea {
@@ -130,13 +136,11 @@
     @apply border-2 border-transparent text-white focus:outline-none focus:ring-4 focus:ring-githubDark/50 dark:focus:ring-gray-500;
   }
   .input-flow {
-    @apply block w-full rounded-md border !border-gray-300 !bg-gray-700 p-2.5 text-xs text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 placeholder:text-xs;
+    @apply block w-full rounded-md border !border-gray-300 !bg-gray-700 p-2.5 text-xs text-gray-900 placeholder:text-xs focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500;
   }
 }
 
-
 .quill .ql-editor {
-  margin-bottom:52px;
-  min-height:68px;
- }
- 
+  margin-bottom: 52px;
+  min-height: 68px;
+}

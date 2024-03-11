@@ -10,7 +10,6 @@ interface Props extends React.ComponentProps<"div"> {
   isFavourite?: boolean;
   blogId?: string;
   allLikes: { id: string }[];
-  executeScroll: () => any;
 }
 
 export const BlogFloatingActions = ({
@@ -18,12 +17,20 @@ export const BlogFloatingActions = ({
   totalLikes,
   blogId = "",
   allLikes,
-  executeScroll,
+
   ...rest
 }: Props) => {
   const auth = useAuth();
-
   const isLiked = allLikes.some((like) => like.id === auth?.authUser?.id);
+  // const commentSection = document.getElementById("#comments");
+
+  // const intoTheCommentSections = (
+  //   e: React.MouseEvent<HTMLLIElement, MouseEvent>,
+  // ) => {
+  //   e.preventDefault();
+  //   return commentRef?.current?.scrollIntoView({ behavior: "smooth" });
+  //   // commentSection?.scrollIntoView({ behavior: "smooth" });
+  // };
 
   return (
     <div className="floating-action" {...rest}>
@@ -36,14 +43,16 @@ export const BlogFloatingActions = ({
         </li>
 
         <li>
-          <ToggleBlogToFavorite>
+          <ToggleBlogToFavorite id={blogId!}>
             <HeartIcon />
           </ToggleBlogToFavorite>
         </li>
 
-        <li onClick={() => executeScroll()}>
-          <img src={commentIcon} alt="Comments" />
-          <span>{totalComments}</span>
+        <li>
+          <a href="#blog-comments" className="flex items-center gap-x-1">
+            <img src={commentIcon} alt="Comments" />
+            <span>{totalComments}</span>
+          </a>
         </li>
       </ul>
     </div>
