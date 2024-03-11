@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type Serializer<T> = (object: T | undefined) => string;
 type Parser<T> = (val: string) => T | undefined;
@@ -36,7 +36,7 @@ function useLocalStorage<T>(
   const rawValueRef = useRef<string | null>(null);
 
   const [value, setValue] = useState(() => {
-    if (typeof window === 'undefined') return defaultValue;
+    if (typeof window === "undefined") return defaultValue;
 
     try {
       rawValueRef.current = window.localStorage.getItem(key);
@@ -51,7 +51,7 @@ function useLocalStorage<T>(
   });
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
     const updateLocalStorage = () => {
       // Browser ONLY dispatch storage events to other tabs, NOT current tab.
@@ -62,7 +62,7 @@ function useLocalStorage<T>(
         rawValueRef.current = newValue;
         window.localStorage.setItem(key, newValue);
         window.dispatchEvent(
-          new StorageEvent('storage', {
+          new StorageEvent("storage", {
             storageArea: window.localStorage,
             url: window.location.href,
             key,
@@ -73,7 +73,7 @@ function useLocalStorage<T>(
       } else {
         window.localStorage.removeItem(key);
         window.dispatchEvent(
-          new StorageEvent('storage', {
+          new StorageEvent("storage", {
             storageArea: window.localStorage,
             url: window.location.href,
             key,
@@ -87,7 +87,7 @@ function useLocalStorage<T>(
     } catch (e) {
       logger(e);
     }
-  }, [value]);
+  }, [key, logger, serializer, value]);
 
   useEffect(() => {
     if (!syncData) return;
@@ -105,14 +105,13 @@ function useLocalStorage<T>(
       }
     };
 
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
-    window.addEventListener('storage', handleStorageChange);
-    return () => window.removeEventListener('storage', handleStorageChange);
-  }, [key, syncData]);
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, [key, logger, parser, syncData]);
 
   return [value, setValue];
 }
 
 export { useLocalStorage };
-

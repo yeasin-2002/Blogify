@@ -1,8 +1,8 @@
 import commentIcon from "@/assets/icons/comment.svg";
 
-import { Like, LikeBlog, LinkFill, ToggleBlogToFavorite } from "@/components";
+import { LikeBlog, LinkFill, ToggleBlogToFavorite } from "@/components";
 import { useAuth } from "@/hooks";
-import { HeartIcon } from "lucide-react";
+import { cn } from "@/utils";
 
 interface Props extends React.ComponentProps<"div"> {
   totalComments: number | undefined;
@@ -17,35 +17,38 @@ export const BlogFloatingActions = ({
   totalLikes,
   blogId = "",
   allLikes,
-
   ...rest
 }: Props) => {
   const auth = useAuth();
   const isLiked = allLikes.some((like) => like.id === auth?.authUser?.id);
-  // const commentSection = document.getElementById("#comments");
-
-  // const intoTheCommentSections = (
-  //   e: React.MouseEvent<HTMLLIElement, MouseEvent>,
-  // ) => {
-  //   e.preventDefault();
-  //   return commentRef?.current?.scrollIntoView({ behavior: "smooth" });
-  //   // commentSection?.scrollIntoView({ behavior: "smooth" });
-  // };
 
   return (
     <div className="floating-action" {...rest}>
       <ul className="floating-action-menus">
         <li>
           <LikeBlog blogId={blogId!} invalidateKey={["singleBlog", blogId]}>
-            {isLiked ? <LinkFill /> : <Like />}
+            {/* {isLiked ? (
+              <LinkFill
+                className={cn({
+                  "text-red-500": isLiked,
+                  "text-gray-500": !isLiked,
+                })}
+              />
+            ) : (
+              <Like />
+            )} */}
+            <LinkFill
+              className={cn({
+                "text-red-500": isLiked,
+                "text-gray-500": !isLiked,
+              })}
+            />
             <span>{totalLikes}</span>
           </LikeBlog>
         </li>
 
         <li>
-          <ToggleBlogToFavorite id={blogId!}>
-            <HeartIcon />
-          </ToggleBlogToFavorite>
+          <ToggleBlogToFavorite id={blogId!} />
         </li>
 
         <li>

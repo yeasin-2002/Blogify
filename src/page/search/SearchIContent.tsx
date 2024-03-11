@@ -16,7 +16,6 @@ interface Props extends React.ComponentProps<"div"> {
 export const SearchContent = ({
   data,
   SearchFilter,
-  filterBy,
   setIsShowPortal,
   ...rest
 }: Props) => {

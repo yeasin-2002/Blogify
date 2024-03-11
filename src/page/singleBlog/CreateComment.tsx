@@ -32,7 +32,11 @@ export const CreateComment = ({ comments, ...rest }: Props) => {
   const { mutateAsync, isPending } = useMutation({
     mutationKey: ["createComment", params.id],
     mutationFn: async (data: FormValue) =>
-      api.post(`/blogs/${params.id}/comment`, data),
+      api.post(`/blogs/${params.id}/comment`, data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }),
     onSuccess: () => {
       setValue("content", "");
       return queryClient.invalidateQueries({
@@ -60,7 +64,7 @@ export const CreateComment = ({ comments, ...rest }: Props) => {
       return toast.error("Failed to create comment");
     }
   };
-
+  
   return (
     <div {...rest}>
       <h2 className="my-8 text-3xl font-bold">

@@ -39,8 +39,8 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
 
         <div
           className="mb-6 mt-1 line-clamp-3 text-base text-slate-500"
-          dangerouslySetInnerHTML={{ __html: blog.content }}/>
-
+          dangerouslySetInnerHTML={{ __html: blog.content }}
+        />
 
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 capitalize">

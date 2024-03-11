@@ -16,7 +16,7 @@ export const SingleBlog = ({ ...rest }: Props) => {
   const params = useParams();
 
   const { data, isLoading, isSuccess } = useQuery({
-    queryKey: ["singleBlog", params.id],
+    queryKey: ["singleBlog", params?.id],
     queryFn: async () => axios.get<Blog>(baseUrl + `/blogs/${params?.id}`),
   });
 

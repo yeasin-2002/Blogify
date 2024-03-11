@@ -31,7 +31,7 @@ export const Nav = ({ ...rest }: Props) => {
               </Link>
             </li>
             <li>
-              <SearchBlogs />
+              {authData?.authToken && authData?.authUser && <SearchBlogs />}
             </li>
 
             {authData?.authToken && authData?.authUser ? (

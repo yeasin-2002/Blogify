@@ -85,7 +85,7 @@ export const Camera = ({ className, ...rest }: SvgProp) => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="lucide lucide-camera"
+    className={cn(className)}
   >
     <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
     <circle cx="12" cy="13" r="3" />
@@ -219,12 +219,12 @@ export const Trash = ({ className, ...rest }: SvgProp) => (
 export const ImageIcon = ({ className, ...rest }: SvgProp) => (
   <svg
     {...rest}
+    className={cn("h-6 w-6", className)}
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -237,12 +237,12 @@ export const ImageIcon = ({ className, ...rest }: SvgProp) => (
 export const UploadIcon = ({ className, ...rest }: SvgProp) => (
   <svg
     {...rest}
+    className={cn("h-8 w-8 text-gray-500 dark:text-gray-400", className)}
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className="h-8 w-8 text-gray-500 dark:text-gray-400"
   >
     <path
       strokeLinecap="round"

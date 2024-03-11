@@ -3,7 +3,6 @@ import { BlogForm } from "@/components/actions/BlogForm";
 import { useAxios } from "@/hooks";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React from "react";
-import { flushSync } from "react-dom";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -16,7 +15,7 @@ export const Edit = ({ ...rest }: Props) => {
   const api = useAxios();
 
   const { isLoading, data } = useQuery({
-    queryKey: ["singleBlog", params.id],
+    queryKey: ["singleBlog", params?.id],
     queryFn: async () => api.get<Blog>(`/blogs/${params?.id}`),
   });
 

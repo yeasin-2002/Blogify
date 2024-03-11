@@ -26,24 +26,19 @@ export const useAxios = () => {
 
         if (error?.response?.status === 403 && !originalRequest._retry) {
           originalRequest._retry = true;
+          const response = await axios.post(baseUrl + "/auth/refresh-token", {
+            refreshToken: authData?.authToken?.refreshToken,
+          });
 
-          try {
-            const response = await axios.post(baseUrl + "/auth/refresh-token", {
-              refreshToken: authData?.authToken?.refreshToken,
-            });
+          const { accessToken, refreshToken } = response.data;
 
-            const { accessToken, refreshToken } = response.data;
+          authData?.setAuthToken({
+            accessToken: accessToken,
+            refreshToken: refreshToken,
+          });
 
-            authData?.setAuthToken({
-              accessToken: accessToken,
-              refreshToken: refreshToken,
-            });
-
-            originalRequest.headers.Authorization = `Bearer ${accessToken}`;
-            return axios(originalRequest);
-          } catch (error) {
-            throw error;
-          }
+          originalRequest.headers.Authorization = `Bearer ${accessToken}`;
+          return axios(originalRequest);
         }
 
         return Promise.reject(error);
@@ -54,7 +49,7 @@ export const useAxios = () => {
       axiosInstance.interceptors.request.eject(requestIntercept);
       axiosInstance.interceptors.response.eject(responseIntercept);
     };
-  }, []);
+  }, [authData]);
 
   return axiosInstance;
 };

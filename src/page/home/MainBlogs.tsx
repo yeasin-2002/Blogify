@@ -31,7 +31,7 @@ export const MainBlogs = ({ ...rest }: Props) => {
     if (isVisible && hasNextPage && !isFetching && !isFetchingNextPage) {
       fetchNextPage();
     }
-  }, [isVisible]);
+  }, [fetchNextPage, hasNextPage, isFetching, isFetchingNextPage, isVisible]);
 
   return (
     <div className="space-y-3 md:col-span-5" {...rest}>
