@@ -1,5 +1,5 @@
-import React from 'react';
-interface Props extends React.ComponentProps<'svg'> {}
+import React from "react";
+interface Props extends React.ComponentProps<"svg"> {}
 
 export const FaceBook = ({ ...rest }: Props) => {
   return (

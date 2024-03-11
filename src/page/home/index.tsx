@@ -1,8 +1,8 @@
-import React from 'react';
-interface Props extends React.ComponentProps<'div'> {}
+import React from "react";
+interface Props extends React.ComponentProps<"div"> {}
 
-import { MainBlogs } from './MainBlogs';
-import { SideBarPost } from './SideBarPost';
+import { MainBlogs } from "./MainBlogs";
+import { SideBarPost } from "./SideBarPost";
 
 export const Home = ({ ...rest }: Props) => {
   return (

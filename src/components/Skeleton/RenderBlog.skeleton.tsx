@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
-import React from 'react';
-import { BlogsSkeleton } from './Blogs.skeleton';
-interface Props extends React.ComponentProps<'div'> {
+import { motion } from "framer-motion";
+import React from "react";
+import { BlogsSkeleton } from "./Blogs.skeleton";
+interface Props extends React.ComponentProps<"div"> {
   initialCount?: number;
 }
 

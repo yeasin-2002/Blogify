@@ -10,4 +10,3 @@ export * from "./singleBlog";
 // global  not found and error handler pages
 export * from "./error";
 export * from "./not-found";
-

@@ -1,9 +1,7 @@
 import React from "react";
-interface Props extends React.ComponentProps<"input"> {
-  
-}
+interface Props extends React.ComponentProps<"input"> {}
 
-export const SearchInput = ({  ...rest }: Props) => {
+export const SearchInput = ({ ...rest }: Props) => {
   return (
     <div className="my-8 flex-1">
       <input

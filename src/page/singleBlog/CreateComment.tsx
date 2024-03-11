@@ -64,7 +64,7 @@ export const CreateComment = ({ comments, ...rest }: Props) => {
       return toast.error("Failed to create comment");
     }
   };
-  
+
   return (
     <div {...rest}>
       <h2 className="my-8 text-3xl font-bold">

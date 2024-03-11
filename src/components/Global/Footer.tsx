@@ -1,8 +1,8 @@
-import React from 'react';
-interface Props extends React.ComponentProps<'div'> {}
+import React from "react";
+interface Props extends React.ComponentProps<"div"> {}
 
-import logo from '@/assets/logo.svg';
-import { contactItems } from '@/data';
+import logo from "@/assets/logo.svg";
+import { contactItems } from "@/data";
 
 export const Footer = ({ ...rest }: Props) => {
   return (

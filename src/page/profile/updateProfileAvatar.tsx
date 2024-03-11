@@ -22,7 +22,7 @@ interface Props extends React.ComponentProps<"div"> {
   id: string | undefined;
 }
 
-export const UpdateProfileAvatar = ({  ...rest }: Props) => {
+export const UpdateProfileAvatar = ({ ...rest }: Props) => {
   const api = useAxios();
   const queryClient = useQueryClient();
   const auth = useAuth();

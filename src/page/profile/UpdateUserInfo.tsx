@@ -1,11 +1,11 @@
-import { Input, Popover, PopoverContent, PopoverTrigger } from '@/components';
-import { useAxios } from '@/hooks';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { Pencil } from 'lucide-react';
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
+import { Input, Popover, PopoverContent, PopoverTrigger } from "@/components";
+import { useAxios } from "@/hooks";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { Pencil } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
-interface UpdateUserInfoProps extends React.ComponentPropsWithoutRef<'button'> {
+interface UpdateUserInfoProps extends React.ComponentPropsWithoutRef<"button"> {
   info: {
     id: string | undefined;
     firstName: string | undefined;
@@ -25,10 +25,10 @@ export const UpdateUserInfo = ({ info, ...rest }: UpdateUserInfoProps) => {
   const queryClient = useQueryClient();
 
   const { mutateAsync } = useMutation({
-    mutationKey: ['updateUserInfo'],
-    mutationFn: (body: FormValues) => api.patch('/profile', body),
+    mutationKey: ["updateUserInfo"],
+    mutationFn: (body: FormValues) => api.patch("/profile", body),
     onSuccess: () => {
-      return queryClient.invalidateQueries({ queryKey: ['profile'] });
+      return queryClient.invalidateQueries({ queryKey: ["profile"] });
     },
   });
 
@@ -47,11 +47,11 @@ export const UpdateUserInfo = ({ info, ...rest }: UpdateUserInfoProps) => {
     try {
       const req = await mutateAsync(data);
       if (req.status === 200) {
-        toast.success('User info updated successfully');
+        toast.success("User info updated successfully");
       }
     } catch (error) {
-      console.log('🚀 onSubmit ', error);
-      toast.error('something went wrong, try again later');
+      console.log("🚀 onSubmit ", error);
+      toast.error("something went wrong, try again later");
     }
   };
 
@@ -101,4 +101,3 @@ export const UpdateUserInfo = ({ info, ...rest }: UpdateUserInfoProps) => {
     </Popover>
   );
 };
-

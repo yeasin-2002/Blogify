@@ -24,17 +24,17 @@ export const FavoriteBlogs = ({ ...rest }: Props) => {
           <li key={blog.id}>
             <Link to={`/blog/${blog.id}`}>
               <h3 className="cursor-pointer font-medium text-slate-400 transition-all hover:text-slate-300">
-                  {blog.title}
-                </h3>
-                <p className="text-sm text-slate-600">
-                  {blog.tags.split(",").map((tag) => (
-                    <span key={tag} className="mr-1 text-slate-400">
-                      #{tag}
-                    </span>
-                  ))}
-                </p>
-              </Link>
-            </li>
+                {blog.title}
+              </h3>
+              <p className="text-sm text-slate-600">
+                {blog.tags.split(",").map((tag) => (
+                  <span key={tag} className="mr-1 text-slate-400">
+                    #{tag}
+                  </span>
+                ))}
+              </p>
+            </Link>
+          </li>
         ))}
       </ul>
     </div>

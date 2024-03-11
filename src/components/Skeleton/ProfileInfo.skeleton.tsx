@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import { UserIcon } from '../icons';
-import { TextSkeleton } from './Text.skeleton';
+import { motion } from "framer-motion";
+import { UserIcon } from "../icons";
+import { TextSkeleton } from "./Text.skeleton";
 
 export const ProfileInfoSkeleton = () => {
   return (
