@@ -17,7 +17,7 @@ export const PopularBlogItems = ({ data, ...rest }: Props) => {
   return (
     <li {...rest}>
       <h3 className="cursor-pointer font-medium text-slate-400 transition-all hover:text-slate-300">
-        {data.title}
+        <Link to={`/blog/${data.id}`}>{data.title}</Link>
       </h3>
       <div className="flex items-center gap-x-1 text-sm text-slate-600">
         by

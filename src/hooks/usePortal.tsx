@@ -42,8 +42,8 @@ interface HeadingProps extends React.ComponentProps<"div"> {
 
 export const PortalHeading = ({ title, ...rest }: HeadingProps) => {
   return (
-    <div {...rest} className="flex items-center justify-between  ">
-      <p className="text-center text-xl font-bold">{title}</p>
+    <div {...rest} className="flex w-full items-center justify-between    ">
+      <p className="text-center text-xl font-bold">{title || ""}</p>
       <span className="cursor-pointer rounded-md bg-gray-800 p-2 hover:bg-gray-700">
         <Cross />
       </span>

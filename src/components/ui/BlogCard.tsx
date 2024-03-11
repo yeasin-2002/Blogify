@@ -1,4 +1,4 @@
-import { baseUrl, formatDateYearFirst } from "@/utils";
+import { baseUrl, formatDateYearFirst, htmlToString } from "@/utils";
 import React from "react";
 interface Props extends React.ComponentProps<"div"> {
   showActionModal?: boolean;
@@ -26,6 +26,7 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
     blog.likes.find((like) => like.id === auth?.authUser?.id);
 
   const isUserIsAuthor = auth?.authUser?.id === blog.author.id || false;
+  const contentString = htmlToString(blog?.content);
 
   return (
     <div className="blog-card" {...rest}>
@@ -37,10 +38,9 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
           </h3>
         </Link>
 
-        <div
-          className="mb-6 mt-1 line-clamp-3 text-base text-slate-500"
-          dangerouslySetInnerHTML={{ __html: blog.content }}
-        />
+        <div className="mb-6 mt-1 line-clamp-3 text-base text-slate-500">
+          {contentString}
+        </div>
 
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 capitalize">

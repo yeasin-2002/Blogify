@@ -11,6 +11,7 @@ export const BlogContent = ({ blog, ...rest }: Props) => {
   const thumbnail = getBlogThumbnail(blog?.thumbnail);
   const publishDate = formatDateYearFirst(new Date(blog?.createdAt || ""));
 
+  
   return (
     <section {...rest}>
       <div className="container py-4 text-center ">
@@ -31,11 +32,13 @@ export const BlogContent = ({ blog, ...rest }: Props) => {
           </Link>
           <span className="dot text-sm text-slate-700"> {publishDate} </span>
         </div>
-        <img
-          className="mx-auto h-80 w-full object-cover md:h-96 md:w-8/12"
-          src={thumbnail}
-          alt=""
-        />
+        {blog?.thumbnail && (
+          <img
+            className="mx-auto h-80 w-full object-cover md:h-96 md:w-8/12"
+            src={thumbnail}
+            alt=""
+          />
+        )}
 
         {blog?.tags && (
           <ul className="tags">

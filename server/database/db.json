@@ -36,7 +36,7 @@
       "firstName": "Saad ",
       "lastName": "Hasan",
       "avatar": "avatar-1710099231594-625798957.png",
-      "bio": "I am Saad Hasan, self-taught Junior Software Developer from Bangladesh. I have been working as a Professional Frontend Developer for the last 1 year, Though I started my Self-Taught Programming Journey In 2014.",
+      "bio": "I am Saad Hasan, self-taught Junior Software Developer from Bangladesh. I have been working as a Professional Frontend Developer for the last 1 year, Though I started my Self-Taught Programming Journey In 2014. Now a Team Member of LWS\n",
       "password": "$2b$08$e9uY0ZjxXJ9F4r36Ln4oCu4nLZ92OKaQ466VEVDtxBPCs/JL/ChR.",
       "favourites": [
         {
@@ -372,6 +372,26 @@
       "createdAt": "2024-03-10T17:15:29.173Z"
     },
     {
+      "id": "c1e58ed5d1e3e7bae276",
+      "title": "Programming Hero ",
+      "content": "<p><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">Learn and master&nbsp;</span><strong style=\"background-color: rgb(31, 31, 31); color: rgb(188, 192, 195);\">programming</strong><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">&nbsp;to open a new career opportunity. Enjoy the most effective and fun way to learn&nbsp;</span><strong style=\"background-color: rgb(31, 31, 31); color: rgb(188, 192, 195);\">programming</strong><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">&nbsp;as an absolute beginner that will</span></p>",
+      "thumbnail": "thumbnail-1710097390724-445740444.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "docker,ci,cd,git,github",
+      "likes": [
+        {
+          "id": "3d2dde4b6548275fb066"
+        }
+      ],
+      "comments": [],
+      "createdAt": "2024-03-10T19:03:10.743Z"
+    },
+    {
       "id": "965584a7b281d9f99c14",
       "title": "What do you need to know to become proficient in JavaScript?",
       "content": "JavaScript is everywhere! It's the web browser's language and helps you create web, mobile, and desktop applications. Today, JavaScript is not limited to the client side alone; it is equally popular as the base of server-side frameworks like Node.js and Deno. If you are considering picking up and mastering a programming language, JavaScript is a safe bet.\n\nRecently I have focused on chalking out a path about how to learn JavaScript effectively using a learning model. Please check it out in the video below. I believe that it will help you to learn the language faster.\n\nThe video above talks about how learning JavaScript effectively, and in this article, we will focus on the what part. We will go over the topics that you must consider putting on your plate when you plan to learn JavaScript.\n\nWe will also get introduced to a community-driven JavaScript Roadmap Guide that you can make use of in learning the language and also can contribute to. We will mention the chapters from the guide occasionally, but if you are interested, please feel free to check out the entire guide early.",
@@ -450,22 +470,6 @@
       "likes": [],
       "comments": [],
       "createdAt": "2024-03-10T19:02:09.077Z"
-    },
-    {
-      "id": "c1e58ed5d1e3e7bae276",
-      "title": "Programming Hero ",
-      "content": "<p><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">Learn and master&nbsp;</span><strong style=\"background-color: rgb(31, 31, 31); color: rgb(188, 192, 195);\">programming</strong><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">&nbsp;to open a new career opportunity. Enjoy the most effective and fun way to learn&nbsp;</span><strong style=\"background-color: rgb(31, 31, 31); color: rgb(188, 192, 195);\">programming</strong><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">&nbsp;as an absolute beginner that will</span></p>",
-      "thumbnail": "thumbnail-1710097390724-445740444.png",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
-      },
-      "tags": "docker,ci,cd,git,github",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-03-10T19:03:10.743Z"
     },
     {
       "id": "c395a56bf9a7a2720c70",
@@ -552,7 +556,6 @@
       "id": "64b8a2c35b7598c1e95b",
       "title": "what is github",
       "content": "<p>GitHub is a developer platform that allows developers to create, store, manage and share their code. It uses Git software, providing the distributed version control of Git plus access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project.&nbsp;<a href=\"https://en.wikipedia.org/wiki/GitHub\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(153, 195, 255);\">Wikipedia</a></p><p><br></p><p><br></p>",
-      "thumbnail": "thumbnail-1710104568623-662903659.png",
       "author": {
         "id": "3d2dde4b6548275fb066",
         "firstName": "Saad ",

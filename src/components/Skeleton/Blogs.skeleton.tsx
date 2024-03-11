@@ -1,7 +1,12 @@
-export const BlogsSkeleton = ({ ...rest }: DivProps) => {
+import { cn } from "@/utils";
+
+export const BlogsSkeleton = ({ className, ...rest }: DivProps) => {
   return (
     <div
-      className="mx-auto flex w-full max-w-md animate-pulse overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800"
+      className={cn(
+        "mx-auto flex w-full  animate-pulse overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800",
+        className,
+      )}
       {...rest}
     >
       <div className="w-1/3 bg-gray-300 dark:bg-gray-600"></div>
