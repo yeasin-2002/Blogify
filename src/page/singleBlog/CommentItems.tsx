@@ -22,7 +22,9 @@ export const CommentItems = ({ comment, ...rest }: Props) => {
           <h5 className="text-slate -500 font-bold">
             {comment.author.firstName} {comment.author.lastName}
           </h5>
-          <p className="text-slate-300">{comment.content}</p>
+          <p className="text-slate-800 dark:text-slate-300">
+            {comment.content}
+          </p>
         </div>
         {isOwner && <CommentActions commentId={comment.id} />}
       </div>

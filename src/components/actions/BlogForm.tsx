@@ -107,7 +107,7 @@ export const BlogForm = ({ onSave, defaultBlogValues, ...rest }: Props) => {
               </p>
             )}
 
-            <label htmlFor="content" className="text-white">
+            <label htmlFor="content" className="text-slate-900 dark:text-slate-100">
               Content
             </label>
 
@@ -120,7 +120,7 @@ export const BlogForm = ({ onSave, defaultBlogValues, ...rest }: Props) => {
                   id="content"
                   value={field.value}
                   onChange={field.onChange}
-                  className="my-6   text-white"
+                  className="my-6   text-slate-900 dark:text-slate-100"
                 />
               )}
             />

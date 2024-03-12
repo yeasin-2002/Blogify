@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import { Input } from "@/components";
+import { Input, PasswordInput } from "@/components";
 import { useAuth } from "@/hooks";
 import { authData } from "@/types";
 import { axiosInstance } from "@/utils";
@@ -69,7 +69,7 @@ export const LogIn = ({ ...rest }: DivProps) => {
               labelName="Email"
               className="w-full rounded-md border border-white   p-3 text-black focus:border-indigo-500  focus:outline-none dark:bg-slate-200"
             />
-            <Input
+            <PasswordInput
               placeholder="write your password"
               register={register("password", {
                 required: "password is required",

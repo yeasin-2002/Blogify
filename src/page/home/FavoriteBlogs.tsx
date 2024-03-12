@@ -27,9 +27,10 @@ export const FavoriteBlogs = ({ ...rest }: Props) => {
           data?.data.blogs?.map((blog) => (
             <li key={blog.id}>
               <Link to={`/blog/${blog.id}`}>
-                <h3 className="cursor-pointer font-medium text-slate-400 transition-all hover:text-slate-300">
+                <h3 className="cursor-pointer font-medium text-slate-600 transition-all hover:text-slate-500 dark:hover:text-slate-700">
                   {blog.title}
                 </h3>
+
                 <p className="text-sm text-slate-600">
                   {blog.tags.split(",").map((tag) => (
                     <span key={tag} className="mr-1 text-slate-400">

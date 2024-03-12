@@ -28,7 +28,7 @@ export const SearchContent = ({
 
   return (
     <div
-      className="my-4 max-h-[440px] divide-y-2 divide-slate-500/30 overflow-y-scroll overscroll-contain"
+      className="  h-full divide-y-2 divide-slate-500/30 overflow-y-scroll overscroll-contain"
       {...rest}
     >
       {filteredData?.map((blog) => (
@@ -44,7 +44,9 @@ export const SearchContent = ({
             alt=""
           />
           <div className="mt-2">
-            <h3 className="text-xl font-bold text-slate-300">{blog.title}</h3>
+            <h3 className="text-xl font-bold text-slate-800 dark:text-slate-300">
+              {blog.title}
+            </h3>
             <p className="mb-6 mt-1 line-clamp-3 text-sm text-slate-500">
               {blog.content}
             </p>

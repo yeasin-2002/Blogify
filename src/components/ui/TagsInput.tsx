@@ -36,6 +36,8 @@ export const TagsInput = (props: Props) => {
 
   return (
     <div className="my-2 flex flex-col gap-y-1  rounded-md p-2 ring-1">
+      <label className="text-gray-900 dark:text-gray-100">Tags</label>
+
       <div className="flex h-full w-full flex-wrap overflow-auto">
         {tags.map((tag, index) => (
           <p
@@ -53,7 +55,7 @@ export const TagsInput = (props: Props) => {
       <input
         {...props}
         type="text"
-        className="input-flow w-full rounded-md p-2  text-gray-100"
+        className="input-flow w-full rounded-md p-2  "
         placeholder="Press Enter to add tags"
         value={inputValue}
         onChange={(e) => {

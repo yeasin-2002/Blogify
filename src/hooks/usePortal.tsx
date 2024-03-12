@@ -20,8 +20,8 @@ export const usePortal = (defaultShow = false) => {
           <div
             className=" 
              mx-auto  grid
-             h-3/4
-             w-11/12 place-items-center    rounded-lg border border-slate-600/50 bg-slate-900 p-4 shadow-lg shadow-slate-400/10 "
+             h-[90%]
+             w-11/12 place-items-center    rounded-lg border border-slate-600/50 bg-slate-100 p-4 shadow-lg shadow-slate-400/10 dark:bg-slate-900 "
             onClick={(e) => e.stopPropagation()}
           >
             {children}

@@ -34,11 +34,11 @@ export const SearchBlogs = () => {
       {renter(
         <>
           <div className="flex w-full items-center justify-between">
-            <h3 className="my-2 pl-2 text-xl font-bold text-slate-400">
+            <h3 className="my-2 pl-2 text-xl font-bold text-slate-800 dark:text-slate-400">
               Search for Your Desire Blogs
             </h3>
             <span
-              className="cursor-pointer rounded-md  bg-slate-800 p-2 transition-all hover:bg-slate-700"
+              className="cursor-pointer rounded-md  bg-slate-200 p-2 transition-all hover:bg-slate-700 dark:bg-slate-800"
               onClick={() => setIsShowPortal((pre) => !pre)}
             >
               <Cross className="cursor-pointer" />

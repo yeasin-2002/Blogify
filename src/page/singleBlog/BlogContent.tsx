@@ -41,7 +41,7 @@ export const BlogContent = ({ blog, ...rest }: Props) => {
         )}
 
         {blog?.tags && (
-          <ul className="tags">
+          <ul className="tags text-white">
             {blog?.tags
               .split(",")
               .map((tag, index) => <li key={index}>{tag}</li>)}
@@ -49,7 +49,8 @@ export const BlogContent = ({ blog, ...rest }: Props) => {
         )}
 
         <article
-          className="prose mx-auto mt-5 w-full py-2 !text-left text-base leading-8 text-slate-300 lg:prose-xl md:w-10/12 md:text-lg"
+          // className="prose mx-auto mt-5 w-full py-2 !text-left text-base leading-8  lg:prose-xl md:w-10/12 md:text-lg"
+          className="prose mx-auto text-left text-gray-900 xl:prose-xl dark:text-gray-300"
           dangerouslySetInnerHTML={{ __html: blog?.content || "" }}
         />
       </div>

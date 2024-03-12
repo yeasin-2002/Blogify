@@ -82,7 +82,7 @@ export const CreateComment = ({ comments, ...rest }: Props) => {
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
           <textarea
             {...register("content", { required: "Comment is required" })}
-            className="w-full rounded-md border border-slate-500 bg-[#030317] p-4 text-slate-300 focus:outline-none"
+            className="w-full rounded-md border border-slate-500 bg-gray-100  p-4    text-slate-300 focus:outline-none dark:bg-midnightBlue"
             placeholder="Write a comment"
             onClick={HandleOpenPortal}
           ></textarea>

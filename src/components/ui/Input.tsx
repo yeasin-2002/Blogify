@@ -17,7 +17,10 @@ export const Input = ({
 }: Props) => {
   return (
     <div className="mb-6">
-      <label htmlFor={labelName} className={cn("mb-2 block")}>
+      <label
+        htmlFor={labelName}
+        className={cn("mb-2 block text-slate-900 dark:text-slate-100 ")}
+      >
         {labelName}
       </label>
       <input id={labelName} {...rest} {...register} className={cn(className)} />
