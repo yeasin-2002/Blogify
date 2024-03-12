@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 interface Props extends React.ComponentProps<"div"> {}
 
 import logo from "@/assets/logo.svg";
+import { ThemeSwitcher } from "@/components";
 import { useAuth } from "@/hooks";
 import { SearchBlogs } from "@/page/search";
 import { Avatar } from "../ui";
@@ -13,7 +14,7 @@ export const Nav = ({ ...rest }: Props) => {
 
   return (
     <header {...rest}>
-      <nav className="container">
+      <nav className="container ">
         <div>
           <Link to="/">
             <img className="w-32" src={logo} alt="lws" />
@@ -31,6 +32,9 @@ export const Nav = ({ ...rest }: Props) => {
               </Link>
             </li>
             <li>
+              <ThemeSwitcher />
+            </li>
+            <li>
               {authData?.authToken && authData?.authUser && <SearchBlogs />}
             </li>
 
@@ -46,7 +50,7 @@ export const Nav = ({ ...rest }: Props) => {
                     className="size-10"
                   />
 
-                  <span className="ml-2 truncate text-white">
+                  <span className="ml-2 truncate dark:text-white text-gray-950">
                     {authData?.authUser?.firstName +
                       " " +
                       authData?.authUser?.lastName}
@@ -57,7 +61,7 @@ export const Nav = ({ ...rest }: Props) => {
               <li>
                 <Link
                   to="/login"
-                  className="text-white/50 transition-all duration-200 hover:text-white"
+                  className="text-gray-900 transition-all duration-200 hover:text-white dark:text-white/50"
                 >
                   Login
                 </Link>

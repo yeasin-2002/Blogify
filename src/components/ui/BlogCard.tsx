@@ -30,15 +30,22 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
 
   return (
     <div className="blog-card" {...rest}>
-      <img className="blog-thumb" src={thumbnail} alt="" />
+      {blog?.thumbnail && (
+        <img
+          className="blog-thumb border border-slate-800/80"
+          src={thumbnail}
+          alt="thumbnail"
+        />
+      )}
+
       <div className="relative mt-2">
         <Link to={`/blog/${blog?.id}`}>
-          <h3 className="text-xl text-slate-300 lg:text-2xl">
+          <h3 className="text-xl text-slate-800 lg:text-2xl dark:text-slate-100">
             <p>{blog.title}</p>
           </h3>
         </Link>
 
-        <div className="mb-6 mt-1 line-clamp-3 text-base text-slate-500">
+        <div className="mb-6 mt-1 line-clamp-3 text-base text-slate-700 dark:text-slate-300">
           {contentString}
         </div>
 
@@ -52,11 +59,14 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
             </Link>
 
             <div>
-              <h5 className="text-sm text-slate-500">
+              <h5 className="text-sm text-slate-800 dark:text-slate-300">
                 <Link to={`/profile/${blog?.author?.id}`}>{authName}</Link>
               </h5>
               <div className="flex items-center text-xs text-slate-700">
-                <span> {blogCreatedDate}</span>
+                <span className="text-slate-700 dark:text-slate-400">
+                  {" "}
+                  {blogCreatedDate}
+                </span>
               </div>
             </div>
           </div>

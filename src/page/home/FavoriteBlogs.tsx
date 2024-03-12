@@ -16,7 +16,7 @@ export const FavoriteBlogs = ({ ...rest }: Props) => {
 
   return (
     <div className="sidebar-card" {...rest}>
-      <h3 className="text-xl font-semibold text-slate-300 lg:text-2xl">
+      <h3 className="text-xl font-semibold text-slate-800 lg:text-2xl dark:text-slate-300 ">
         Your Favorite ❤️
       </h3>
 

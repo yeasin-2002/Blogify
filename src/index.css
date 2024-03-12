@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
+  body {
+    @apply scroll-smooth bg-white  text-midnightBlue transition-all    dark:bg-midnightBlue dark:text-white;
   }
 }
 
@@ -46,7 +46,7 @@
 
   /* Blogs */
   .blog-card {
-    @apply flex cursor-pointer flex-col gap-4  rounded-lg border border-slate-800/40 bg-[#030317] p-3 shadow-slate-200/50 transition-all hover:border-blue-900/50 hover:shadow-lg md:flex-row;
+    @apply flex cursor-pointer flex-col gap-4  rounded-lg border border-slate-800/40 bg-gray-100 p-3 text-gray-900 dark:text-gray-200 shadow-slate-200/50 transition-all hover:border-blue-900/50 hover:shadow-lg md:flex-row dark:bg-midnightBlue;
   }
 
   .blog-card > div {
@@ -54,7 +54,7 @@
   }
 
   .blog-thumb {
-    @apply aspect-video max-h-48 rounded-md object-cover;
+    @apply aspect-video max-h-48 rounded-md object-cover ;
   }
 
   /* Sidebar */

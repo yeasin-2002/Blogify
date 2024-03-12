@@ -53,7 +53,7 @@ export const LogIn = ({ ...rest }: DivProps) => {
   return (
     <main {...rest}>
       <section className="container">
-        <div className="mx-auto mt-12 w-full rounded-md bg-[#030317] p-8 md:w-1/2">
+        <div className="mx-auto mt-12 w-full rounded-md bg-gray-200 p-8 md:w-1/2 dark:bg-midnightBlue">
           <h2 className="mb-6 text-2xl font-bold">Login</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Input
@@ -67,7 +67,7 @@ export const LogIn = ({ ...rest }: DivProps) => {
               })}
               errorMsg={errors.email?.message}
               labelName="Email"
-              className="w-full rounded-md border border-white/20   bg-slate-200 p-3 text-black  focus:border-indigo-500 focus:outline-none"
+              className="w-full rounded-md border border-white   p-3 text-black focus:border-indigo-500  focus:outline-none dark:bg-slate-200"
             />
             <Input
               placeholder="write your password"
@@ -80,7 +80,7 @@ export const LogIn = ({ ...rest }: DivProps) => {
               })}
               errorMsg={errors.password?.message}
               labelName="Password"
-              className="w-full rounded-md border border-white/20   bg-slate-200 p-3 text-black  focus:border-indigo-500 focus:outline-none"
+              className="w-full rounded-md border  border-white   p-3 text-black focus:border-indigo-500  focus:outline-none dark:bg-slate-200"
             />
             <div className="mb-6">
               <button

@@ -1,5 +1,4 @@
-import searchIcon from "@/assets/icons/search.svg";
-import { Cross } from "@/components";
+import { Cross, SearchIcon } from "@/components";
 import { useDebounce, usePortal } from "@/hooks";
 import { searchResponse } from "@/types";
 import { axiosInstance } from "@/utils";
@@ -27,8 +26,8 @@ export const SearchBlogs = () => {
   return (
     <>
       <div onClick={() => setIsShowPortal((pre) => !pre)}>
-        <p className="flex cursor-pointer items-center gap-2">
-          <img src={searchIcon} alt="Search" />
+        <p className="flex cursor-pointer items-center gap-2 text-slate-800 dark:text-slate-100">
+          <SearchIcon />
           <span>Search</span>
         </p>
       </div>
