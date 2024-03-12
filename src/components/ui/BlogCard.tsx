@@ -30,13 +30,15 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
 
   return (
     <div className="blog-card" {...rest}>
-      {blog?.thumbnail && (
-        <img
-          className="blog-thumb border border-slate-800/80"
-          src={thumbnail}
-          alt="thumbnail"
-        />
-      )}
+      <Link to={`/blog/${blog?.id}`}>
+        {blog?.thumbnail && (
+          <img
+            className="blog-thumb border border-slate-800/80"
+            src={thumbnail}
+            alt="thumbnail"
+          />
+        )}
+      </Link>
 
       <div className="relative mt-2">
         <Link to={`/blog/${blog?.id}`}>

@@ -19,10 +19,11 @@ export const SingleBlog = ({ ...rest }: Props) => {
     queryKey: ["singleBlog", params?.id],
     queryFn: async () => axios.get<Blog>(baseUrl + `/blogs/${params?.id}`),
   });
+  console.log(isSuccess);
 
   return (
     <div {...rest}>
-      {!isLoading && isSuccess ? (
+      {!isLoading && data?.status === 200 ? (
         <>
           <main>
             <BlogContent blog={data?.data} />

@@ -40,13 +40,8 @@
       "password": "$2b$08$e9uY0ZjxXJ9F4r36Ln4oCu4nLZ92OKaQ466VEVDtxBPCs/JL/ChR.",
       "favourites": [
         {
-          "id": "9d5598ab44600a379103",
-          "title": "Dev Retro 2022: What made me a better developer this year?",
-          "tags": "programming, algorithm, prototype, javascript"
-        },
-        {
-          "id": "4321b782f360f58c8c88",
-          "title": "JSON Parse | Android | Java",
+          "id": "4321b782f360f58c8c86",
+          "title": "এন্ড্রয়েড পার্মিশন",
           "tags": "android, java, kotlin, permission"
         }
       ]
@@ -360,33 +355,9 @@
         "avatar": "avatar-1708764856675-623317122.jpg"
       },
       "tags": "react,web",
-      "likes": [
-        {
-          "id": "3d2dde4b6548275fb066"
-        }
-      ],
+      "likes": [],
       "comments": [],
       "createdAt": "2024-03-10T17:15:29.173Z"
-    },
-    {
-      "id": "c1e58ed5d1e3e7bae276",
-      "title": "Programming Hero ",
-      "content": "<p><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">Learn and master&nbsp;</span><strong style=\"background-color: rgb(31, 31, 31); color: rgb(188, 192, 195);\">programming</strong><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">&nbsp;to open a new career opportunity. Enjoy the most effective and fun way to learn&nbsp;</span><strong style=\"background-color: rgb(31, 31, 31); color: rgb(188, 192, 195);\">programming</strong><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">&nbsp;as an absolute beginner that will</span></p>",
-      "thumbnail": "thumbnail-1710097390724-445740444.png",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
-      },
-      "tags": "docker,ci,cd,git,github",
-      "likes": [
-        {
-          "id": "3d2dde4b6548275fb066"
-        }
-      ],
-      "comments": [],
-      "createdAt": "2024-03-10T19:03:10.743Z"
     },
     {
       "id": "32db437a4e8060a0a6f4",
@@ -440,54 +411,6 @@
       "likes": [],
       "comments": [],
       "createdAt": "2024-03-10T18:59:27.281Z"
-    },
-    {
-      "id": "a4172170704cbbd1035c",
-      "title": "Front end Developers roadmap ",
-      "content": "<p><span style=\"background-color: rgb(31, 31, 31); color: rgb(232, 232, 232);\">&nbsp;Front-End Developer is&nbsp;</span><span style=\"background-color: rgb(58, 63, 80); color: rgb(226, 238, 255);\">someone who creates websites and web applications</span><span style=\"background-color: rgb(31, 31, 31); color: rgb(232, 232, 232);\">. The difference between Front-End and Back-End is that Front-End refers to how a web page looks, while back-end refers to how it works</span></p>",
-      "thumbnail": "thumbnail-1710097241388-713062958.png",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
-      },
-      "tags": "react,web",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-03-10T19:00:41.412Z"
-    },
-    {
-      "id": "f9261522741b0d4054d1",
-      "title": "Back end  Developers roadmap ",
-      "content": "<p><span style=\"background-color: rgb(31, 31, 31); color: rgb(232, 232, 232);\">Back-end development means&nbsp;</span><span style=\"background-color: rgb(58, 63, 80); color: rgb(226, 238, 255);\">working on server-side software, which focuses on everything you can't see on a website</span><span style=\"background-color: rgb(31, 31, 31); color: rgb(232, 232, 232);\">. Back-end developers ensure the website performs correctly, focusing on databases, back-end logic, application programming interface (APIs), architecture, and servers.</span></p>",
-      "thumbnail": "thumbnail-1710097283905-476737997.png",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
-      },
-      "tags": "react,node,express",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-03-10T19:01:23.954Z"
-    },
-    {
-      "id": "bfb8af1371205cce4b93",
-      "title": "Be a DevOps",
-      "content": "<p><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">&nbsp;</span><strong style=\"background-color: rgb(31, 31, 31); color: rgb(188, 192, 195);\">DevOps engineer</strong><span style=\"background-color: rgb(31, 31, 31); color: rgb(189, 193, 198);\">&nbsp;is an IT generalist who should have a wide-ranging knowledge of both development and operations, including coding, infrastructure management</span></p>",
-      "thumbnail": "thumbnail-1710097329065-54504321.png",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
-      },
-      "tags": "docker,ci,cd,git,github",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-03-10T19:02:09.077Z"
     },
     {
       "id": "c395a56bf9a7a2720c70",

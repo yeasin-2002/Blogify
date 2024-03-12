@@ -15,6 +15,7 @@ export const ToggleBlogToFavorite = ({
   children,
   id,
   showIcon = true,
+
   ...rest
 }: Props) => {
   const api = useAxios();

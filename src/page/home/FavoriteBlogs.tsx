@@ -1,4 +1,4 @@
-import { YourFavoriteSkelton } from "@/components";
+import { Cross, ToggleBlogToFavorite, YourFavoriteSkelton } from "@/components";
 import { useAxios } from "@/hooks";
 import { FavoriteBlogsResponse } from "@/types";
 import { useQuery } from "@tanstack/react-query";
@@ -26,10 +26,22 @@ export const FavoriteBlogs = ({ ...rest }: Props) => {
         ) : (
           data?.data.blogs?.map((blog) => (
             <li key={blog.id}>
-              <Link to={`/blog/${blog.id}`}>
-                <h3 className="cursor-pointer font-medium text-slate-600 transition-all hover:text-slate-500 dark:hover:text-slate-700">
-                  {blog.title}
-                </h3>
+              <div>
+                <div className="flex items-start justify-between ">
+                  <Link
+                    to={`/blog/${blog.id}`}
+                    className="flex-1 cursor-pointer font-medium text-slate-600 transition-all hover:text-slate-500 dark:hover:text-slate-700"
+                  >
+                    {blog.title}
+                  </Link>
+                  <ToggleBlogToFavorite
+                    id={blog.id}
+                    showIcon={false}
+                    className="px-1"
+                  >
+                    <Cross />
+                  </ToggleBlogToFavorite>
+                </div>
 
                 <p className="text-sm text-slate-600">
                   {blog.tags.split(",").map((tag) => (
@@ -38,7 +50,7 @@ export const FavoriteBlogs = ({ ...rest }: Props) => {
                     </span>
                   ))}
                 </p>
-              </Link>
+              </div>
             </li>
           ))
         )}
