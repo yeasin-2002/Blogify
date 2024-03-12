@@ -101,7 +101,7 @@
     @apply mx-auto my-8 w-8/12;
   }
 
-  .createBlog input {
+  .createBlog-input {
     @apply w-full appearance-none border-none bg-transparent px-1 pl-0 text-lg font-bold shadow-none outline-none placeholder:px-2 placeholder:text-lg focus:border-none focus:outline-none focus:ring-0;
   }
 
@@ -136,7 +136,7 @@
     @apply border-2 border-transparent text-white focus:outline-none focus:ring-4 focus:ring-githubDark/50 dark:focus:ring-gray-500;
   }
   .input-flow {
-    @apply block w-full rounded-md border !border-gray-300 !bg-gray-700 p-2.5 text-xs text-gray-900 placeholder:text-xs focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500;
+    @apply block w-full rounded-md border !border-gray-700 !bg-gray-700 p-2.5 text-xs text-gray-900 placeholder:text-xs focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500;
   }
 }
 

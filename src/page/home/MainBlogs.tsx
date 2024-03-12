@@ -5,14 +5,14 @@ interface Props extends React.ComponentProps<"div"> {}
 import discoverIcon from "@/assets/others/binocular.png";
 import { BlogCard, Spinners180Ring } from "@/components";
 import { MainBlogSkeleton } from "@/components/Skeleton/MainBlog.skeleton";
+import { useIntersectionObserver } from "@/hooks";
 import { homeBlogResponse } from "@/types";
 import { axiosInstance } from "@/utils";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { useInView } from "framer-motion";
 
 export const MainBlogs = ({ ...rest }: Props) => {
-  const ref = useRef(null);
-  const isVisible = useInView(ref);
+  const ref = useRef<null | HTMLDivElement>(null);
+  const isVisible = useIntersectionObserver({ element: ref });
 
   const {
     data,
@@ -43,7 +43,7 @@ export const MainBlogs = ({ ...rest }: Props) => {
 
   return (
     <>
-      {!isLoading ? (
+      {!isLoading && (
         <div className="space-y-3 md:col-span-5" {...rest}>
           {data?.pages.map((group) => {
             return group.data.blogs.map((eachBlog) => (
@@ -73,9 +73,9 @@ export const MainBlogs = ({ ...rest }: Props) => {
             )}
           </div>
         </div>
-      ) : (
-        <MainBlogSkeleton />
       )}
+
+      {(isLoading || isFetching) && <MainBlogSkeleton />}
     </>
   );
 };

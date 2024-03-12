@@ -392,6 +392,27 @@
       "createdAt": "2024-03-10T19:03:10.743Z"
     },
     {
+      "id": "32db437a4e8060a0a6f4",
+      "title": "TailwindCSS overview",
+      "content": "<h1><strong>Rapidly build modern websites without ever leaving your HTML</strong></h1><h3><br></h3><h3>A utility-first CSS <em>framework </em>packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.</h3>",
+      "thumbnail": "thumbnail-1710231511409-504367320.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad ",
+        "lastName": "Hasan",
+        "avatar": "avatar-1710099231594-625798957.png"
+      },
+      "tags": "tailwind,css,react,style,tailwindLab",
+      "likes": [
+        {
+          "id": "3d2dde4b6548275fb066"
+        }
+      ],
+      "comments": [],
+      "createdAt": "2024-03-12T08:18:31.438Z",
+      "isFavourite": false
+    },
+    {
       "id": "965584a7b281d9f99c14",
       "title": "What do you need to know to become proficient in JavaScript?",
       "content": "JavaScript is everywhere! It's the web browser's language and helps you create web, mobile, and desktop applications. Today, JavaScript is not limited to the client side alone; it is equally popular as the base of server-side frameworks like Node.js and Deno. If you are considering picking up and mastering a programming language, JavaScript is a safe bet.\n\nRecently I have focused on chalking out a path about how to learn JavaScript effectively using a learning model. Please check it out in the video below. I believe that it will help you to learn the language faster.\n\nThe video above talks about how learning JavaScript effectively, and in this article, we will focus on the what part. We will go over the topics that you must consider putting on your plate when you plan to learn JavaScript.\n\nWe will also get introduced to a community-driven JavaScript Roadmap Guide that you can make use of in learning the language and also can contribute to. We will mention the chapters from the guide occasionally, but if you are interested, please feel free to check out the entire guide early.",

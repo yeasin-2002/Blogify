@@ -15,7 +15,7 @@ export const FiltersBlog = ({ filterBy, setFilterBy, ...rest }: Props) => {
         onChange={(e) => setFilterBy(e.target.value as Props["filterBy"])}
       >
         <option defaultValue="" value={""}>
-          Choose a country
+          Sort By
         </option>
         <option value="latest">Latest </option>
         <option value="oldest">Oldest</option>

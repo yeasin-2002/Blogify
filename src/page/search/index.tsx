@@ -45,9 +45,9 @@ export const SearchBlogs = () => {
               <Cross className="cursor-pointer" />
             </span>
           </div>
-          <div className="flex items-center  gap-x-2 ">
+          <div className="flex w-full  items-center  gap-x-2">
             <SearchInput
-              className="my-10"
+              className="my-10 flex-1"
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
             />

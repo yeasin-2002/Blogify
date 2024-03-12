@@ -1,4 +1,4 @@
-import { Avatar } from "@/components";
+import { Avatar, Spinners180Ring } from "@/components";
 import { useAuth, useAxios, usePortal } from "@/hooks";
 import { Comment } from "@/types";
 import { cn } from "@/utils";
@@ -34,7 +34,7 @@ export const CreateComment = ({ comments, ...rest }: Props) => {
     mutationFn: async (data: FormValue) =>
       api.post(`/blogs/${params.id}/comment`, data, {
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "application/json",
         },
       }),
     onSuccess: () => {
@@ -53,6 +53,7 @@ export const CreateComment = ({ comments, ...rest }: Props) => {
   };
 
   const onSubmit = async (data: FormValue) => {
+    console.log("🚀 ~ onSubmit ~ data:", data);
     try {
       const res = await mutateAsync(data);
 
@@ -101,7 +102,13 @@ export const CreateComment = ({ comments, ...rest }: Props) => {
               )}
               disabled={!auth?.authUser}
             >
-              {isPending ? "Loading..." : "Comment"}
+              {isPending ? (
+                <>
+                  <Spinners180Ring />
+                </>
+              ) : (
+                "Comment"
+              )}
             </button>
           </div>
         </form>

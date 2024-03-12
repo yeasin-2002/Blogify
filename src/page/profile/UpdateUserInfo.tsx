@@ -1,6 +1,7 @@
 import { Cross, Input } from "@/components";
 import { useAxios, usePortal } from "@/hooks";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+
 import { Pencil } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -73,7 +74,10 @@ export const UpdateUserInfo = ({ info, ...rest }: UpdateUserInfoProps) => {
           <>
             <div className="flex w-full items-center  justify-between">
               <p className="text-center text-xl font-bold">Update User Info</p>
-              <span className="cursor-pointer rounded-md bg-gray-800 p-2 hover:bg-gray-700">
+              <span
+                className="cursor-pointer rounded-md bg-gray-800 p-2 hover:bg-gray-700"
+                onClick={() => setIsShowPortal(false)}
+              >
                 <Cross />
               </span>
             </div>

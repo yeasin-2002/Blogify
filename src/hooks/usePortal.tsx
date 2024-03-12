@@ -18,7 +18,6 @@ export const usePortal = (defaultShow = false) => {
       >
         <>
           <div
-            //  className=" h-full   w-full  border-gray-200 shadow"
             className=" 
              mx-auto  grid
              h-3/4

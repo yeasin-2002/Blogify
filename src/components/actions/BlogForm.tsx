@@ -7,6 +7,7 @@ import { BlogFormThumbnail } from "./BlogFormThumbnail";
 import { DefaultFormValueForNewBlog, FormValueForNewBlog } from "@/types";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { TagsInput } from "../ui/TagsInput";
 
 interface Props extends React.ComponentProps<"div"> {
   onSave: (data: FormData) => Promise<void>;
@@ -78,25 +79,37 @@ export const BlogForm = ({ onSave, defaultBlogValues, ...rest }: Props) => {
                 })}
                 errorMsg={errors.title?.message}
                 labelName="Title"
-                className="input-flow"
+                className="input-flow "
               />
             </div>
 
-            <div className="mb-6">
-              <Input
-                placeholder="Your Comma Separated  Tags Ex. JS,TS,REACT (Max 5) "
-                register={register("tags", {
-                  required: "Tags is required",
-                  validate: (value) => {
-                    const tags = value.split(",");
-                    return tags.length <= 5 || "You can add maximum 5 tags";
-                  },
-                })}
-                errorMsg={errors.tags?.message}
-                labelName="Tags"
-                className="input-flow !placeholder:text-xs"
-              />
-            </div>
+            <Controller
+              control={control}
+              {...register("tags", {
+                required: "Tags is required",
+                validate: (value) => {
+                  const tags = value.split(",");
+                  return tags.length <= 5 || "You can add maximum 5 tags";
+                },
+              })}
+              render={({ field }) => (
+                <TagsInput
+                  defaultTags={field.value}
+                  onSave={(data: string) => {
+                    field.onChange(data);
+                  }}
+                />
+              )}
+            />
+            {errors?.tags && (
+              <p className="mb-6 text-sm text-red-500">
+                {errors?.tags?.message}
+              </p>
+            )}
+
+            <label htmlFor="content" className="text-white">
+              Content
+            </label>
 
             <Controller
               control={control}
@@ -104,9 +117,10 @@ export const BlogForm = ({ onSave, defaultBlogValues, ...rest }: Props) => {
               render={({ field }) => (
                 <ReactQuill
                   theme="snow"
+                  id="content"
                   value={field.value}
                   onChange={field.onChange}
-                  className="mb-6 text-white "
+                  className="my-6   text-white"
                 />
               )}
             />
