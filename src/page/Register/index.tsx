@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import { Input } from "@/components";
+import { Input, PasswordInput } from "@/components";
 import { useAuth } from "@/hooks";
 import { authData } from "@/types";
 
@@ -65,6 +65,7 @@ export const Register = ({ ...rest }: DivProps) => {
               errorMsg={errors.firstName?.message}
               labelName="First Name"
               className="w-full rounded-md border border-white/20   bg-slate-200 p-3 text-black  focus:border-indigo-500 focus:outline-none"
+              placeholder="Write your First Name"
             />
 
             <Input
@@ -74,6 +75,7 @@ export const Register = ({ ...rest }: DivProps) => {
               errorMsg={errors.lastName?.message}
               labelName="Last Name"
               className="w-full rounded-md border border-white/20   bg-slate-200 p-3 text-black  focus:border-indigo-500 focus:outline-none"
+              placeholder="Write your Last Name"
             />
 
             <Input
@@ -87,9 +89,10 @@ export const Register = ({ ...rest }: DivProps) => {
               errorMsg={errors.email?.message}
               labelName="Email"
               className="w-full rounded-md border border-white/20   bg-slate-200 p-3 text-black  focus:border-indigo-500 focus:outline-none"
+              placeholder="Write your email"
             />
 
-            <Input
+            <PasswordInput
               register={register("password", {
                 required: "password is required",
                 minLength: { value: 8, message: "Minimum 8 characters" },
@@ -97,6 +100,7 @@ export const Register = ({ ...rest }: DivProps) => {
               errorMsg={errors.password?.message}
               labelName="Password"
               className="w-full rounded-md border border-white/20   bg-slate-200 p-3 text-black  focus:border-indigo-500 focus:outline-none"
+              placeholder="Write your password"
             />
             <div className="mb-6">
               <button
