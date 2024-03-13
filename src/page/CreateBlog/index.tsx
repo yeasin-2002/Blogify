@@ -25,7 +25,7 @@ export const CreateBlog = ({ ...rest }: Props) => {
 
       if (req.status === 201) {
         toast.success("Blog created successfully");
-        navigate(`/blogs/${req.data.blog.id}`);
+        navigate(`/blog/${req?.data?.blog?.id}`);
       }
     } catch (error) {
       console.log(error);

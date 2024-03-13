@@ -42,14 +42,14 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
 
       <div className="relative mt-2">
         <Link to={`/blog/${blog?.id}`}>
-          <h3 className="text-xl text-slate-800 lg:text-2xl dark:text-slate-100">
+          <h3 className="text-xl text-slate-800 dark:text-slate-100 lg:text-2xl">
             <p>{blog.title}</p>
           </h3>
-        </Link>
 
-        <div className="mb-6 mt-1 line-clamp-3 text-base text-slate-700 dark:text-slate-300">
-          {contentString}
-        </div>
+          <div className="mb-6 mt-1 line-clamp-3 text-base text-slate-700 dark:text-slate-300">
+            {contentString}
+          </div>
+        </Link>
 
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 capitalize">

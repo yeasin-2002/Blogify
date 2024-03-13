@@ -13,13 +13,13 @@ export const PreventCommentingIfUnauthenticated = ({
   return (
     <div
       {...rest}
-      className="h-full w-full rounded-md border border-slate-500  bg-[#030317] p-4"
+      className="h-full w-full rounded-md border border-slate-500  bg-gray-200 p-4  dark:bg-midnightBlue"
     >
       <div className="flex items-center justify-between ">
         <p>Log in to continue</p>
         <Cross
           onClick={() => setIsShowPortal(false)}
-          className="h-6 w-6 cursor-pointer fill-current text-slate-300 transition-all duration-200 hover:text-slate-100"
+          className="h-6 w-6 cursor-pointer fill-current text-slate-800 transition-all  duration-200 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-100"
         />
       </div>
       <div className="flex flex-col items-center justify-center   ">

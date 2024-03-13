@@ -15,11 +15,10 @@ interface Props extends React.ComponentProps<"div"> {}
 export const SingleBlog = ({ ...rest }: Props) => {
   const params = useParams();
 
-  const { data, isLoading, isSuccess } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["singleBlog", params?.id],
     queryFn: async () => axios.get<Blog>(baseUrl + `/blogs/${params?.id}`),
   });
-  console.log(isSuccess);
 
   return (
     <div {...rest}>

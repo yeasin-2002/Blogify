@@ -1,25 +1,34 @@
-import deleteIcon from "@/assets/icons/delete.svg";
 import { useAxios } from "@/hooks";
 import { cn } from "@/utils";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Trash } from "../icons";
 
 interface Props extends React.ComponentProps<"button"> {
   id: string | undefined;
+  navigateTo?: string | number;
 }
 
-export const DeleteBlog = (props: Props) => {
+export const DeleteBlog = ({
+  id,
+  navigateTo,
+  className,
+  children,
+  ...rest
+}: Props) => {
   const api = useAxios();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
   const { mutateAsync } = useMutation({
-    mutationKey: ["deleteBlog", props?.id],
-    mutationFn: async () => api.delete(`/blogs/${props?.id}`),
+    mutationKey: ["deleteBlog", id],
+    mutationFn: async () => api.delete(`/blogs/${id}`),
     onSuccess: () => {
       queryClient.invalidateQueries();
-      navigate(-1 || "/");
+      typeof navigateTo == "string" && navigateTo
+        ? navigate(navigateTo)
+        : navigate(-1);
     },
   });
 
@@ -32,10 +41,10 @@ export const DeleteBlog = (props: Props) => {
     }
   };
   return (
-    <button className={cn(props.className)} onClick={handleDelete}>
-      {props.children || (
+    <button className={cn(className)} onClick={handleDelete} {...rest}>
+      {children || (
         <>
-          <img src={deleteIcon} alt="Delete" />
+          <Trash />
           Delete
         </>
       )}

@@ -107,7 +107,10 @@ export const BlogForm = ({ onSave, defaultBlogValues, ...rest }: Props) => {
               </p>
             )}
 
-            <label htmlFor="content" className="text-slate-900 dark:text-slate-100">
+            <label
+              htmlFor="content"
+              className="text-slate-900 dark:text-slate-100"
+            >
               Content
             </label>
 

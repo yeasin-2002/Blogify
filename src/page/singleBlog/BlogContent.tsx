@@ -49,6 +49,7 @@ export const BlogContent = ({ blog, ...rest }: Props) => {
 
               <DeleteBlog
                 id={blog?.id}
+                navigateTo={"/"}
                 className="  action-menu-item w-full rounded-md border border-slate-700  "
               />
             </div>
@@ -73,7 +74,7 @@ export const BlogContent = ({ blog, ...rest }: Props) => {
 
         <article
           // className="prose mx-auto mt-5 w-full py-2 !text-left text-base leading-8  lg:prose-xl md:w-10/12 md:text-lg"
-          className="prose mx-auto text-left text-gray-900 xl:prose-xl dark:text-gray-300"
+          className="format  mx-auto text-left text-gray-900 xl:prose-xl *:text-gray-900 dark:!text-gray-100  dark:*:text-gray-100 "
           dangerouslySetInnerHTML={{ __html: blog?.content || "" }}
         />
       </div>
