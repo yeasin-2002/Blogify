@@ -9,12 +9,14 @@ interface Props extends React.ComponentProps<"button"> {
   children?: React.ReactNode;
   id: string;
   showIcon?: boolean;
+  isStopQuery?: boolean;
 }
 
 export const ToggleBlogToFavorite = ({
   children,
   id,
   showIcon = true,
+  isStopQuery,
 
   ...rest
 }: Props) => {
@@ -32,14 +34,15 @@ export const ToggleBlogToFavorite = ({
   const { data } = useQuery({
     queryKey: ["favourites"],
     queryFn: async () => api.get<FavoriteBlogsResponse>("/blogs/favourites"),
+    enabled: !isStopQuery,
   });
 
   const isIdExist = data?.data.blogs?.some((blog) => blog.id === id);
 
   const handlerToggle = async () => {
     try {
-      const req = await mutateAsync();
-      console.log("🚀 ~ handlerToggle ~ req:", req);
+      if (isStopQuery) return null;
+      return await mutateAsync();
     } catch (error) {
       toast.error("Something went wrong");
     }

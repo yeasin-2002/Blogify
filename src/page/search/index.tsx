@@ -20,7 +20,7 @@ export const SearchBlogs = () => {
     queryKey: ["search", delaySearchedValue],
     queryFn: async () =>
       axiosInstance.get<searchResponse>(`/search?q=${delaySearchedValue}`),
-    enabled: !!searchValue,
+    enabled: !!delaySearchedValue,
   });
 
   return (

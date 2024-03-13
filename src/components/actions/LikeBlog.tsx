@@ -7,6 +7,7 @@ interface Props extends React.ComponentProps<"button"> {
   children: React.ReactNode;
   blogId: string;
   invalidateKey: string[];
+  isStopQuery?: boolean;
 }
 
 export const LikeBlog = ({
@@ -14,6 +15,7 @@ export const LikeBlog = ({
   blogId,
   className,
   invalidateKey,
+  isStopQuery,
   ...rest
 }: Props) => {
   const queryClient = useQueryClient();
@@ -25,6 +27,7 @@ export const LikeBlog = ({
   });
   const handleLike = async () => {
     try {
+      if (isStopQuery) return null;
       const req = await mutateAsync();
 
       if (req.status === 200) {

@@ -55,6 +55,7 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
           <div className="flex items-center space-x-2 capitalize">
             <Link to={`/profile/${blog?.author?.id}`}>
               <Avatar
+                className="size-8"
                 img={blog?.author?.avatar}
                 name={blog?.author?.firstName}
               />

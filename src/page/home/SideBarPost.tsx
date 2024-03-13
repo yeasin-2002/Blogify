@@ -7,6 +7,8 @@ interface Props extends React.ComponentProps<"div"> {}
 
 export const SideBarPost = ({ ...rest }: Props) => {
   const auth = useAuth();
+  console.log("🚀 ~ SideBarPost ~ auth:", auth);
+  
 
   return (
     <div className="h-full w-full space-y-5 md:col-span-2" {...rest}>

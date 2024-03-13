@@ -57,14 +57,6 @@ export const MainBlogs = ({ ...rest }: Props) => {
           <div id="next-page" ref={ref} />
 
           <div>
-            {isFetchingNextPage && (
-              <div>
-                <Spinners180Ring />
-                <p>Loading more blogs</p>
-              </div>
-            )}
-          </div>
-          <div>
             {!hasNextPage && !isError && (
               <div className="mt-24  flex flex-col items-center justify-center gap-x-3 *:text-center">
                 <img src={discoverIcon} alt="Discover" className="size-40" />
@@ -82,6 +74,14 @@ export const MainBlogs = ({ ...rest }: Props) => {
       )}
 
       {(isLoading || isFetching) && <MainBlogSkeleton />}
+      {isFetchingNextPage && (
+        <div>
+          <div className="mt-8 flex w-full items-center justify-center  ">
+            <Spinners180Ring />
+            <p>Loading more blogs</p>
+          </div>
+        </div>
+      )}
     </>
   );
 };

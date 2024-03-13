@@ -7,7 +7,7 @@ import { Trash } from "../icons";
 
 interface Props extends React.ComponentProps<"button"> {
   id: string | undefined;
-  navigateTo?: string | number;
+  navigateTo: string | number | undefined;
 }
 
 export const DeleteBlog = ({
@@ -26,9 +26,7 @@ export const DeleteBlog = ({
     mutationFn: async () => api.delete(`/blogs/${id}`),
     onSuccess: () => {
       queryClient.invalidateQueries();
-      typeof navigateTo == "string" && navigateTo
-        ? navigate(navigateTo)
-        : navigate(-1);
+      navigateTo && navigate(navigateTo as string);
     },
   });
 
