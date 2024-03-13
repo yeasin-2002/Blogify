@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import { SingleBlogSkeleton } from "@/components";
+import { SingleBlogNotFound, SingleBlogSkeleton } from "@/components";
 import { Blog } from "@/types";
 import { baseUrl } from "@/utils";
 import axios from "axios";
@@ -15,14 +15,16 @@ interface Props extends React.ComponentProps<"div"> {}
 export const SingleBlog = ({ ...rest }: Props) => {
   const params = useParams();
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ["singleBlog", params?.id],
     queryFn: async () => axios.get<Blog>(baseUrl + `/blogs/${params?.id}`),
+    retry: 1,
+    refetchOnWindowFocus: false,
   });
 
   return (
     <div {...rest}>
-      {!isLoading && data?.status === 200 ? (
+      {!isLoading && data?.status === 200 && (
         <>
           <main>
             <BlogContent blog={data?.data} />
@@ -36,9 +38,10 @@ export const SingleBlog = ({ ...rest }: Props) => {
             allLikes={data?.data.likes}
           />
         </>
-      ) : (
-        <SingleBlogSkeleton />
       )}
+
+      {isLoading && !isError && <SingleBlogSkeleton />}
+      {!isLoading && isError && <SingleBlogNotFound />}
     </div>
   );
 };

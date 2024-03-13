@@ -15,8 +15,8 @@ export const RenderBlogSkeleton = ({ initialCount }: Props) => {
       exit={{ opacity: 0 }}
       className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
     >
-      {array.map((i) => (
-        <BlogsSkeleton key={i} />
+      {array.map(() => (
+        <BlogsSkeleton key={crypto.randomUUID()} />
       ))}
     </motion.div>
   );

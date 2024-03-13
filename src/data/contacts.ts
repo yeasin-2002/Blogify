@@ -1,4 +1,10 @@
-import { FaceBook, Instagram, Pinterest, Twitter, YouTube } from "@/components";
+import {
+  FaceBook,
+  Instagram,
+  Pinterest,
+  Twitter,
+  YouTube,
+} from "@/components/icons";
 
 export const contactItems = [
   {

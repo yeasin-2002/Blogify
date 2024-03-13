@@ -50,7 +50,10 @@ export const MainBlogs = ({ ...rest }: Props) => {
               <BlogCard key={eachBlog.id} blog={eachBlog} />
             ));
           })}
-          <div id="next-page" ref={ref}>
+
+          <div id="next-page" ref={ref} />
+
+          <div>
             {isFetchingNextPage && (
               <div>
                 <Spinners180Ring />

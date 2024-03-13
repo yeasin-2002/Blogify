@@ -6,8 +6,8 @@ const array = Array.from({ length: 10 });
 export const MainBlogSkeleton = (props: Props) => {
   return (
     <div {...props} className="space-y-5 md:col-span-5">
-      {array.map((_, index) => (
-        <BlogsSkeleton key={index} className="w-full" />
+      {array.map(() => (
+        <BlogsSkeleton key={crypto.randomUUID()} className="w-full" />
       ))}
     </div>
   );

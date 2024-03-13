@@ -1,18 +1,23 @@
 import { Route, Routes } from "react-router-dom";
-import { Footer, GlobalProvider, Nav } from "./components/Global";
-import { PrivateRoute } from "./components/routes";
+
+import {
+  Footer,
+  GlobalProvider,
+  Nav,
+  PrivateRoute,
+  RootNotFound,
+} from "./components";
+
 import {
   CreateBlog,
+  Edit,
   Home,
   LogIn,
-  NotFound,
   Profile,
   Register,
   RootErrorBoundary,
   SingleBlog,
-  TestRoute,
 } from "./page";
-import { Edit } from "./page/Edit";
 
 const App = () => {
   return (
@@ -36,9 +41,7 @@ const App = () => {
         <Route path="/login" element={<LogIn />} />
         <Route path="/blog/:id" element={<SingleBlog />} />
 
-        <Route path="/test" element={<TestRoute />} />
-
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<RootNotFound />} />
       </Routes>
 
       <Footer />
