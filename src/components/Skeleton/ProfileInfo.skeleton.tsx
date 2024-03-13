@@ -10,7 +10,7 @@ export const ProfileInfoSkeleton = () => {
       exit={{ opacity: 0 }}
     >
       <div className="mt-4 flex flex-col items-center gap-y-5">
-        <UserIcon className="size-28" />
+        <UserIcon className="size-28 text-gray-400 " />
         <TextSkeleton />
       </div>
     </motion.div>

@@ -7,4 +7,5 @@ export * from "./RenderBlog.skeleton";
 export * from "./SingleBlog.skeleton";
 export * from "./Text.skeleton";
 export * from "./YourFavorite.skeleton";
+export * from "./search.skeleton";
 

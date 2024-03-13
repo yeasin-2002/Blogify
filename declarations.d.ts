@@ -1,4 +1,5 @@
 import { store } from "@/redux/store";
+import { MotionProps } from "framer-motion";
 
 declare global {
   type OnlyChild = {
@@ -16,6 +17,8 @@ declare global {
   interface DivPropsWithChild extends React.ComponentProps<"div"> {
     children: React.ReactNode;
   }
+
+  type MotionElement = React.FC<MotionProps>;
 
   interface SvgProp extends React.SVGProps<SVGSVGElement> {}
 

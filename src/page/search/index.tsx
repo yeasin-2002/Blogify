@@ -1,4 +1,4 @@
-import { Cross, SearchIcon } from "@/components";
+import { Cross, SearchIcon, SearchSkeleton } from "@/components";
 import { useDebounce, usePortal } from "@/hooks";
 import { searchResponse } from "@/types";
 import { axiosInstance } from "@/utils";
@@ -16,7 +16,7 @@ export const SearchBlogs = () => {
   const delaySearchedValue = useDebounce(searchValue, 500);
   const { renter, setIsShowPortal } = usePortal();
 
-  const { data, error } = useQuery({
+  const { data, error, isLoading } = useQuery({
     queryKey: ["search", delaySearchedValue],
     queryFn: async () =>
       axiosInstance.get<searchResponse>(`/search?q=${delaySearchedValue}`),
@@ -54,7 +54,7 @@ export const SearchBlogs = () => {
             <FiltersBlog filterBy={filterBy} setFilterBy={setFilterBy} />
           </div>
 
-          {delaySearchedValue && (
+          {delaySearchedValue && !isLoading && (
             <SearchContent
               data={data}
               error={error}
@@ -63,6 +63,7 @@ export const SearchBlogs = () => {
               setIsShowPortal={setIsShowPortal}
             />
           )}
+          {isLoading && <SearchSkeleton />}
 
           {!delaySearchedValue && <SuggestSearch />}
         </>,

@@ -9,6 +9,8 @@ export const SingleBlogSkeleton = ({ ...rest }: Props) => {
 
       <Skeleton className="mt-4 h-10 w-full" />
       <Skeleton className="mt-4 h-10 w-full" />
+      <Skeleton className="mt-4 h-10 w-full" />
+
       <Skeleton className="mt-10 h-36 w-full" />
     </div>
   );
