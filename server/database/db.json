@@ -55,6 +55,16 @@
       "bio": "",
       "password": "$2b$08$At/U5W1/ASt/F3zWCqOZnO75ftNVjwR.RVf0FEhEdQ0nHkll5tJ4m",
       "favourites": []
+    },
+    {
+      "id": "52442827d8a18e2ea6ed",
+      "email": "yeasin@gmail.com",
+      "firstName": "md",
+      "lastName": "yeasin",
+      "avatar": null,
+      "bio": "",
+      "password": "$2b$08$DCWOVsiJ1wz9x8teIQS24OTOvPjrUslVJLMqE3Semhj/f81kR68Nq",
+      "favourites": []
     }
   ],
   "blogs": [

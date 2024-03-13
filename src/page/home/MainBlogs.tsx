@@ -1,18 +1,21 @@
-import React, { useEffect, useRef } from "react";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 interface Props extends React.ComponentProps<"div"> {}
 
-// assets and Icons
 import discoverIcon from "@/assets/others/binocular.png";
-import { BlogCard, Spinners180Ring } from "@/components";
-import { MainBlogSkeleton } from "@/components/Skeleton/MainBlog.skeleton";
-import { useIntersectionObserver } from "@/hooks";
+import { BlogCard, MainBlogSkeleton, Spinners180Ring } from "@/components";
 import { homeBlogResponse } from "@/types";
 import { axiosInstance } from "@/utils";
-import { useInfiniteQuery } from "@tanstack/react-query";
+
+// import { useIntersectionObserver } from "@/hooks";
+// import { useInView } from "framer-motion";
 
 export const MainBlogs = ({ ...rest }: Props) => {
-  const ref = useRef<null | HTMLDivElement>(null);
-  const isVisible = useIntersectionObserver({ element: ref });
+  // const ref = useRef<null | HTMLDivElement>(null);
+  // const isVisible = useIntersectionObserver({ element: ref });
+  // const isVisible = useInView(ref);
+  const [ref, isVisible] = useInView();
 
   const {
     data,
