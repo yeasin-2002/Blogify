@@ -3,12 +3,12 @@ import { CrossRound } from "../icons";
 
 interface Props extends React.ComponentProps<"input"> {
   onSave: (data: string) => void;
-  defaultTags?: string;
+  initialtags?: string;
 }
 
 export const TagsInput = (props: Props) => {
   const [tags, setTags] = useState<string[]>(
-    props?.defaultTags?.split(",") || [],
+    props?.initialtags?.split(",") || [],
   );
   const [inputValue, setInputValue] = useState("");
 
@@ -32,7 +32,7 @@ export const TagsInput = (props: Props) => {
 
   useEffect(() => {
     props.onSave(tags.join(","));
-  }, [tags, inputValue, props?.defaultTags]);
+  }, [tags, inputValue, props?.initialtags]);
 
   return (
     <div className="my-2 flex flex-col gap-y-1  rounded-md p-2 ring-1">

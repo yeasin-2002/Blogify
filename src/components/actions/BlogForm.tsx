@@ -91,7 +91,7 @@ export const BlogForm = ({ onSave, defaultBlogValues, ...rest }: Props) => {
               })}
               render={({ field }) => (
                 <TagsInput
-                  defaultTags={field.value}
+                  initialtags={field.value}
                   onSave={(data: string) => {
                     field.onChange(data);
                   }}

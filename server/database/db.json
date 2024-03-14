@@ -38,7 +38,13 @@
       "avatar": "avatar-1710099231594-625798957.png",
       "bio": "I am Saad Hasan, self-taught Junior Software Developer from Bangladesh. I have been working as a Professional Frontend Developer for the last 1 year, Though I started my Self-Taught Programming Journey In 2014. Now a Team Member of LWS\n",
       "password": "$2b$08$e9uY0ZjxXJ9F4r36Ln4oCu4nLZ92OKaQ466VEVDtxBPCs/JL/ChR.",
-      "favourites": []
+      "favourites": [
+        {
+          "id": "7c12b4b48531bcc995ae",
+          "title": "A guide to Prototype in JavaScript",
+          "tags": "programming, algorithm, prototype, javascript"
+        }
+      ]
     },
     {
       "id": "65aff389f1822a5e9f43",
@@ -76,7 +82,7 @@
       "firstName": "md ",
       "lastName": "Yeasin",
       "avatar": null,
-      "bio": "",
+      "bio": "I’m a front-end web developer From Dhaka, Bangladesh, also familiar with the Back End. I convert coffee into Code ✌️\n\n",
       "password": "$2b$08$qSGDSrEAh.e6Tz8lUggaveGEMWcVhEs0h.MbX.yMGbFpPyB.8xTHe",
       "favourites": []
     }
@@ -103,6 +109,9 @@
         },
         {
           "id": "3d2dde4b6548275fb066"
+        },
+        {
+          "id": "af88348749df1430f462"
         }
       ],
       "comments": [
@@ -157,6 +166,9 @@
         },
         {
           "id": "3d2dde4b6548275fb066"
+        },
+        {
+          "id": "af88348749df1430f462"
         }
       ],
       "comments": [
@@ -192,6 +204,9 @@
         },
         {
           "id": "3d2dde4b6548275fb066"
+        },
+        {
+          "id": "af88348749df1430f462"
         }
       ],
       "comments": [
@@ -237,6 +252,9 @@
         },
         {
           "id": "3d2dde4b6548275fb066"
+        },
+        {
+          "id": "af88348749df1430f462"
         }
       ],
       "comments": [
@@ -592,7 +610,7 @@
     {
       "id": "145379ab5a4c35419202",
       "title": "Build a Text-to-PowerPoint Application (LangChain, Next.js, & CopilotKit)",
-      "content": "<h1>TL;DR</h1><p>In this article, you will learn how to build an AI-powered PowerPoint application that can search the web to automatically make a presentation about any topic.</p><p>We will cover using:</p><ul><li>Next.js for the app framework 🖥️</li><li>OpenAI for the LLM 🧠</li><li>LangChain &amp; Tavily for a web-searching AI agent 🤖</li><li>Using CopilotKit to integrate the AI into your app 🪁</li></ul><p><img src=\"https://media.dev.to/cdn-cgi/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fztokmi3hdcthmxkj2gny.gif\" alt=\"Image description\" height=\"239\" width=\"498\"></p><h2>CopilotKit: Build an AI-copilot for your app</h2><p>CopilotKit is the&nbsp;<a href=\"https://github.com/CopilotKit/CopilotKit\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--link-branded-color);\">open-source AI copilot platform.</a>&nbsp;We make it easy to integrate powerful AI into your react apps.</p><p>Build:</p><ul><li>ChatBot: Context aware in-app chatbots that can take actions in-app 💬</li><li>CopilotTextArea: AI-powered textFields with context-aware autocomplete &amp; insertions 📝</li><li>Co-Agents: In-app AI agents that can interact with your app &amp; users 🤖</li></ul><p><img src=\"https://media.dev.to/cdn-cgi/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh69i50cxsyvcknlcs6q0.gif\" alt=\"Image description\" height=\"480\" width=\"800\"></p><p><a href=\"https://github.com/CopilotKit/CopilotKit\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"background-color: var(--bg); color: var(--link-branded-color);\">Star CopilotKit ⭐️</a></p><p>Now back to the article.</p><p>(This article is a progression of an article we published 3 weeks ago, but you don't need to read that one to understand this).</p><p><br></p>",
+      "content": "<h1>TL;DR</h1><p>In this article, you will learn how to build an AI-powered PowerPoint application that can search the web to automatically make a presentation about any topic.</p><p>We will cover using:</p><ul><li>Next.js for the app framework 🖥️</li><li>OpenAI for the LLM 🧠</li><li>LangChain &amp; Tavily for a web-searching AI agent 🤖</li><li>Using CopilotKit to integrate the AI into your app 🪁</li></ul><p><img src=\"https://media.dev.to/cdn-cgi/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fztokmi3hdcthmxkj2gny.gif\" alt=\"Image description\" height=\"239\" width=\"498\"></p><h2>CopilotKit: Build an AI-copilot for your app</h2><p>CopilotKit is the&nbsp;<a href=\"https://github.com/CopilotKit/CopilotKit\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--link-branded-color);\">open-source AI copilot platform.</a>&nbsp;We make it easy to integrate powerful AI into your react apps.</p><p>Build:</p><ul><li>ChatBot: Context aware in-app chatbots that can take actions in-app 💬</li><li>CopilotTextArea: AI-powered textFields with context-aware autocomplete &amp; insertions 📝</li><li>Co-Agents: In-app AI agents that can interact with your app &amp; users 🤖</li></ul><p><img src=\"https://media.dev.to/cdn-cgi/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh69i50cxsyvcknlcs6q0.gif\" alt=\"Image description\" height=\"480\" width=\"800\"></p><p><a href=\"https://github.com/CopilotKit/CopilotKit\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"background-color: var(--bg); color: var(--link-branded-color);\">Star CopilotKit ⭐️</a></p><p>Now back to the article.</p><p>(This article is a progression of an article we published 3 weeks ago, but you don't need to read that one to understand this).</p>",
       "thumbnail": "thumbnail-1710401178100-929523236.jpg",
       "author": {
         "id": "af88348749df1430f462",
@@ -600,10 +618,11 @@
         "lastName": "Yeasin",
         "avatar": null
       },
-      "tags": "Ai,JavaScript",
+      "tags": "Ai,JavaScript,TypeScript",
       "likes": [],
       "comments": [],
-      "createdAt": "2024-03-14T07:26:18.117Z"
+      "createdAt": "2024-03-14T07:26:18.117Z",
+      "isFavourite": false
     },
     {
       "id": "f52528f79ab89bf884ae",
