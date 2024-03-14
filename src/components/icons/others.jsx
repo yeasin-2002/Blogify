@@ -370,3 +370,4 @@ export const EyeClose = ({ className, ...rest }) => (
     <line x1="2" x2="22" y1="2" y2="22" />
   </svg>
 );
+

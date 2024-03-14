@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { AnimatePresence } from "framer-motion";
 
-import { ProfileInfoSkeleton, RenderBlogSkeleton } from "@/components/Skeleton";
+import { ProfileInfoSkeleton, RenderBlogSkeleton } from "@/components";
 import { axiosInstance } from "@/utils";
 import { useParams } from "react-router-dom";
 import { ProfileInfo } from "./ProfileInfo";

@@ -71,6 +71,14 @@ export const MainBlogs = ({ ...rest }) => {
                     Please check back later for more blogs
                   </span>
                 </p>
+                <button
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
+                  className="mt-3 rounded-md bg-slate-300 px-4  py-2  text-slate-950 dark:bg-slate-800 dark:text-slate-200"
+                >
+                  Go to Top
+                </button>
               </div>
             )}
           </div>

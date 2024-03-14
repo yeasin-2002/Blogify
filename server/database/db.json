@@ -38,13 +38,7 @@
       "avatar": "avatar-1710099231594-625798957.png",
       "bio": "I am Saad Hasan, self-taught Junior Software Developer from Bangladesh. I have been working as a Professional Frontend Developer for the last 1 year, Though I started my Self-Taught Programming Journey In 2014. Now a Team Member of LWS\n",
       "password": "$2b$08$e9uY0ZjxXJ9F4r36Ln4oCu4nLZ92OKaQ466VEVDtxBPCs/JL/ChR.",
-      "favourites": [
-        {
-          "id": "7c12b4b48531bcc995ae",
-          "title": "A guide to Prototype in JavaScript",
-          "tags": "programming, algorithm, prototype, javascript"
-        }
-      ]
+      "favourites": []
     },
     {
       "id": "65aff389f1822a5e9f43",
