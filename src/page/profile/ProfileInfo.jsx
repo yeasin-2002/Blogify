@@ -23,10 +23,12 @@ export const ProfileInfo = ({ User, ...rest }) => {
 
         <div className="flex flex-1 justify-between">
           <div>
-            <h3 className=" text-2xl font-semibold text-gray-900 dark:text-white  lg:text-[28px]">
+            <h3 className=" font-europa-bold text-2xl font-semibold text-gray-900  dark:text-white  lg:text-[28px]">
               {User?.firstName + " " + User?.lastName}
             </h3>
-            <p className="leading-[231%] lg:text-lg">{User?.email}</p>
+            <p className=" font-europa-regular leading-[231%] lg:text-lg">
+              {User?.email}
+            </p>
           </div>
           {isAuthUser && (
             <div className="flex flex-col items-center gap-x-2 sm:flex-row">

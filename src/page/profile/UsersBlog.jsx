@@ -11,7 +11,7 @@ export const UsersBlog = ({ usersBlog, userName }) => {
 
   return (
     <>
-      <h4 className="mt-6 text-xl lg:mt-8 lg:text-2xl">
+      <h4 className="mt-6 font-europa-bold text-xl lg:mt-8 lg:text-2xl">
         {usersBlog?.length !== 0 && namingConvention + " Blogs"}
       </h4>
       <div className="my-6 space-y-4">

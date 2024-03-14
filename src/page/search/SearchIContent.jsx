@@ -34,10 +34,10 @@ export const SearchContent = ({
             alt=""
           />
           <div className="mt-2">
-            <h3 className="text-xl font-bold text-slate-800 dark:text-slate-300">
+            <h3 className="font-europa-bold text-xl font-bold text-slate-800 dark:text-slate-300">
               {blog.title}
             </h3>
-            <p className="mb-6 mt-1 line-clamp-3 text-sm text-slate-500">
+            <p className="mb-6 mt-1 line-clamp-3 font-europa-regular text-sm text-slate-500">
               {blog.content}
             </p>
           </div>

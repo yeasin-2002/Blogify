@@ -32,7 +32,7 @@ export const SearchBlogs = () => {
       {renter(
         <>
           <div className="flex w-full items-center justify-between">
-            <h3 className="my-2 pl-2 text-xl font-bold text-slate-800 dark:text-slate-400">
+            <h3 className="my-2 pl-2 font-europa-bold text-xl font-bold text-slate-800 dark:text-slate-400">
               Search for Your Desire Blogs
             </h3>
             <span

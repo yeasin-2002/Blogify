@@ -44,11 +44,15 @@ export const BlogCard = ({ blog, ...rest }) => {
 
       <div className="relative mt-2">
         <Link to={`/blog/${blog?.id}`}>
-          <h3 className="text-xl text-slate-800 dark:text-slate-100 lg:text-2xl">
-            <p>{blog.title}</p>
+          <h3 className="font-europa-bold text-xl text-slate-800 dark:text-slate-100 lg:text-2xl">
+            {blog.title}
           </h3>
 
-          <div className="mb-6 mt-1 line-clamp-3 text-base text-slate-700 dark:text-slate-300">
+          <div
+            className="mb-6 mt-1 line-clamp-3 font-europa-regular text-base text-slate-700
+           dark:text-slate-300
+          "
+          >
             {contentString}
           </div>
         </Link>
@@ -64,14 +68,15 @@ export const BlogCard = ({ blog, ...rest }) => {
             </Link>
 
             <div>
-              <h5 className="text-sm text-slate-800 dark:text-slate-300">
-                <Link to={`/profile/${blog?.author?.id}`}>{authName}</Link>
-              </h5>
-              <div className="flex items-center text-xs text-slate-700">
-                <span className="text-slate-700 dark:text-slate-400">
-                  {" "}
-                  {blogCreatedDate}
-                </span>
+              <Link
+                className="font-europa-bold text-sm text-slate-800 dark:text-slate-300"
+                to={`/profile/${blog?.author?.id}`}
+              >
+                {authName}
+              </Link>
+
+              <div className="flex items-center font-europa-regular  text-xs text-slate-700  dark:text-slate-400">
+                {blogCreatedDate}
               </div>
             </div>
           </div>
@@ -81,7 +86,7 @@ export const BlogCard = ({ blog, ...rest }) => {
             invalidateKey={["blog"]}
             className="flex items-center gap-x-1 px-2 py-1 text-sm text-slate-700"
           >
-            <span>{blog?.likes?.length}</span>
+            <span className="font-europa-bold">{blog?.likes?.length}</span>
             {isYouLiked ? <LinkFill /> : <Like />}
           </LikeBlog>
         </div>

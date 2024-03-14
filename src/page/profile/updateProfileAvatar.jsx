@@ -34,7 +34,7 @@ export const UpdateProfileAvatar = ({ ...rest }) => {
         headers: { "Content-Type": "multipart/form-data" },
       }),
     onSuccess: () => {
-      return queryClient.invalidateQueries({ queryKey: ["profile"] });
+      return queryClient.invalidateQueries();
     },
   });
 

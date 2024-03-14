@@ -11,12 +11,18 @@ export const PopularBlogItems = ({ data, ...rest }) => {
 
   return (
     <li {...rest}>
-      <h3 className="cursor-pointer font-medium text-slate-800 transition-all hover:text-slate-950 dark:text-slate-400 dark:hover:text-slate-300">
-        <Link to={`/blog/${data.id}`}>{data.title}</Link>
-      </h3>
+      <Link
+        className="cursor-pointer font-europa-bold font-medium text-slate-800 transition-all hover:text-slate-950 dark:text-slate-400  dark:hover:text-slate-300"
+        to={`/blog/${data.id}`}
+      >
+        {data.title}
+      </Link>
+
       <div className="flex items-center gap-x-1 text-sm  text-slate-600">
         by
-        <Link to={`/profile/${data.author.id}`}> {authorName} </Link>
+        <Link className="font-europa-bold" to={`/profile/${data.author.id}`}>
+          {authorName}
+        </Link>
         <LikeBlog
           blogId={data.id}
           invalidateKey={["mostPopularBlogs"]}

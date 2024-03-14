@@ -47,7 +47,7 @@ export const Nav = ({ ...rest }) => {
                     className="size-10"
                   />
 
-                  <span className="ml-2 truncate text-gray-950 dark:text-white">
+                  <span className="ml-2 truncate font-europa-regular text-gray-950 dark:text-white">
                     {authData?.authUser?.firstName +
                       " " +
                       authData?.authUser?.lastName}

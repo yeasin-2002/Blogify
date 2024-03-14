@@ -11,7 +11,7 @@ export const MostPopularBlogs = ({ ...rest }) => {
 
   return (
     <div className="sidebar-card" {...rest}>
-      <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-300 lg:text-2xl">
+      <h3 className="font-europa-bold text-xl font-semibold text-slate-800 dark:text-slate-300 lg:text-2xl">
         Most Popular
       </h3>
 

@@ -1,6 +1,6 @@
 ## React Blogify
 
-#### This is a simple blog application built with React. It allows users to create, read, update, and delete blog posts. The application uses a mock API to store the blog posts.
+#### This is a simple blog application built with React. It allows users to create, read, update, and delete blog posts. The application uses a  JSON Server  API to store the blog posts.
 
 ![Cover](/public/cover.png)
 
