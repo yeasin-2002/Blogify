@@ -6,4 +6,3 @@ export * from "./useIntersectionObserver";
 export * from "./useLocalStorage";
 export * from "./usePortal";
 export * from "./useTheme";
-

@@ -50,7 +50,7 @@ export const Nav = ({ ...rest }: Props) => {
                     className="size-10"
                   />
 
-                  <span className="ml-2 truncate dark:text-white text-gray-950">
+                  <span className="ml-2 truncate text-gray-950 dark:text-white">
                     {authData?.authUser?.firstName +
                       " " +
                       authData?.authUser?.lastName}

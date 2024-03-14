@@ -28,7 +28,7 @@ export const ProfileInfo = ({ User, ...rest }: Props) => {
 
         <div className="flex flex-1 justify-between">
           <div>
-            <h3 className=" text-2xl font-semibold text-gray-900 lg:text-[28px]  dark:text-white">
+            <h3 className=" text-2xl font-semibold text-gray-900 dark:text-white  lg:text-[28px]">
               {User?.firstName + " " + User?.lastName}
             </h3>
             <p className="leading-[231%] lg:text-lg">{User?.email}</p>
@@ -58,7 +58,7 @@ export const ProfileInfo = ({ User, ...rest }: Props) => {
       {/* bio */}
       <div className="mt-4 flex items-start gap-2 lg:mt-6">
         <div className="flex-1">
-          <p className="leading-[188%] text-gray-600 lg:text-lg dark:text-gray-400">
+          <p className="leading-[188%] text-gray-600 dark:text-gray-400 lg:text-lg">
             {User?.bio}
           </p>
         </div>

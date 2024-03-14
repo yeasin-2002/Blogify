@@ -7,7 +7,7 @@ import { contactItems } from "@/data";
 export const Footer = ({ ...rest }: Props) => {
   return (
     <footer
-      className="my-6 bg-white text-gray-950  md:my-8 dark:bg-midnightBlue"
+      className="my-6 bg-white text-gray-950  dark:bg-midnightBlue md:my-8"
       {...rest}
     >
       <div className="container mx-auto flex items-center justify-between">

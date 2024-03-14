@@ -33,43 +33,41 @@ export const Popover = ({
   };
 
   return (
-    <>
-      <PopoverContext.Provider value={{ isOpen, setIsOpen }}>
-        {!isOpen && <>{children}</>}
+    <PopoverContext.Provider value={{ isOpen, setIsOpen }}>
+      {!isOpen && children}
 
-        {isOpen &&
-          createPortal(
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 5,
-              }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 5 }}
-              className={`fixed inset-0 z-50 flex  items-center justify-center bg-black bg-opacity-50`}
-              onClick={handleClick}
+      {isOpen &&
+        createPortal(
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 5,
+            }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 5 }}
+            className={`fixed inset-0 z-50 flex  items-center justify-center bg-black bg-opacity-50`}
+            onClick={handleClick}
+          >
+            <div
+              className={cn(
+                "min-h-80 min-w-80 overflow-y-auto rounded-lg bg-white p-4 text-black shadow-lg",
+                className,
+              )}
+              onClick={(e) => e.stopPropagation()}
             >
-              <div
-                className={cn(
-                  "min-h-80 min-w-80 overflow-y-auto rounded-lg bg-white p-4 text-black shadow-lg",
-                  className,
-                )}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="flex justify-between ">
-                  <p className="text-lg font-semibold">{title}</p>
-                  <Cross
-                    className="cursor-pointer"
-                    onClick={() => setIsOpen(false)}
-                  />
-                </div>
-                {children}
+              <div className="flex justify-between ">
+                <p className="text-lg font-semibold">{title}</p>
+                <Cross
+                  className="cursor-pointer"
+                  onClick={() => setIsOpen(false)}
+                />
               </div>
-            </motion.div>,
-            document.getElementById("popOver") as HTMLElement,
-          )}
-      </PopoverContext.Provider>
-    </>
+              {children}
+            </div>
+          </motion.div>,
+          document.getElementById("popOver") as HTMLElement,
+        )}
+    </PopoverContext.Provider>
   );
 };
 

@@ -53,7 +53,7 @@ export const LogIn = ({ ...rest }: DivProps) => {
   return (
     <main {...rest}>
       <section className="container">
-        <div className="mx-auto mt-12 w-full rounded-md bg-gray-200 p-8 md:w-1/2 dark:bg-midnightBlue">
+        <div className="mx-auto mt-12 w-full rounded-md bg-gray-200 p-8 dark:bg-midnightBlue md:w-1/2">
           <h2 className="mb-6 text-2xl font-bold">Login</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Input

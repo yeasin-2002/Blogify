@@ -7,7 +7,7 @@ import { Trash } from "../icons";
 
 interface Props extends React.ComponentProps<"button"> {
   id: string | undefined;
-  navigateTo: string | number | undefined;
+  navigateTo?: string | number;
 }
 
 export const DeleteBlog = ({

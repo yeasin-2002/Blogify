@@ -15,7 +15,7 @@ export const MostPopularBlogs = ({ ...rest }: Props) => {
 
   return (
     <div className="sidebar-card" {...rest}>
-      <h3 className="text-xl font-semibold text-slate-800 lg:text-2xl dark:text-slate-300">
+      <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-300 lg:text-2xl">
         Most Popular
       </h3>
 

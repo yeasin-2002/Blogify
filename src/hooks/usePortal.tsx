@@ -16,17 +16,15 @@ export const usePortal = (defaultShow = false) => {
         )}
         onClick={() => setIsShowPortal((pre) => !pre)}
       >
-        <>
-          <div
-            className=" 
+        <div
+          className=" 
              mx-auto  grid
              h-[90%]
              w-11/12 place-items-center    rounded-lg border border-slate-600/50 bg-slate-100 p-4 shadow-lg shadow-slate-400/10 dark:bg-slate-900 "
-            onClick={(e) => e.stopPropagation()}
-          >
-            {children}
-          </div>
-        </>
+          onClick={(e) => e.stopPropagation()}
+        >
+          {children}
+        </div>
       </div>,
       document.getElementById("popOver") as HTMLElement,
     );
