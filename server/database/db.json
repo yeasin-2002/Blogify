@@ -33,7 +33,7 @@
     {
       "id": "3d2dde4b6548275fb066",
       "email": "saadhasan@learnwithsumit.com",
-      "firstName": "Saaad ",
+      "firstName": "Saad ",
       "lastName": "Hasan",
       "avatar": "avatar-1710099231594-625798957.png",
       "bio": "I am Saad Hasan, self-taught Junior Software Developer from Bangladesh. I have been working as a Professional Frontend Developer for the last 1 year, Though I started my Self-Taught Programming Journey In 2014. Now a Team Member of LWS\n",
@@ -655,6 +655,22 @@
       "likes": [],
       "comments": [],
       "createdAt": "2024-03-14T07:28:35.545Z"
+    },
+    {
+      "id": "726c90b2c58db7f4e7ec",
+      "title": "Top 14 Libraries for Any React App",
+      "content": "<p>There are so many React libraries out there, and picking the right one can be tough. In this article, I’ve put together a list of my favorite and most reliable libraries to help you make the best choice for your project.</p><p>Please, notice that it’s my subjective top based on experience. I can miss something and there might be other great libraries out there. So, feel free to leave comments and share your thoughts.</p><p><br></p><p><br></p><p><strong>Table of Contents</strong></p><ul><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#b5fd\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>Interaction with API</strong></a></li><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#ea9d\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>State Management</strong></a></li><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#8b2f\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>UI-kit</strong></a></li><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#4dab\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>Styling</strong></a></li><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#b781\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>Forms and Validation</strong></a></li><li><br></li></ul><h1>Interaction with API</h1><p>In today’s world, a frontend application is rarely complete without a connection to a backend. This makes the choice of the right library for API interactions incredibly important.</p><p><br></p><p>Mainly, there are two popular types of APIs you will encounter: Typical RESTful API and GraphQL. And it’s not hard to guess that their tooling will differ.</p>",
+      "thumbnail": "thumbnail-1710415516118-969035931.webp",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saaad ",
+        "lastName": "Hasan",
+        "avatar": "avatar-1710099231594-625798957.png"
+      },
+      "tags": "ai ,raect",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-14T11:25:16.134Z"
     }
   ]
 }

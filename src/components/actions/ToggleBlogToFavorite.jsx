@@ -1,10 +1,8 @@
 import { useAxios } from "@/hooks";
-import { FavoriteBlogsResponse } from "@/types";
 import { cn } from "@/utils";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { HeartIcon } from "lucide-react";
 import { toast } from "react-toastify";
-
 
 export const ToggleBlogToFavorite = ({
   children,
@@ -13,7 +11,7 @@ export const ToggleBlogToFavorite = ({
   isStopQuery,
 
   ...rest
-} ) => {
+}) => {
   const api = useAxios();
   const queryClient = useQueryClient();
 
@@ -27,7 +25,7 @@ export const ToggleBlogToFavorite = ({
 
   const { data } = useQuery({
     queryKey: ["favourites"],
-    queryFn: async () => api.get<FavoriteBlogsResponse>("/blogs/favourites"),
+    queryFn: async () => api.get("/blogs/favourites"),
     enabled: !isStopQuery,
   });
 
