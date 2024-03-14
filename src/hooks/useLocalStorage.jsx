@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-export const useLocalStorage = <T,>(key: string, defaultValue: T) => {
-  const [storedValue, setStoredValue] = useState<T>(() => {
+export const useLocalStorage = (key, defaultValue) => {
+  const [storedValue, setStoredValue] = useState(() => {
     try {
       const item = localStorage.getItem(key);
       return item ? JSON.parse(item) : defaultValue;
@@ -11,7 +11,7 @@ export const useLocalStorage = <T,>(key: string, defaultValue: T) => {
     }
   });
 
-  const setValue = (value: T | ((val: T) => T)) => {
+  const setValue = (value) => {
     try {
       const valueToStore =
         value instanceof Function ? value(storedValue) : value;
@@ -23,7 +23,7 @@ export const useLocalStorage = <T,>(key: string, defaultValue: T) => {
   };
 
   useEffect(() => {
-    const handleStorageChange = (event: StorageEvent) => {
+    const handleStorageChange = (event) => {
       if (event.key === key) {
         try {
           const newValue = event.newValue

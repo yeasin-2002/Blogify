@@ -1,13 +1,12 @@
 import { Cross } from "@/components";
 import { cn } from "@/utils";
-import type { ReactNode, ReactPortal } from "react";
 import { useState } from "react";
 import { createPortal } from "react-dom";
 
 export const usePortal = (defaultShow = false) => {
   const [isShowPortal, setIsShowPortal] = useState(defaultShow);
 
-  const renter = (children: ReactNode): ReactPortal | null => {
+  const renter = (children) => {
     if (!isShowPortal) return null;
     return createPortal(
       <div
@@ -26,18 +25,14 @@ export const usePortal = (defaultShow = false) => {
           {children}
         </div>
       </div>,
-      document.getElementById("popOver") as HTMLElement,
+      document.getElementById("popOver"),
     );
   };
 
   return { isShowPortal, setIsShowPortal, renter };
 };
 
-interface HeadingProps extends React.ComponentProps<"div"> {
-  title?: string;
-}
-
-export const PortalHeading = ({ title, ...rest }: HeadingProps) => {
+export const PortalHeading = ({ title, ...rest }) => {
   return (
     <div {...rest} className="flex w-full items-center justify-between    ">
       <p className="text-center text-xl font-bold">{title || ""}</p>

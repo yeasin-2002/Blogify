@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 
-type Options = {
-  element: React.MutableRefObject<HTMLDivElement | null>;
-};
-
-export const useIntersectionObserver = ({ element }: Options) => {
+export const useIntersectionObserver = ({ element }) => {
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
