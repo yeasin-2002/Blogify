@@ -1,4 +1,4 @@
 import { baseUrl } from "./exportEnv";
 
-export const getBlogThumbnail = (thumbnail: string | undefined) =>
+export const getBlogThumbnail = (thumbnail) =>
   `${baseUrl}/uploads/blog/${thumbnail}`;

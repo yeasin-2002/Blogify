@@ -1,22 +1,16 @@
 import { useLocalStorage } from "@/hooks";
-import { authContextValue, authToken, authUser } from "@/types";
 import { createContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const AuthContext = createContext<authContextValue | null>(null);
+export const AuthContext = createContext(null);
 
-export const AuthProvider = ({ children }: OnlyChild) => {
+export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
-  const [authUser, setAuthUser] = useLocalStorage<authUser | null>(
-    "authUser",
-    null,
-  );
-  const [authToken, setAuthToken] = useLocalStorage<authToken | null>(
-    "authToken",
-    null,
-  );
+  const [authUser, setAuthUser] = useLocalStorage("authUser", null);
 
-  const login = (user: authUser, token: authToken) => {
+  const [authToken, setAuthToken] = useLocalStorage("authToken", null);
+
+  const login = (user, token) => {
     setAuthUser(user);
     setAuthToken(token);
   };

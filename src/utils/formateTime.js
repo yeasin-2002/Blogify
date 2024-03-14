@@ -1,6 +1,6 @@
-export function formatDateYearFirst(date: Date): string {
+export function formatDateYearFirst(date) {
   if (!date) return "";
-  const options: Intl.DateTimeFormatOptions = {
+  const options = {
     year: "numeric",
     month: "long",
     day: "numeric",

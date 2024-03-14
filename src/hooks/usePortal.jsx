@@ -32,6 +32,7 @@ export const usePortal = (defaultShow = false) => {
   return { isShowPortal, setIsShowPortal, renter };
 };
 
+
 export const PortalHeading = ({ title, ...rest }) => {
   return (
     <div {...rest} className="flex w-full items-center justify-between    ">
