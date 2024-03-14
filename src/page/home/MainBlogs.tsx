@@ -1,6 +1,5 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import React, { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import React, { useEffect, useRef } from "react";
 interface Props extends React.ComponentProps<"div"> {}
 
 import discoverIcon from "@/assets/others/binocular.png";
@@ -8,14 +7,8 @@ import { BlogCard, MainBlogSkeleton, Spinners180Ring } from "@/components";
 import { homeBlogResponse } from "@/types";
 import { axiosInstance } from "@/utils";
 
-// import { useIntersectionObserver } from "@/hooks";
-// import { useInView } from "framer-motion";
-
 export const MainBlogs = ({ ...rest }: Props) => {
-  // const ref = useRef<null | HTMLDivElement>(null);
-  // const isVisible = useIntersectionObserver({ element: ref });
-  // const isVisible = useInView(ref);
-  const [ref, isVisible] = useInView();
+  const ref = useRef(null);
 
   const {
     data,
@@ -39,10 +32,22 @@ export const MainBlogs = ({ ...rest }: Props) => {
   });
 
   useEffect(() => {
-    if (isVisible && hasNextPage && !isFetching && !isFetchingNextPage) {
-      fetchNextPage();
-    }
-  }, [fetchNextPage, hasNextPage, isFetching, isFetchingNextPage, isVisible]);
+    const observer = new IntersectionObserver((items) => {
+      if (
+        items[0].isIntersecting &&
+        hasNextPage &&
+        !isFetching &&
+        !isFetchingNextPage
+      ) {
+        fetchNextPage();
+      }
+    });
+    ref?.current && observer.observe(ref?.current);
+
+    () => {
+      observer.disconnect();
+    };
+  }, [fetchNextPage, hasNextPage, isFetching, isFetchingNextPage]);
 
   return (
     <>
@@ -73,14 +78,14 @@ export const MainBlogs = ({ ...rest }: Props) => {
         </div>
       )}
 
-      {(isLoading || isFetching) && <MainBlogSkeleton />}
-      {isFetchingNextPage && (
-        <div>
+      {(isLoading || isFetchingNextPage) && (
+        <>
           <div className="mt-8 flex w-full items-center justify-center  ">
             <Spinners180Ring />
             <p>Loading more blogs</p>
           </div>
-        </div>
+          <MainBlogSkeleton />
+        </>
       )}
     </>
   );

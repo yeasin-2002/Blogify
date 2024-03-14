@@ -9,7 +9,9 @@ export const useIntersectionObserver = ({ element }: Options) => {
 
   useEffect(() => {
     const observer = new IntersectionObserver((ent) => {
-      setInView(ent[0].isIntersecting);
+      if (ent[0].isIntersecting) {
+        setInView(true);
+      }
     });
     element?.current && observer.observe(element?.current);
 

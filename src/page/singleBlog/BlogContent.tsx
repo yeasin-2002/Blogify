@@ -56,11 +56,11 @@ export const BlogContent = ({ blog, ...rest }: Props) => {
           )}
         </div>
 
-        {blog?.thumbnail && (
+        {blog?.thumbnail && blog?.thumbnail !== "undefined" && (
           <img
             className="mx-auto my-4 h-80 w-full object-cover md:h-96 md:w-8/12"
             src={thumbnail}
-            alt=""
+            alt="Blog thumbnail"
           />
         )}
 
@@ -74,7 +74,7 @@ export const BlogContent = ({ blog, ...rest }: Props) => {
 
         <article
           // className="prose mx-auto mt-5 w-full py-2 !text-left text-base leading-8  lg:prose-xl md:w-10/12 md:text-lg"
-          className="prose  mx-auto text-left text-gray-900 xl:prose-xl *:text-gray-900 dark:!text-gray-100  dark:*:text-gray-100 "
+          className="prose  mx-auto mt-7 text-left text-gray-900 xl:prose-xl *:text-gray-900  dark:!text-gray-100 dark:*:text-gray-100 "
           dangerouslySetInnerHTML={{ __html: blog?.content || "" }}
         />
       </div>

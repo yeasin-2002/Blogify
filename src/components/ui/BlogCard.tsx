@@ -1,6 +1,7 @@
 import { baseUrl, formatDateYearFirst, htmlToString } from "@/utils";
-import React from "react";
-interface Props extends React.ComponentProps<"div"> {
+import { motion } from "framer-motion";
+
+interface Props {
   showActionModal?: boolean;
   blog: Blog;
 }
@@ -29,9 +30,16 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
   const contentString = htmlToString(blog?.content);
 
   return (
-    <div className="blog-card" {...rest}>
+    <motion.div
+      className="blog-card"
+      {...rest}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+    >
       <Link to={`/blog/${blog?.id}`}>
-        {blog?.thumbnail && (
+        {blog?.thumbnail && blog?.thumbnail !== "undefined" && (
           <img
             className="blog-thumb border border-slate-800/80"
             src={thumbnail}
@@ -86,6 +94,6 @@ export const BlogCard = ({ blog, ...rest }: Props) => {
 
         {isUserIsAuthor && <BlogCardActions blogid={blog?.id} />}
       </div>
-    </div>
+    </motion.div>
   );
 };

@@ -16,6 +16,10 @@ module.exports = {
         githubHover: "#050708",
         midnightBlue: "#030317",
       },
+      fontFamily: {
+        "europa-bold": ["Europa-Bold", "sans-serif"],
+        "europa-regular": ["Europa-Regular", "sans-serif"],
+      },
     },
   },
   plugins: [typography],

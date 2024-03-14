@@ -6,6 +6,23 @@
   body {
     @apply scroll-smooth bg-white  text-midnightBlue transition-all    dark:bg-midnightBlue dark:text-white;
   }
+  @font-face {
+    font-family: "Europa-Bold";
+    src:
+      url("./assets/fonts/Europa-Bold.woff") format("woff"),
+      url("./assets/fonts/Europa-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Europa-Regular";
+    src:
+      url("./assets/fonts/Europa-Regular.woff") format("woff"),
+      url("/fonts/Europa-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
 }
 
 @layer components {
@@ -119,7 +136,7 @@
   }
 
   .action-menu-item {
-    @apply flex w-full items-center gap-2 px-4 py-2 text-gray-900  dark:text-gray-100  transition-all hover:bg-slate-800;
+    @apply flex w-full items-center gap-2 px-4 py-2 text-gray-900  transition-all  hover:bg-slate-800 dark:text-gray-100;
   }
 
   /*  My custom styles  */

@@ -38,13 +38,7 @@
       "avatar": "avatar-1710099231594-625798957.png",
       "bio": "I am Saad Hasan, self-taught Junior Software Developer from Bangladesh. I have been working as a Professional Frontend Developer for the last 1 year, Though I started my Self-Taught Programming Journey In 2014. Now a Team Member of LWS\n",
       "password": "$2b$08$e9uY0ZjxXJ9F4r36Ln4oCu4nLZ92OKaQ466VEVDtxBPCs/JL/ChR.",
-      "favourites": [
-        {
-          "id": "4321b782f360f58c8c86",
-          "title": "এন্ড্রয়েড পার্মিশন",
-          "tags": "android, java, kotlin, permission"
-        }
-      ]
+      "favourites": []
     },
     {
       "id": "65aff389f1822a5e9f43",
@@ -562,6 +556,86 @@
       "likes": [],
       "comments": [],
       "createdAt": "2024-03-10T21:02:48.654Z"
+    },
+    {
+      "id": "649f6d9d172b14def895",
+      "title": "Nurturing Relationships for AI Excellence",
+      "content": "<h3>Hey y'all!</h3><p>If you are new here, hello and welcome! I am here today with CodeNewbie Podcast, where we come to you weekly with an interview with a tech professional, sharing supportive advice for newbies in tech.</p><p><em>What's not to like!</em></p><p><br></p><p>GIF<img src=\"https://media.dev.to/cdn-cgi/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnxpvmqcicmy4oyvgojpj.gif\" alt=\"Someone shouting at a computer.\" height=\"440\" width=\"480\"></p><p><img src=\"https://media.dev.to/cdn-cgi/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fm1eg98x9rku16gxd9rvr.gif\" alt=\"Cartoon person jamming to music saying, &quot;It's a Hit!&quot;\"></p>",
+      "thumbnail": "thumbnail-1710401012835-940236863.avif",
+      "author": {
+        "id": "af88348749df1430f462",
+        "firstName": "md ",
+        "lastName": "Yeasin",
+        "avatar": null
+      },
+      "tags": "AI",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-14T07:23:32.842Z"
+    },
+    {
+      "id": "c3f4c2a0b8ebf71e439f",
+      "title": "25 Unnoticeable Features of JavaScript",
+      "content": "<h2>1 — Labels for Loop and Block Statements</h2><p>JavaScript allows labeling loops and block statements, enabling precise control with&nbsp;<code style=\"color: var(--color-body-color);\">break</code>&nbsp;and&nbsp;<code style=\"color: var(--color-body-color);\">continue</code>.</p><pre class=\"ql-syntax\" spellcheck=\"false\">outerLoop: for (let i = 0; i &lt; 5; i++) {\r\n    innerLoop: for (let j = 0; j &lt; 5; j++) {\r\n        if (i === 2 &amp;&amp; j === 2) break outerLoop;\r\n        console.log(`i=${i}, j=${j}`);\r\n    }\r\n}\r\n</pre><p><br></p><h2>2 — Comma Operator</h2><p>The comma operator allows multiple expressions to be evaluated in a sequence, returning the last expression’s result.</p><pre class=\"ql-syntax\" spellcheck=\"false\">let a = (1, 2, 3); // a = 3\r\n</pre><p><br></p>",
+      "thumbnail": "thumbnail-1710401079764-971166570.avif",
+      "author": {
+        "id": "af88348749df1430f462",
+        "firstName": "md ",
+        "lastName": "Yeasin",
+        "avatar": null
+      },
+      "tags": "js,ts,react",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-14T07:24:39.779Z"
+    },
+    {
+      "id": "145379ab5a4c35419202",
+      "title": "Build a Text-to-PowerPoint Application (LangChain, Next.js, & CopilotKit)",
+      "content": "<h1>TL;DR</h1><p>In this article, you will learn how to build an AI-powered PowerPoint application that can search the web to automatically make a presentation about any topic.</p><p>We will cover using:</p><ul><li>Next.js for the app framework 🖥️</li><li>OpenAI for the LLM 🧠</li><li>LangChain &amp; Tavily for a web-searching AI agent 🤖</li><li>Using CopilotKit to integrate the AI into your app 🪁</li></ul><p><img src=\"https://media.dev.to/cdn-cgi/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fztokmi3hdcthmxkj2gny.gif\" alt=\"Image description\" height=\"239\" width=\"498\"></p><h2>CopilotKit: Build an AI-copilot for your app</h2><p>CopilotKit is the&nbsp;<a href=\"https://github.com/CopilotKit/CopilotKit\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: var(--link-branded-color);\">open-source AI copilot platform.</a>&nbsp;We make it easy to integrate powerful AI into your react apps.</p><p>Build:</p><ul><li>ChatBot: Context aware in-app chatbots that can take actions in-app 💬</li><li>CopilotTextArea: AI-powered textFields with context-aware autocomplete &amp; insertions 📝</li><li>Co-Agents: In-app AI agents that can interact with your app &amp; users 🤖</li></ul><p><img src=\"https://media.dev.to/cdn-cgi/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fh69i50cxsyvcknlcs6q0.gif\" alt=\"Image description\" height=\"480\" width=\"800\"></p><p><a href=\"https://github.com/CopilotKit/CopilotKit\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"background-color: var(--bg); color: var(--link-branded-color);\">Star CopilotKit ⭐️</a></p><p>Now back to the article.</p><p>(This article is a progression of an article we published 3 weeks ago, but you don't need to read that one to understand this).</p><p><br></p>",
+      "thumbnail": "thumbnail-1710401178100-929523236.jpg",
+      "author": {
+        "id": "af88348749df1430f462",
+        "firstName": "md ",
+        "lastName": "Yeasin",
+        "avatar": null
+      },
+      "tags": "Ai,JavaScript",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-14T07:26:18.117Z"
+    },
+    {
+      "id": "f52528f79ab89bf884ae",
+      "title": "How to Create Bookmarklets Using Libraries Like React",
+      "content": "<p>This article was generated by a human :)</p><p>The cover image provided by Gemini AI. UNLEASH BOOKKALLETT POWER!</p><p>The full code for this article's bookmarklet is available in the end.</p><p>Long time ago, in a galaxy far away, when web developers did not use node_modules to create web pages. Today we will discover how these forgotten techniques of using plain script tags and some js to create rich bookmarklets.</p><p>Yet, let us start with the basic, what is a bookmarklet? Essentially it is a bookmark, but with some javascript in place of the URL, in a format, which can be pasted in the browser's address bar and get executed, for example, try pasting the following code into the address bar and press enter:</p><pre class=\"ql-syntax\" spellcheck=\"false\">javascript:alert('hello!');\r\n</pre><p><br></p><p>Rather primitive, eh? However, this ability to execute javascript on the fly opens a huge field of possibilities. Do not feel like typing branch names manually when creating one on the work item? Have a bookmarklet to generate them. Want to check what does google analytics send? Have a bookmarklet to log its data in real time. Imagination is the limit.</p><p>Let us imagine a scenario, where we decided to code a bookmarklet with some fancy interface, so it creates a separate element and displays some data. To make it more interesting, let us use a css framework for the looks and a js library for components. For this demo, the bookmarklet will render a simple counter with a button that increments the displayed click count.</p><p>Resources we will be using:</p><ul><li>Bulma for css (simply because it does not use js);</li><li>React for components;</li><li>ReactDOM to render our React components.</li></ul><p>All of these need to be loaded prior to any serious work, so let's create some functions to load them and await until we are ready to proceed. We can use CDNs to load everything we need. Note, that for this proof of concept we will not encapsulate our bookmarklet into an iframe, we will use a regular div to host our micro bookmarklet application instead.</p><p><br></p>",
+      "thumbnail": "thumbnail-1710401247446-988109334.avif",
+      "author": {
+        "id": "af88348749df1430f462",
+        "firstName": "md ",
+        "lastName": "Yeasin",
+        "avatar": null
+      },
+      "tags": "javaScript,nebiew,learners",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-14T07:27:27.451Z"
+    },
+    {
+      "id": "db7deab739a1a76c73c9",
+      "title": "How many variations can be produced by obfuscating a single line of JavaScript code: 'var a=1'?",
+      "content": "<p>Confusing code is a technique used to make it difficult to understand and reverse engineer, often employed to protect the confidentiality of source code. For a simple variable assignment like&nbsp;<code style=\"color: var(--color-body-color);\">var a = 1;</code>, here are some possible methods:</p><p><strong>Using Uncommon Variable Names</strong>:</p><pre class=\"ql-syntax\" spellcheck=\"false\">var _0x1234 = 1;\r\n</pre><p><br></p><p><strong>Using Computational Expressions</strong>:</p><pre class=\"ql-syntax\" spellcheck=\"false\">var a = 0 + 1;\r\n</pre><p><br></p><p>Or a more complex one:</p><pre class=\"ql-syntax\" spellcheck=\"false\">var a = Math.floor(1.0);\r\n</pre><p><br></p><p><strong>Using String Parsing</strong>:</p><pre class=\"ql-syntax\" spellcheck=\"false\">var a = parseInt(\"1\", 10);\r\n</pre><p><br></p><p><strong>Using Array or Object Access</strong>:</p><pre class=\"ql-syntax\" spellcheck=\"false\">var _0xarray = [1];\r\nvar a = _0xarray[0];\r\n</pre><p><br></p><p>Or:</p><pre class=\"ql-syntax\" spellcheck=\"false\">var _0xobj = {key: 1};\r\nvar a = _0xobj.key;\r\n</pre><p><br></p><p><strong>Using Bitwise Operations</strong>:</p><pre class=\"ql-syntax\" spellcheck=\"false\">var a = ~(~0 + 1);\r\n</pre><p><br></p><p><strong>Multiple Assignments</strong>:</p><pre class=\"ql-syntax\" spellcheck=\"false\">var b, a;\r\nb = 1;\r\na = b;\r\n</pre><p><br></p><p><strong>Using Functions</strong>:</p><pre class=\"ql-syntax\" spellcheck=\"false\">function getOne() {\r\n    return 1;\r\n}\r\nvar a = getOne();\r\n</pre><p><br></p><p><strong>Using JShaman JavaScript Obfuscator</strong>:</p><pre class=\"ql-syntax\" spellcheck=\"false\">var a = function (s, h) {\r\n  return eval(String.fromCharCode(115, 32, 94, 32, 104));\r\n}(287630, 287631);\r\n</pre><p><br></p><p>Please note that obfuscating code can make it harder to read and maintain, so it should be used cautiously</p>",
+      "thumbnail": "undefined",
+      "author": {
+        "id": "af88348749df1430f462",
+        "firstName": "md ",
+        "lastName": "Yeasin",
+        "avatar": null
+      },
+      "tags": "javaScript,variables",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-14T07:28:35.545Z"
     }
   ]
 }

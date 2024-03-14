@@ -55,13 +55,10 @@ export const BlogForm = ({ onSave, defaultBlogValues, ...rest }: Props) => {
                   <BlogFormThumbnail
                     imgFile={field?.value}
                     handleChange={(file) => {
-                      console.log(file);
-                      field.onChange(file);
+                      field?.onChange(file);
                     }}
-                    Register={register("thumbnail", {
-                      required: "Thumbnail is required",
-                    })}
-                    errorMsg={errors.thumbnail?.message}
+                    Register={register("thumbnail")}
+                    errorMsg={errors?.thumbnail?.message}
                   />
                 );
               }}
