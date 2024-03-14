@@ -1,12 +1,12 @@
 import editIcon from "@/assets/icons/edit.svg";
 import { Avatar, DeleteBlog } from "@/components";
 import { useAuth } from "@/hooks";
-import { formatDateYearFirst, getBlogThumbnail } from "@/utils";
+import { formatTimeWithTimeZone, getBlogThumbnail } from "@/utils";
 import { Link } from "react-router-dom";
 
 export const BlogContent = ({ blog, ...rest }) => {
   const thumbnail = getBlogThumbnail(blog?.thumbnail);
-  const publishDate = formatDateYearFirst(new Date(blog?.createdAt || ""));
+  const publishDate = formatTimeWithTimeZone(new Date(blog?.createdAt || ""));
   const auth = useAuth();
   const isOwner = auth?.authUser?.id === blog?.author?.id;
 

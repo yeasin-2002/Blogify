@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { baseUrl, formatDateYearFirst, htmlToString } from "@/utils";
+import { baseUrl, formatTimeWithTimeZone, htmlToString } from "@/utils";
 import { motion } from "framer-motion";
 
 import { useAuth } from "@/hooks";
@@ -15,7 +15,7 @@ export const BlogCard = ({ blog, ...rest }) => {
 
   const thumbnail = `${baseUrl}/uploads/blog/${blog?.thumbnail}`;
   const authName = blog.author.firstName + " " + blog.author.lastName;
-  const blogCreatedDate = formatDateYearFirst(new Date(blog.createdAt));
+  const blogCreatedDate = formatTimeWithTimeZone(new Date(blog.createdAt));
   const isYouLiked =
     auth?.authUser?.id &&
     blog.likes.find((like) => like.id === auth?.authUser?.id);
