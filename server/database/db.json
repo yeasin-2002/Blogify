@@ -33,12 +33,18 @@
     {
       "id": "3d2dde4b6548275fb066",
       "email": "saadhasan@learnwithsumit.com",
-      "firstName": "Saad ",
+      "firstName": "Saaaad ",
       "lastName": "Hasan",
-      "avatar": "avatar-1710099231594-625798957.png",
+      "avatar": "avatar-1710520066554-757486903.jpg",
       "bio": "I am Saad Hasan, self-taught Junior Software Developer from Bangladesh. I have been working as a Professional Frontend Developer for the last 1 year, Though I started my Self-Taught Programming Journey In 2014. Now a Team Member of LWS\n",
       "password": "$2b$08$e9uY0ZjxXJ9F4r36Ln4oCu4nLZ92OKaQ466VEVDtxBPCs/JL/ChR.",
-      "favourites": []
+      "favourites": [
+        {
+          "id": "792cf0c8b871c1721f02",
+          "title": "Front end web developer",
+          "tags": "react,web"
+        }
+      ]
     },
     {
       "id": "65aff389f1822a5e9f43",
@@ -410,18 +416,7 @@
           "id": "3d2dde4b6548275fb066"
         }
       ],
-      "comments": [
-        {
-          "id": "129bdb841f6b1cf0cf27",
-          "content": "nice ",
-          "author": {
-            "id": "3d2dde4b6548275fb066",
-            "firstName": "Saad ",
-            "lastName": "Hasan",
-            "avatar": "avatar-1710099231594-625798957.png"
-          }
-        }
-      ],
+      "comments": [],
       "createdAt": "2024-03-12T08:18:31.438Z",
       "isFavourite": false
     },
@@ -538,23 +533,6 @@
       "createdAt": "2024-03-10T20:34:23.499Z"
     },
     {
-      "id": "16fae7f1c09e1f9d7daa",
-      "title": "এন্ড্রয়েড পার্মিশন",
-      "content": "<p>এন্ড্রয়েড ইউজারদের ললিপপ খাওয়ানোর পাশাপাশি তাদের নিরপত্তার বিষয়টি নিশ্চিত করতে ললিপপ ভার্সন থেকে রান টাইম পার্মিশন নামক একটি অদ্ভুত বস্তু গুগল তাদের খাতায় যোগ করেছে । যেখানে, কোনো এপ ডেভেলোপার যদি তার এপ ইউজারের Storage, Camera, Contacts, Locationঅথবা Microphone সহ অন্যান্য যেকোনো গুরুত্বপূর্ণ এরিয়াতে হাত দিতে চাইলে অবশ্যই ইউজার কতৃক পারমিশন নিয়ে তারপরেই হাতা হাতি করতে হবে । আমার মনে হয় গুগল বাংলাদেশের কথা ভেবেই এই বস্তুটি তাদের খাতায় যুক্ত করেছেন । কারণ, আমরা (৯০% মানুষ) আল্লাহর ওয়াস্তে আমাদের এপ কি কি পার্মিশন নিচ্ছে অথবা Terms &amp; Condition এ কি লেখা আছে সেট না পড়েই সব কিছু তে Allow করে দেই (আমিও এর ব্যাতিক্রম নই 🤓 )। যেটা অনেকটা ঝুকিপূর্ণ, কারণ আমাদের কিছু ভাই রয়েছে (হ্যাকার) যারা RAT বা ট্রজান হর্স দিয়ে খুব সুন্দর করে ভিকটিমের ডেটা নিজের মনে করে চুরি করে নিতে</p>",
-      "thumbnail": "thumbnail-1708765297564-606798153.png",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad ",
-        "lastName": "Hasan",
-        "avatar": "avatar-1710099231594-625798957.png"
-      },
-      "tags": "android, java, kotlin,flash",
-      "likes": [],
-      "comments": [],
-      "createdAt": "2024-03-10T20:43:53.985Z",
-      "isFavourite": false
-    },
-    {
       "id": "64b8a2c35b7598c1e95b",
       "title": "what is github",
       "content": "<p>GitHub is a developer platform that allows developers to create, store, manage and share their code. It uses Git software, providing the distributed version control of Git plus access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project.&nbsp;<a href=\"https://en.wikipedia.org/wiki/GitHub\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(153, 195, 255);\">Wikipedia</a></p><p><br></p><p><br></p>",
@@ -653,7 +631,7 @@
     {
       "id": "726c90b2c58db7f4e7ec",
       "title": "Top 14 Libraries for Any React App",
-      "content": "<p>There are so many React libraries out there, and picking the right one can be tough. In this article, I’ve put together a list of my favorite and most reliable libraries to help you make the best choice for your project.</p><p>Please, notice that it’s my subjective top based on experience. I can miss something and there might be other great libraries out there. So, feel free to leave comments and share your thoughts.</p><p><br></p><p><br></p><p><strong>Table of Contents</strong></p><ul><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#b5fd\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>Interaction with API</strong></a></li><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#ea9d\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>State Management</strong></a></li><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#8b2f\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>UI-kit</strong></a></li><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#4dab\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>Styling</strong></a></li><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#b781\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>Forms and Validation</strong></a></li><li><br></li></ul><h1>Interaction with API</h1><p>In today’s world, a frontend application is rarely complete without a connection to a backend. This makes the choice of the right library for API interactions incredibly important.</p><p><br></p><p>Mainly, there are two popular types of APIs you will encounter: Typical RESTful API and GraphQL. And it’s not hard to guess that their tooling will differ.</p>",
+      "content": "<p>There are so many React libraries out there, and picking the right one can be tough. In this article, I’ve put together a list of my favorite and most reliable libraries to help you make the best choice for your project.</p><p>Please, notice that it’s my subjective top based on experience. I can miss something and there might be other great libraries out there. So, feel free to leave comments and share your thoughts.</p><p><br></p><p><br></p><p><strong>Table of Contents</strong></p><ul><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#b5fd\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>Interaction with API</strong></a></li><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#ea9d\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>State Management</strong></a></li><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#8b2f\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>UI-kit</strong></a></li><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#4dab\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>Styling</strong></a></li><li><a href=\"https://medium.com/gitconnected/top-14-libraries-for-any-react-app-7ef7933d8966#b781\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: inherit;\"><strong>Forms and Validation</strong></a></li></ul><p><br></p><p><br></p><h2>Interaction with API</h2><p>In today’s world, a frontend application is rarely complete without a connection to a backend. This makes the choice of the right library for API interactions incredibly important.</p><p><br></p><p>Mainly, there are two popular types of APIs you will encounter: Typical RESTful API and GraphQL. And it’s not hard to guess that their tooling will differ.</p>",
       "thumbnail": "thumbnail-1710415516118-969035931.webp",
       "author": {
         "id": "3d2dde4b6548275fb066",
@@ -661,10 +639,11 @@
         "lastName": "Hasan",
         "avatar": "avatar-1710099231594-625798957.png"
       },
-      "tags": "ai ,raect",
+      "tags": "ai ,raect,frontend",
       "likes": [],
       "comments": [],
-      "createdAt": "2024-03-14T11:25:16.134Z"
+      "createdAt": "2024-03-14T11:25:16.134Z",
+      "isFavourite": false
     },
     {
       "id": "19f268226ead43b2de0e",
@@ -681,6 +660,22 @@
       "likes": [],
       "comments": [],
       "createdAt": "2024-03-14T17:51:22.592Z"
+    },
+    {
+      "id": "792cf0c8b871c1721f02",
+      "title": "Front end web developer",
+      "content": "hello world ",
+      "thumbnail": "thumbnail-1710622213470-845666220.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saaaad ",
+        "lastName": "Hasan",
+        "avatar": "avatar-1710520066554-757486903.jpg"
+      },
+      "tags": "react,web",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-16T20:50:13.503Z"
     }
   ]
 }

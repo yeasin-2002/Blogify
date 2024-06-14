@@ -7,8 +7,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "api": " cd server && npm run dev",
-    "formate": "prettier --write src/",
-    "push": "git push origin main  && git push lws main"
+    "formate": "prettier --write src/"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
